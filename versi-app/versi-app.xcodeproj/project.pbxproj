@@ -7,21 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311900212253877B0098B064 /* borderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311900202253877B0098B064 /* borderButton.swift */; };
+		315B96D12255E38200C6CE2A /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D02255E38200C6CE2A /* SignupVC.swift */; };
+		315B96D32255E92200C6CE2A /* GenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D22255E92200C6CE2A /* GenderType.swift */; };
+		315B96D52255E98900C6CE2A /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D42255E98900C6CE2A /* UIButtonExt.swift */; };
+		315B96D72255FCCD00C6CE2A /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D62255FCCD00C6CE2A /* CategoryVC.swift */; };
+		315B96D92255FD0100C6CE2A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D82255FD0100C6CE2A /* CategoryCell.swift */; };
+		315B96DD2256092200C6CE2A /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96DC2256092200C6CE2A /* CategoryModel.swift */; };
+		315B96DF22562BCF00C6CE2A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96DE22562BCF00C6CE2A /* ForgotPasswordVC.swift */; };
+		315B96E1225635A300C6CE2A /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96E0225635A300C6CE2A /* AccountVC.swift */; };
 		31C37A5022534C6E0050505D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C37A4F22534C6E0050505D /* AppDelegate.swift */; };
-		31C37A5222534C6F0050505D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C37A5122534C6F0050505D /* ViewController.swift */; };
+		31C37A5222534C6F0050505D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C37A5122534C6F0050505D /* LoginVC.swift */; };
 		31C37A5522534C6F0050505D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5322534C6F0050505D /* Main.storyboard */; };
 		31C37A5722534C700050505D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5622534C700050505D /* Assets.xcassets */; };
 		31C37A5A22534C700050505D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5822534C700050505D /* LaunchScreen.storyboard */; };
+		6EBE18CA99278B6C1CCCEA7A /* Pods_versi_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3A1454C7024386B80AC392 /* Pods_versi_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		311900202253877B0098B064 /* borderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderButton.swift; sourceTree = "<group>"; };
+		315B96D02255E38200C6CE2A /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		315B96D22255E92200C6CE2A /* GenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderType.swift; sourceTree = "<group>"; };
+		315B96D42255E98900C6CE2A /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		315B96D62255FCCD00C6CE2A /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		315B96D82255FD0100C6CE2A /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		315B96DC2256092200C6CE2A /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		315B96DE22562BCF00C6CE2A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		315B96E0225635A300C6CE2A /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		31C37A4C22534C6E0050505D /* versi-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "versi-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C37A4F22534C6E0050505D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		31C37A5122534C6F0050505D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31C37A5122534C6F0050505D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		31C37A5422534C6F0050505D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		31C37A5622534C700050505D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C37A5922534C700050505D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31C37A5B22534C700050505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DB2D2295E37DAAFE98ED340 /* Pods-versi-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.release.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.release.xcconfig"; sourceTree = "<group>"; };
+		3F3A1454C7024386B80AC392 /* Pods_versi_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_versi_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91592550B184DCA3AEE86BCC /* Pods-versi-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.debug.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EBE18CA99278B6C1CCCEA7A /* Pods_versi_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20EBEA6A1768B5DA4E478F78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91592550B184DCA3AEE86BCC /* Pods-versi-app.debug.xcconfig */,
+				3DB2D2295E37DAAFE98ED340 /* Pods-versi-app.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		31C37A4322534C6E0050505D = {
 			isa = PBXGroup;
 			children = (
 				31C37A4E22534C6E0050505D /* versi-app */,
 				31C37A4D22534C6E0050505D /* Products */,
+				20EBEA6A1768B5DA4E478F78 /* Pods */,
+				6365A818D98C5203D66BF68B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +88,87 @@
 		31C37A4E22534C6E0050505D /* versi-app */ = {
 			isa = PBXGroup;
 			children = (
+				31C37A66225359360050505D /* Services */,
+				31C37A64225359090050505D /* Extensions */,
+				31C37A672253594D0050505D /* Utilities */,
+				31C37A65225359290050505D /* Enums */,
+				31C37A6122534D730050505D /* Model */,
+				31C37A6322534D890050505D /* View */,
+				31C37A6222534D7F0050505D /* Controller */,
 				31C37A4F22534C6E0050505D /* AppDelegate.swift */,
-				31C37A5122534C6F0050505D /* ViewController.swift */,
 				31C37A5322534C6F0050505D /* Main.storyboard */,
 				31C37A5622534C700050505D /* Assets.xcassets */,
 				31C37A5822534C700050505D /* LaunchScreen.storyboard */,
 				31C37A5B22534C700050505D /* Info.plist */,
 			);
 			path = "versi-app";
+			sourceTree = "<group>";
+		};
+		31C37A6122534D730050505D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				315B96DC2256092200C6CE2A /* CategoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		31C37A6222534D7F0050505D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				31C37A5122534C6F0050505D /* LoginVC.swift */,
+				315B96D02255E38200C6CE2A /* SignupVC.swift */,
+				315B96D62255FCCD00C6CE2A /* CategoryVC.swift */,
+				315B96DE22562BCF00C6CE2A /* ForgotPasswordVC.swift */,
+				315B96E0225635A300C6CE2A /* AccountVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		31C37A6322534D890050505D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				311900202253877B0098B064 /* borderButton.swift */,
+				315B96D82255FD0100C6CE2A /* CategoryCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		31C37A64225359090050505D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				315B96D42255E98900C6CE2A /* UIButtonExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31C37A65225359290050505D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				315B96D22255E92200C6CE2A /* GenderType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		31C37A66225359360050505D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		31C37A672253594D0050505D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6365A818D98C5203D66BF68B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F3A1454C7024386B80AC392 /* Pods_versi_app.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31C37A5E22534C700050505D /* Build configuration list for PBXNativeTarget "versi-app" */;
 			buildPhases = (
+				DC7F2EA74B213D919238B94F /* [CP] Check Pods Manifest.lock */,
 				31C37A4822534C6E0050505D /* Sources */,
 				31C37A4922534C6E0050505D /* Frameworks */,
 				31C37A4A22534C6E0050505D /* Resources */,
+				7AE2E2821C064BAA7A1B90F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +239,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AE2E2821C064BAA7A1B90F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/RYFloatingInput/RYFloatingInput.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RYFloatingInput.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC7F2EA74B213D919238B94F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-versi-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		31C37A4822534C6E0050505D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31C37A5222534C6F0050505D /* ViewController.swift in Sources */,
+				315B96E1225635A300C6CE2A /* AccountVC.swift in Sources */,
+				315B96D72255FCCD00C6CE2A /* CategoryVC.swift in Sources */,
+				315B96D12255E38200C6CE2A /* SignupVC.swift in Sources */,
+				315B96D52255E98900C6CE2A /* UIButtonExt.swift in Sources */,
+				315B96DD2256092200C6CE2A /* CategoryModel.swift in Sources */,
+				315B96DF22562BCF00C6CE2A /* ForgotPasswordVC.swift in Sources */,
+				315B96D92255FD0100C6CE2A /* CategoryCell.swift in Sources */,
+				31C37A5222534C6F0050505D /* LoginVC.swift in Sources */,
 				31C37A5022534C6E0050505D /* AppDelegate.swift in Sources */,
+				311900212253877B0098B064 /* borderButton.swift in Sources */,
+				315B96D32255E92200C6CE2A /* GenderType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +457,7 @@
 		};
 		31C37A5F22534C700050505D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91592550B184DCA3AEE86BCC /* Pods-versi-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +476,7 @@
 		};
 		31C37A6022534C700050505D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DB2D2295E37DAAFE98ED340 /* Pods-versi-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

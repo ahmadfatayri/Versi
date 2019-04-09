@@ -149,6 +149,17 @@
                                                         <constraint firstAttribute="height" constant="300" id="F0a-yc-BaP"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCz-ZH-BrY">
+                                                    <rect key="frame" x="325" y="10" width="30" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="cjT-xE-M9C"/>
+                                                        <constraint firstAttribute="width" constant="30" id="xE9-fy-s5J"/>
+                                                    </constraints>
+                                                    <state key="normal" image="love"/>
+                                                    <connections>
+                                                        <action selector="loveBtnPressed:" destination="ffP-ce-Kok" eventType="touchUpInside" id="6nW-Ic-ave"/>
+                                                    </connections>
+                                                </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1iq-Yy-JeC">
                                                     <rect key="frame" x="20" y="343" width="165" height="49.5"/>
                                                     <subviews>
@@ -170,13 +181,16 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="1iq-Yy-JeC" secondAttribute="bottom" constant="5" id="BLh-zn-dlz"/>
                                                 <constraint firstItem="8GR-jq-gA5" firstAttribute="top" secondItem="bWD-wn-ewK" secondAttribute="top" id="BzK-RX-MbQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="cCz-ZH-BrY" secondAttribute="trailing" constant="20" id="OHw-yZ-Dlw"/>
                                                 <constraint firstAttribute="trailing" secondItem="8GR-jq-gA5" secondAttribute="trailing" id="Qel-4e-W4k"/>
                                                 <constraint firstItem="8GR-jq-gA5" firstAttribute="leading" secondItem="bWD-wn-ewK" secondAttribute="leading" id="Qxy-Yg-bkU"/>
                                                 <constraint firstItem="1iq-Yy-JeC" firstAttribute="leading" secondItem="bWD-wn-ewK" secondAttribute="leading" constant="20" id="XOW-GT-Uvk"/>
+                                                <constraint firstItem="cCz-ZH-BrY" firstAttribute="top" secondItem="bWD-wn-ewK" secondAttribute="top" constant="10" id="lXt-gv-c00"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageProduct" destination="8GR-jq-gA5" id="TyR-aZ-gpO"/>
+                                            <outlet property="loveBtn" destination="cCz-ZH-BrY" id="3pr-jU-YAC"/>
                                             <outlet property="priceProduct" destination="CJE-Qs-t9q" id="qvU-VN-K3Z"/>
                                             <outlet property="titleProduct" destination="McW-Wv-RwZ" id="STk-S0-NBo"/>
                                         </connections>
@@ -205,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcP-7b-HpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2545" y="-676"/>
+            <point key="canvasLocation" x="-2546.4000000000001" y="-676.01199400299856"/>
         </scene>
         <!--Product Images Page View Controller-->
         <scene sceneID="SI5-kw-M1f">
@@ -451,6 +465,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFb-uu-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-215" y="-1406"/>
+        </scene>
+        <!--Add AddressVC-->
+        <scene sceneID="Igi-jw-Oaa">
+            <objects>
+                <viewController id="Wke-Jh-UZ4" customClass="AddAddressVC" customModule="versi_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Yp-Df-qiB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HUp-6W-DGx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVX-wC-yz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215" y="-2149"/>
         </scene>
         <!--WelcomeVC-->
         <scene sceneID="cgT-VM-8fG">
@@ -1319,6 +1348,7 @@
         <image name="f1" width="1242" height="1242"/>
         <image name="home" width="32" height="32"/>
         <image name="location-marker" width="400" height="400"/>
+        <image name="love" width="982" height="808"/>
         <image name="orders" width="888" height="980"/>
         <image name="s1" width="1242" height="1242"/>
         <image name="t1" width="1242" height="1242"/>

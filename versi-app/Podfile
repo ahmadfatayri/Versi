@@ -12,5 +12,6 @@ target 'versi-app' do
   pod 'AlamofireImage'
   pod 'RYFloatingInput'
   pod 'SwiftyJSON'
-  
+  pod 'TweeTextField'
+
 end

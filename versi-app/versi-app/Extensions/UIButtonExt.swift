@@ -17,4 +17,11 @@ extension UIButton {
         self.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
     }
     
+    func setLikedImage() {
+        self.setImage(UIImage(named: "red-love")?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
+    
+    func setDisLikedImage() {
+        self.setImage(UIImage(named: "love")?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
 }

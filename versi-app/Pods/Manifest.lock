@@ -11,6 +11,7 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - SwiftyJSON (4.2.0)
+  - TweeTextField (1.5.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - RxSwift
   - RYFloatingInput
   - SwiftyJSON
+  - TweeTextField
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,6 +31,7 @@ SPEC REPOS:
     - RxSwift
     - RYFloatingInput
     - SwiftyJSON
+    - TweeTextField
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -38,7 +41,8 @@ SPEC CHECKSUMS:
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   RYFloatingInput: 4034e3c12a8235a7d7e0a97d69ae05e906397b22
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  TweeTextField: 18c7c8990a4a0926ce8ba73fc87e52df4f26805b
 
-PODFILE CHECKSUM: 5b8bae83000068bd1d8c905ae66b9e2ab325a446
+PODFILE CHECKSUM: 613b5b8c5a2c9a9a7ec036b18547764996cf704e
 
 COCOAPODS: 1.6.1

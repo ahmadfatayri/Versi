@@ -13,12 +13,15 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var imageProduct: UIImageView!
     @IBOutlet weak var titleProduct: UILabel!
     @IBOutlet weak var priceProduct: UILabel!
+    @IBOutlet weak var loveBtn: UIButton!
     
     var product: Product! {
         didSet {
             self.updateUI()
         }
     }
+    
+    var isLiked: LikedImage = .disliked
     
     func updateUI()
     {
@@ -31,4 +34,15 @@ class ProductCell: UITableViewCell {
         }
     }
     
+    @IBAction func loveBtnPressed(_ sender: Any) {
+        if isLiked.rawValue == "false" {
+            loveBtn.setLikedImage()
+            isLiked = .liked
+        }
+        else {
+            loveBtn.setDisLikedImage()
+            isLiked = .disliked
+        }
+        
+    }
 }

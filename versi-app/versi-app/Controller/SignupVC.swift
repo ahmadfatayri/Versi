@@ -104,4 +104,16 @@ class SignupVC: UIViewController {
 
     }
     
+    @IBAction func closeBtnWasPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated:true)
+    }
+    @IBAction func createAccountPressed(_ sender: Any) {
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
+        present(vc, animated: true, completion: nil)
+    }
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNIN) as! LoginVC   
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

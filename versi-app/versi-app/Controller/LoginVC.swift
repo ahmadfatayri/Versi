@@ -58,5 +58,20 @@ class LoginVC: UIViewController {
 
     }
 
+    @IBAction func closeBtnWasPressed(_ sender: Any) {
+        navigationController?.popToRootViewController(animated:true)
+    }
+    @IBAction func loginBtnPressed(_ sender: Any) {
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
+        present(vc, animated: true, completion: nil)
+    }
+    @IBAction func signupBtnPressed(_ sender: Any) {
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNUP) as! SignupVC
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func forgotPasswordBtnPressed(_ sender: Any) {
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: FORGOTPASSWORD) as! ForgotPasswordVC
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

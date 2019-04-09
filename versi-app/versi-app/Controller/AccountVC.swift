@@ -12,49 +12,77 @@ class AccountVC: UIViewController {
 
     @IBOutlet weak var logoutBtn: borderButton!
     @IBOutlet weak var logTableView: UITableView!
-    @IBOutlet weak var detailsTableView: UITableView!
     
-    /// A simple data structure to populate the table view.
-    struct PreviewDetail {
-        let title: String
-        let navigationNext: String
-    }
     
-    let sampleData = [
-        PreviewDetail(title: "Small", navigationNext: "160.0"),
-        PreviewDetail(title: "Medium", navigationNext: "320.0"),
-        PreviewDetail(title: "Large", navigationNext: "0.0")
-    ]
-    
-    let sampleData1 = [
-        PreviewDetail(title: "One", navigationNext: "160.0"),
-        PreviewDetail(title: "Two", navigationNext: "320.0"),
-        PreviewDetail(title: "Three", navigationNext: "0.0"),
-        PreviewDetail(title: "More", navigationNext: "0.0")
-    ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        logTableView.delegate = self as UITableViewDelegate
-//        logTableView.dataSource = self as UITableViewDataSource
-//
-//        detailsTableView.delegate = self as UITableViewDelegate
-//        detailsTableView.dataSource = self as UITableViewDataSource
+
+        logTableView.delegate = self as UITableViewDelegate
+        logTableView.dataSource = self as UITableViewDataSource
+        logTableView.isScrollEnabled = false;
+
     }
     
     
 }
-//
-//extension AccountVC: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//
-//}
+
+extension AccountVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if(section == 0) {
+            
+            return group1.count
+        }
+        else if(section == 1) {
+            return group2.count
+        }
+        else {
+            return group3.count
+        }
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = logTableView.dequeueReusableCell(withIdentifier: "AccountCell") as? AccountCell else { return UITableViewCell() }
+        var cat = group1[indexPath.row]
+        switch indexPath.section{
+            case 1:
+                cat = group2[indexPath.row]
+            case 2:
+                cat = group3[indexPath.row]
+            default:
+                cat = group1[indexPath.row]
+        }
+        cell.config(title: cat.title,description: cat.description, imageUrl: cat.iconName)
+        cell.selectionStyle = .none
+        
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        }
+        return 20
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return 5
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+        navigationController?.pushViewController(vc, animated: true)
+        
+//        let vc = AddressesVC()
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+
+}

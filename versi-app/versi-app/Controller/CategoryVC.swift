@@ -58,6 +58,7 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        print("section: \(indexPath.section)")
 //        print("row: \(indexPath.row)")
+        
     }
 
 }

@@ -17,7 +17,11 @@ protocol ProductImagesPageViewControllerDelegate: class
 
 
 class ProductImagesPageViewController: UIPageViewController {
-    var images: [UIImage]? = Product.fetchProducts().first!.images
+    
+    var products: [Product]?
+    
+//    var images: [UIImage]? = Product.fetchProducts().first!.images
+    var images: [UIImage]? = []
     weak var pageViewControllerDelegate: ProductImagesPageViewControllerDelegate?
     
     struct Storyboard {
@@ -43,6 +47,11 @@ class ProductImagesPageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ProductsService.instance.loadData(completion:  {data in
+            self.products = data
+            var images: [UIImage]? = self.products!.first!.images
+        })
         
         automaticallyAdjustsScrollViewInsets = false
         dataSource = self

@@ -10,6 +10,7 @@ import UIKit
 
 class ProductDetailTableViewController: UITableViewController {
     
+    var relatedProducts: [Product]?
     var product: Product!
     
 //    @IBOutlet weak var productImagesHeaderView: ProductImagesHeaderView!
@@ -24,6 +25,11 @@ class ProductDetailTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
 //
         //tableView.tabBarController?.tabBar.items![1].badgeValue = "2"
+        
+        ProductsService.instance.loadData(completion:  {data in
+            self.relatedProducts = data
+            self.tableView.reloadData()
+        })
         
     }
     
@@ -118,16 +124,15 @@ extension ProductDetailTableViewController
 extension ProductDetailTableViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return (relatedProducts?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.suggestionCell, for: indexPath) as! SuggestionCollectionViewCell
         // TODO: - get your data model...
-        let products = Product.fetchProducts()
         
-        cell.image = products[indexPath.item].images?.first
+        cell.image = relatedProducts![indexPath.item].images?.first
         
         return cell
     }

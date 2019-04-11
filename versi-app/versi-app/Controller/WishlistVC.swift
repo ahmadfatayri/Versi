@@ -12,11 +12,21 @@ class WishlistVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var products: [Product]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self as UITableViewDelegate
-        tableView.dataSource = self as UITableViewDataSource
+        WishlistService.instance.loadData(completion:  {data in
+            self.products = data
+            self.tableView.delegate = self as UITableViewDelegate
+            self.tableView.dataSource = self as UITableViewDataSource
+            self.tableView.reloadData()
+        })
+        
+        
+//        tableView.delegate = self as UITableViewDelegate
+//        tableView.dataSource = self as UITableViewDataSource
         
     }
     
@@ -64,18 +74,17 @@ extension WishlistVC: UITableViewDelegate, UITableViewDataSource
 extension WishlistVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return (self.products?.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WishlistCollectionCell", for: indexPath) as! WishlistCollectionCell
-        // TODO: - get your data model...
-        let products = Product.fetchProducts()
-        
-        cell.config(title: products[indexPath.item].name!, price: String(products[indexPath.item].price!), imageUrl: (products[indexPath.item].images?.first)!)
+    
+        cell.product = self.products?[indexPath.item]
         
         return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize

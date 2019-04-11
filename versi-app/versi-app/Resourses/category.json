@@ -1,0 +1,103 @@
+[
+  {
+    "id":1,
+    "title":"WOMEN",
+    "description": "TKurtas & Suits, Top & Tees, Dresses,...",
+    "image": "bg (2)",
+    "sub_category": [
+      {
+        "id": 1,
+        "title": "Brands"
+      },
+      {
+        "id": 2,
+        "title": "Watches"
+      },
+      {
+        "id": 3,
+        "title": "Jewellery"
+      }
+    ]
+  },
+  {
+    "id":2,
+    "title":"MEN",
+    "description": "T-Shirts, Shirts, Jeans, Shoes, Access...",
+    "image": "bg (1)",
+    "sub_category": [
+      {
+        "id": 1,
+        "title": "Brands"
+      },
+      {
+        "id": 2,
+        "title": "Watches"
+      },
+      {
+        "id": 3,
+        "title": "Jewellery"
+      }
+    ]
+  },
+  {
+    "id":3,
+    "title":"KIDS",
+    "description": "Brands, Clothing, Footwear, Accesso...",
+    "image": "bg (3)",
+    "sub_category": [
+      {
+        "id": 1,
+        "title": "Brands"
+      },
+      {
+        "id": 2,
+        "title": "Watches"
+      },
+      {
+        "id": 3,
+        "title": "Jewellery"
+      }
+    ]
+  },
+  {
+    "id":4,
+    "title":"HOME",
+    "description": "Bedsheets, Blankets, Towels, Curtai...",
+    "image": "bg (2)",
+    "sub_category": [
+      {
+        "id": 1,
+        "title": "Brands"
+      },
+      {
+        "id": 2,
+        "title": "Watches"
+      },
+      {
+        "id": 3,
+        "title": "Jewellery"
+      }
+    ]
+  },
+  {
+    "id":5,
+    "title":"GADGETS",
+    "description": "Head phones, Smart wearables, Ruc...",
+    "image": "bg (1)",
+    "sub_category": [
+      {
+        "id": 1,
+        "title": "Brands"
+      },
+      {
+        "id": 2,
+        "title": "Watches"
+      },
+      {
+        "id": 3,
+        "title": "Jewellery"
+      }
+    ]
+  }
+
+]

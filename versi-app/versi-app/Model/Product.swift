@@ -10,12 +10,12 @@ import UIKit
 
 class Product
 {
-    var uid: String?
-    var name: String?
-    var images: [UIImage]?
-    var price: Double?
-    var description: String?
-    var detail: String?
+    public private(set) var uid: String?
+    public private(set) var name: String?
+    public private(set) var images: [UIImage]?
+    public private(set) var price: Double?
+    public private(set) var description: String?
+    public private(set) var detail: String?
     
     init(uid: String, name: String, images: [UIImage], price: Double, description: String, detail: String)
     {

@@ -76,13 +76,41 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         return 5
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-   
-        let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
-        navigationController?.pushViewController(vc, animated: true)
         
-//        let vc = AddressesVC()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+                case 2:
+                    let vc = STORYBOARD.instantiateViewController(withIdentifier: WISHLIST) as! WishlistVC
+                    navigationController?.pushViewController(vc, animated: true)
+                default:
+                    let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+                    navigationController?.pushViewController(vc, animated: true)
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+                navigationController?.pushViewController(vc, animated: true)
+            default:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        case 2:
+            switch indexPath.row {
+            case 3:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+                navigationController?.pushViewController(vc, animated: true)
+            default:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        default:
+            let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+            navigationController?.pushViewController(vc, animated: true)
+        }
         
+
     }
 
 }

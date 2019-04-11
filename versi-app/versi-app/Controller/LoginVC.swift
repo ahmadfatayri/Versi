@@ -62,8 +62,23 @@ class LoginVC: UIViewController {
         navigationController?.popToRootViewController(animated:true)
     }
     @IBAction func loginBtnPressed(_ sender: Any) {
-        let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
-        present(vc, animated: true, completion: nil)
+        
+       
+        guard let email = usernameTextField.text() , usernameTextField.text() != "" else { return }
+        guard let pass = passwordTextField.text() , passwordTextField.text() != "" else { return }
+        
+       
+        AuthService.instance.loginUser(email: email, password: pass) { (success) in
+            if success {
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
+                self.present(vc, animated: true, completion: nil)
+            }
+            else {
+                self.showToast(message: "Username or password not valid")
+            }
+        }
+        
+        
     }
     @IBAction func signupBtnPressed(_ sender: Any) {
         let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNUP) as! SignupVC

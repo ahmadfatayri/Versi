@@ -14,16 +14,13 @@ class HomeVC: UIViewController {
     
     var products: [Product]?
     
-    struct Storyboard {
-        static let feedProductCell = "FeedProductCell"
-        static let showProductDetail = "ShowProductDetail"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        products = Product.fetchProducts()
-        productsTableView.reloadData()
+        ProductsService.instance.loadData(completion:  {data in
+            self.products = data
+            self.productsTableView.reloadData()
+        })
         
 //        productsTableView.estimatedRowHeight = productsTableView.rowHeight
 //        productsTableView.rowHeight = UITableView.automaticDimension

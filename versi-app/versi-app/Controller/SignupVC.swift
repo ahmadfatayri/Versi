@@ -22,6 +22,8 @@ class SignupVC: UIViewController {
     @IBOutlet weak var femaleBtn: borderButton!
     @IBOutlet weak var maleBtn: borderButton!
     
+    var gender: GenderType = .female
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configInput()
@@ -33,11 +35,13 @@ class SignupVC: UIViewController {
     @IBAction func femaleBtnWasPressed(_ sender: Any) {
         femaleBtn.setSelectedColor()
         maleBtn.setDeselectedColor()
+        gender = .female
     }
     
     @IBAction func maleBtnWasPressed(_ sender: Any) {
         maleBtn.setSelectedColor()
         femaleBtn.setDeselectedColor()
+        gender = .male
     }
     
     func configInput() {
@@ -108,8 +112,23 @@ class SignupVC: UIViewController {
         navigationController?.popToRootViewController(animated:true)
     }
     @IBAction func createAccountPressed(_ sender: Any) {
-        let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
-        present(vc, animated: true, completion: nil)
+        
+        guard let name = fullnameTextField.text() , fullnameTextField.text() != "" else { return }
+        guard let email = emailTextField.text() , emailTextField.text() != "" else { return }
+        guard let pass = passwordTextField.text() , passwordTextField.text() != "" else { return }
+        guard let phone = phoneTextField.text() , phoneTextField.text() != "" else { return }
+
+        AuthService.instance.registerUser(email: email, password: pass, name: name, phone: phone, gender: gender.rawValue) { (success) in
+            if success {
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNIN) as! LoginVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                self.showToast(message: "Registration failed")
+            }
+        }
+        
+        
     }
     @IBAction func loginBtnPressed(_ sender: Any) {
         let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNIN) as! LoginVC   

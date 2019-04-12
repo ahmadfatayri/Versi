@@ -63,3 +63,9 @@ let PRODUCTIMAGEVC: String = "SignupVC"
 let PRODUCTIMAGESPAGE: String = ""
 let BOTTOMBAR: String = "BottomBar"
 let WISHLIST: String = "WishlistVC"
+let ADDADDRESS: String = "AddAddressVC"
+let ADDCREDITS: String = "AddCreditVC"
+let CREDITS: String = "CreditsVC"
+
+
+

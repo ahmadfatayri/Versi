@@ -92,6 +92,9 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
             case 0:
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
                 navigationController?.pushViewController(vc, animated: true)
+            case 2:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: CREDITS) as! CreditsVC
+                navigationController?.pushViewController(vc, animated: true)
             default:
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
                 navigationController?.pushViewController(vc, animated: true)

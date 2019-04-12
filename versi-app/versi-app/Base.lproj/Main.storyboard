@@ -417,11 +417,12 @@
                                 </constraints>
                                 <state key="normal" image="back-arrow"/>
                                 <connections>
+                                    <action selector="closeBtnPressed:" destination="j7I-KY-b9Y" eventType="touchUpInside" id="9gg-RU-KSl"/>
                                     <action selector="closeBtnWasPressed:" destination="8id-ya-ueo" eventType="touchUpInside" id="Oan-W2-5w5"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OCr-5e-cJ8">
-                                <rect key="frame" x="0.0" y="70" width="375" height="596.5"/>
+                                <rect key="frame" x="0.0" y="70.5" width="375" height="596.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishlistTableCell" rowHeight="569" id="uF8-Ei-37o" customClass="WishlistTableCell" customModule="versi_app" customModuleProvider="target">
@@ -609,6 +610,9 @@
                                 <state key="normal" title="+ ADD NEW ADDRESS">
                                     <color key="titleColor" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addAddressbtnPressed:" destination="8id-ya-ueo" eventType="touchUpInside" id="Jn7-MV-l7H"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location-marker" translatesAutoresizingMaskIntoConstraints="NO" id="XmY-cy-L7D">
                                 <rect key="frame" x="0.0" y="97" width="375" height="225"/>
@@ -645,20 +649,868 @@
             </objects>
             <point key="canvasLocation" x="-215" y="-1406"/>
         </scene>
+        <!--CreditsVC-->
+        <scene sceneID="avy-XM-3O9">
+            <objects>
+                <viewController storyboardIdentifier="CreditsVC" id="RHd-23-tbP" customClass="CreditsVC" customModule="versi_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qzL-Uy-3Qk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOa-Ic-TBa">
+                                <rect key="frame" x="126" y="451" width="123" height="32"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="+ ADD NEW CARD">
+                                    <color key="titleColor" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAddressbtnPressed:" destination="8id-ya-ueo" eventType="touchUpInside" id="ebS-w4-TDZ"/>
+                                    <action selector="addNewCreditBtnPressed:" destination="RHd-23-tbP" eventType="touchUpInside" id="iSz-0q-XSL"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hk-OP-iY3">
+                                <rect key="frame" x="0.0" y="95.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="332-FJ-ASS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-Zv-PEw">
+                                <rect key="frame" x="15" y="40.5" width="30" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6pF-rh-54t"/>
+                                    <constraint firstAttribute="height" constant="40" id="M9z-rk-ryB"/>
+                                </constraints>
+                                <state key="normal" image="back-arrow"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="RHd-23-tbP" eventType="touchUpInside" id="iXT-f5-tvI"/>
+                                    <action selector="closeBtnWasPressed:" destination="8id-ya-ueo" eventType="touchUpInside" id="JgW-WM-mIP"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cards" translatesAutoresizingMaskIntoConstraints="NO" id="sr3-KG-cWu">
+                                <rect key="frame" x="0.0" y="97" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="BfV-go-9f8"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="h0A-QX-M44">
+                                <rect key="frame" x="0.0" y="342" width="375" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAVE YOUR CREDIT CARDS NOW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdx-oG-T4p">
+                                        <rect key="frame" x="69.5" y="0.0" width="236" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your cards and enjoy faster checkout" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-Y5-Zon">
+                                        <rect key="frame" x="55" y="39.5" width="265" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAYMENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw2-dV-bCn">
+                                <rect key="frame" x="153" y="50" width="69" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h0A-QX-M44" firstAttribute="leading" secondItem="sAG-26-qkh" secondAttribute="leading" id="0aL-7M-9Jr"/>
+                            <constraint firstItem="2ff-Zv-PEw" firstAttribute="leading" secondItem="sAG-26-qkh" secondAttribute="leading" constant="15" id="8Iv-s9-Cvb"/>
+                            <constraint firstItem="h0A-QX-M44" firstAttribute="top" secondItem="sr3-KG-cWu" secondAttribute="bottom" constant="20" id="9Kg-yL-kBX"/>
+                            <constraint firstItem="HOa-Ic-TBa" firstAttribute="top" secondItem="h0A-QX-M44" secondAttribute="bottom" constant="50" id="LnW-Yl-hdC"/>
+                            <constraint firstItem="Jw2-dV-bCn" firstAttribute="top" secondItem="sAG-26-qkh" secondAttribute="top" constant="30" id="OcH-EY-Zx7"/>
+                            <constraint firstItem="sr3-KG-cWu" firstAttribute="leading" secondItem="sAG-26-qkh" secondAttribute="leading" id="XjS-qJ-21s"/>
+                            <constraint firstAttribute="trailing" secondItem="h0A-QX-M44" secondAttribute="trailing" id="cDY-pY-8yY"/>
+                            <constraint firstItem="sr3-KG-cWu" firstAttribute="top" secondItem="6Hk-OP-iY3" secondAttribute="bottom" constant="1" id="ca7-y4-eDa"/>
+                            <constraint firstItem="2ff-Zv-PEw" firstAttribute="centerY" secondItem="Jw2-dV-bCn" secondAttribute="centerY" id="cjC-J9-jPU"/>
+                            <constraint firstItem="HOa-Ic-TBa" firstAttribute="centerX" secondItem="qzL-Uy-3Qk" secondAttribute="centerX" id="g9i-Ud-hUG"/>
+                            <constraint firstItem="sr3-KG-cWu" firstAttribute="trailing" secondItem="sAG-26-qkh" secondAttribute="trailing" id="hMN-1T-enH"/>
+                            <constraint firstItem="6Hk-OP-iY3" firstAttribute="top" secondItem="2ff-Zv-PEw" secondAttribute="bottom" constant="15" id="hgX-zQ-zm9"/>
+                            <constraint firstItem="6Hk-OP-iY3" firstAttribute="leading" secondItem="qzL-Uy-3Qk" secondAttribute="leading" id="ipt-IU-YCc"/>
+                            <constraint firstItem="Jw2-dV-bCn" firstAttribute="centerX" secondItem="qzL-Uy-3Qk" secondAttribute="centerX" id="sdW-u8-BkL"/>
+                            <constraint firstAttribute="trailing" secondItem="6Hk-OP-iY3" secondAttribute="trailing" id="u5v-Cp-dOh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sAG-26-qkh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="353-7V-47N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="-1406"/>
+        </scene>
         <!--Add AddressVC-->
         <scene sceneID="Igi-jw-Oaa">
             <objects>
-                <viewController id="Wke-Jh-UZ4" customClass="AddAddressVC" customModule="versi_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddAddressVC" id="Wke-Jh-UZ4" customClass="AddAddressVC" customModule="versi_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Yp-Df-qiB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADDRESSES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8R-hw-O1K">
+                                <rect key="frame" x="145" y="50" width="85.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txG-GV-GRg">
+                                <rect key="frame" x="0.0" y="95.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="iZh-93-csR"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMK-fH-5t4">
+                                <rect key="frame" x="15" y="40.5" width="30" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mJz-YQ-Oe6"/>
+                                    <constraint firstAttribute="width" constant="30" id="wBs-VT-gDM"/>
+                                </constraints>
+                                <state key="normal" image="back-arrow"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="Wke-Jh-UZ4" eventType="touchUpInside" id="lp6-lL-wnO"/>
+                                    <action selector="closeBtnWasPressed:" destination="8id-ya-ueo" eventType="touchUpInside" id="ejU-yM-4fs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD NEW ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sql-0q-TPP">
+                                <rect key="frame" x="15" y="111" width="145" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="rsw-47-DsF" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="15" y="146.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LrW-CC-Z5z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Name"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="C2p-Pl-PlK" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="15" y="191.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mew-Vy-tWU"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Mobile"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="MZU-k6-qAH">
+                                <rect key="frame" x="15" y="236.5" width="345" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-JV-dTQ" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="tHu-GC-Nv2"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Pin Code"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="Asw-87-yj1" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="180" y="0.0" width="165" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="waT-BT-k1U"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="State"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="ieD-8A-HgX" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="15" y="281.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vED-EB-hzs"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Address (Home No, Building, Street, Area)"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="4CG-if-Cdn" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="15" y="326.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mO0-Sa-u3B"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Locality/ Town"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="akN-Sc-Wfd" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                <rect key="frame" x="15" y="371.5" width="345" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="k0C-ty-Ndb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="City/ District"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljB-jo-XUe">
+                                <rect key="frame" x="15" y="421.5" width="110.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ocA-AO-nMT">
+                                <rect key="frame" x="15" y="462" width="132.5" height="31"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qGS-1c-9MN">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9L-zW-DRd">
+                                        <rect key="frame" x="69" y="0.0" width="63.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dib-bE-OW4">
+                                <rect key="frame" x="15" y="513" width="272" height="31"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S6Q-hU-nZb">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make this as my default address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybb-2p-UD8">
+                                        <rect key="frame" x="69" y="0.0" width="203" height="31"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DF1-L1-7Cn" customClass="borderButton" customModule="versi_app" customModuleProvider="target">
+                                <rect key="frame" x="20" y="569" width="335" height="30"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3HY-bg-ioQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="CREATE ACCOUNT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAccountPressed:" destination="lZO-DA-ph7" eventType="touchUpInside" id="hMo-q4-p16"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dib-bE-OW4" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="12D-F3-MjY"/>
+                            <constraint firstItem="BMK-fH-5t4" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="3n4-bs-YVf"/>
+                            <constraint firstItem="C2p-Pl-PlK" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="4uQ-dC-7Pa"/>
+                            <constraint firstItem="C2p-Pl-PlK" firstAttribute="top" secondItem="rsw-47-DsF" secondAttribute="bottom" constant="15" id="4uq-wS-CXr"/>
+                            <constraint firstItem="HUp-6W-DGx" firstAttribute="trailing" secondItem="akN-Sc-Wfd" secondAttribute="trailing" constant="15" id="5pq-xY-rtn"/>
+                            <constraint firstItem="rsw-47-DsF" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="6Z8-Xi-dCF"/>
+                            <constraint firstItem="DF1-L1-7Cn" firstAttribute="top" secondItem="Dib-bE-OW4" secondAttribute="bottom" constant="25" id="Bf3-Wk-aIe"/>
+                            <constraint firstItem="Dib-bE-OW4" firstAttribute="top" secondItem="ocA-AO-nMT" secondAttribute="bottom" constant="20" id="Dcq-kN-yBe"/>
+                            <constraint firstItem="ljB-jo-XUe" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="FJi-zq-N8W"/>
+                            <constraint firstItem="ljB-jo-XUe" firstAttribute="top" secondItem="akN-Sc-Wfd" secondAttribute="bottom" constant="20" id="JvP-mV-kAw"/>
+                            <constraint firstItem="MZU-k6-qAH" firstAttribute="top" secondItem="C2p-Pl-PlK" secondAttribute="bottom" constant="15" id="MEd-tq-ePT"/>
+                            <constraint firstItem="rsw-47-DsF" firstAttribute="top" secondItem="sql-0q-TPP" secondAttribute="bottom" constant="15" id="Pxg-2U-McP"/>
+                            <constraint firstAttribute="trailing" secondItem="txG-GV-GRg" secondAttribute="trailing" id="QBN-4w-mIO"/>
+                            <constraint firstItem="txG-GV-GRg" firstAttribute="top" secondItem="BMK-fH-5t4" secondAttribute="bottom" constant="15" id="Sv4-cW-SEv"/>
+                            <constraint firstItem="sql-0q-TPP" firstAttribute="top" secondItem="txG-GV-GRg" secondAttribute="bottom" constant="15" id="V0z-jU-rvX"/>
+                            <constraint firstItem="txG-GV-GRg" firstAttribute="leading" secondItem="7Yp-Df-qiB" secondAttribute="leading" id="VdW-T0-A7P"/>
+                            <constraint firstItem="MZU-k6-qAH" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="VtU-Qi-HHI"/>
+                            <constraint firstItem="r8R-hw-O1K" firstAttribute="centerX" secondItem="7Yp-Df-qiB" secondAttribute="centerX" id="WfR-F3-UUV"/>
+                            <constraint firstItem="HUp-6W-DGx" firstAttribute="trailing" secondItem="C2p-Pl-PlK" secondAttribute="trailing" constant="15" id="YeB-SL-kdo"/>
+                            <constraint firstItem="ieD-8A-HgX" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="cEn-Ii-AnF"/>
+                            <constraint firstItem="HUp-6W-DGx" firstAttribute="trailing" secondItem="ieD-8A-HgX" secondAttribute="trailing" constant="15" id="fce-LC-loD"/>
+                            <constraint firstItem="HUp-6W-DGx" firstAttribute="trailing" secondItem="rsw-47-DsF" secondAttribute="trailing" constant="15" id="fgx-Yx-gKW"/>
+                            <constraint firstItem="HUp-6W-DGx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sql-0q-TPP" secondAttribute="trailing" symbolic="YES" id="gCL-kG-bC0"/>
+                            <constraint firstItem="akN-Sc-Wfd" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="gPE-AB-FJO"/>
+                            <constraint firstItem="HUp-6W-DGx" firstAttribute="trailing" secondItem="4CG-if-Cdn" secondAttribute="trailing" constant="15" id="hE4-2E-JqD"/>
+                            <constraint firstItem="4CG-if-Cdn" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="hg2-8a-UcT"/>
+                            <constraint firstItem="ieD-8A-HgX" firstAttribute="top" secondItem="MZU-k6-qAH" secondAttribute="bottom" constant="15" id="lGP-Mj-0YE"/>
+                            <constraint firstItem="4CG-if-Cdn" firstAttribute="top" secondItem="ieD-8A-HgX" secondAttribute="bottom" constant="15" id="lKb-wW-uDR"/>
+                            <constraint firstItem="BMK-fH-5t4" firstAttribute="centerY" secondItem="r8R-hw-O1K" secondAttribute="centerY" id="nHG-Kf-77J"/>
+                            <constraint firstItem="akN-Sc-Wfd" firstAttribute="top" secondItem="4CG-if-Cdn" secondAttribute="bottom" constant="15" id="qZI-uo-0yB"/>
+                            <constraint firstItem="ocA-AO-nMT" firstAttribute="top" secondItem="ljB-jo-XUe" secondAttribute="bottom" constant="20" id="t7I-YF-J3f"/>
+                            <constraint firstItem="ocA-AO-nMT" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="tkH-Ee-djo"/>
+                            <constraint firstItem="DF1-L1-7Cn" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="20" id="tta-wt-0F9"/>
+                            <constraint firstItem="r8R-hw-O1K" firstAttribute="top" secondItem="HUp-6W-DGx" secondAttribute="top" constant="30" id="uKl-sr-BwM"/>
+                            <constraint firstItem="sql-0q-TPP" firstAttribute="leading" secondItem="HUp-6W-DGx" secondAttribute="leading" constant="15" id="wdG-mS-BHr"/>
+                            <constraint firstAttribute="trailing" secondItem="MZU-k6-qAH" secondAttribute="trailing" constant="15" id="xZ6-Na-XJa"/>
+                            <constraint firstItem="HUp-6W-DGx" firstAttribute="trailing" secondItem="DF1-L1-7Cn" secondAttribute="trailing" constant="20" id="z2R-BC-mNp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HUp-6W-DGx"/>
                     </view>
+                    <connections>
+                        <outlet property="addressDetailsTextField" destination="ieD-8A-HgX" id="IXJ-cK-FOR"/>
+                        <outlet property="cityTextField" destination="akN-Sc-Wfd" id="GLe-n4-jbA"/>
+                        <outlet property="defaultAddressSwitch" destination="S6Q-hU-nZb" id="MUF-L0-hG0"/>
+                        <outlet property="forHomeSwitch" destination="qGS-1c-9MN" id="yHL-Ey-H3Q"/>
+                        <outlet property="mobileTextField" destination="C2p-Pl-PlK" id="Gzp-Tz-Pyn"/>
+                        <outlet property="nameTextField" destination="rsw-47-DsF" id="Ifl-Qq-dKp"/>
+                        <outlet property="pinTextField" destination="CVO-JV-dTQ" id="ZaM-KM-Dqs"/>
+                        <outlet property="stateTextField" destination="Asw-87-yj1" id="Xiw-jo-yZm"/>
+                        <outlet property="townTextField" destination="4CG-if-Cdn" id="UKo-2L-9Rs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVX-wC-yz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215" y="-2149"/>
+            <point key="canvasLocation" x="-215.19999999999999" y="-2149.4752623688159"/>
+        </scene>
+        <!--Add CreditVC-->
+        <scene sceneID="2va-Nd-ozS">
+            <objects>
+                <viewController storyboardIdentifier="AddCreditVC" id="q7u-Yd-B6f" customClass="AddCreditVC" customModule="versi_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gDw-4O-cVM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAYMENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3k-A1-Nn5">
+                                <rect key="frame" x="153" y="50" width="69" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P1-dt-B6d">
+                                <rect key="frame" x="0.0" y="95.5" width="375" height="0.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="vbD-Sq-I5k"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcK-b8-hrQ">
+                                <rect key="frame" x="15" y="40.5" width="30" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="azm-vf-QDu"/>
+                                    <constraint firstAttribute="width" constant="30" id="iVs-fh-rju"/>
+                                </constraints>
+                                <state key="normal" image="back-arrow"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="Wke-Jh-UZ4" eventType="touchUpInside" id="1aF-R4-P61"/>
+                                    <action selector="backBtnPressed:" destination="q7u-Yd-B6f" eventType="touchUpInside" id="fKI-Wb-aH6"/>
+                                    <action selector="closeBtnWasPressed:" destination="8id-ya-ueo" eventType="touchUpInside" id="gmI-Lw-zxA"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="u0I-KV-xvr">
+                                <rect key="frame" x="15" y="281" width="345" height="155.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD NEW CARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-GO-V5s">
+                                        <rect key="frame" x="0.0" y="0.0" width="118" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="IcU-6q-hyq" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="35.5" width="345" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9w5-qD-cVb"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Name on Credit Card"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="gAd-B7-Wsh" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="80.5" width="345" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="GeR-L6-58R"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                                <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Credit Card Number"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eEX-t7-LeG">
+                                        <rect key="frame" x="0.0" y="125.5" width="345" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="mP2-PP-tww" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="sOs-JB-DB6"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                        <real key="value" value="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <integer key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                                        <real key="value" value="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="CVC"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" background="Name" translatesAutoresizingMaskIntoConstraints="NO" id="Z3f-Zv-czJ" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                                <rect key="frame" x="180" y="0.0" width="165" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="7G8-Ge-qOt"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumPlaceholderFontSize">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeLineColor">
+                                                        <color key="value" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="activeLineWidth">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                        <real key="value" value="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <integer key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="originalPlaceholderFontSize">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="infoAnimationDuration">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="infoFontSize">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderDuration">
+                                                        <real key="value" value="0.20000000000000001"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="tweePlaceholder" value="Expires Date"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IcU-6q-hyq" firstAttribute="leading" secondItem="u0I-KV-xvr" secondAttribute="leading" id="6mP-6E-V9g"/>
+                                    <constraint firstItem="IcU-6q-hyq" firstAttribute="top" secondItem="aOh-GO-V5s" secondAttribute="bottom" constant="15" id="Iuw-il-jA8"/>
+                                    <constraint firstItem="eEX-t7-LeG" firstAttribute="leading" secondItem="u0I-KV-xvr" secondAttribute="leading" id="JS9-jK-lBF"/>
+                                    <constraint firstAttribute="trailing" secondItem="gAd-B7-Wsh" secondAttribute="trailing" id="Shi-33-eXt"/>
+                                    <constraint firstItem="gAd-B7-Wsh" firstAttribute="top" secondItem="IcU-6q-hyq" secondAttribute="bottom" constant="15" id="UTf-M4-JCx"/>
+                                    <constraint firstAttribute="trailing" secondItem="eEX-t7-LeG" secondAttribute="trailing" id="ZFl-wq-jgR"/>
+                                    <constraint firstItem="eEX-t7-LeG" firstAttribute="top" secondItem="gAd-B7-Wsh" secondAttribute="bottom" constant="15" id="jrk-eT-aMC"/>
+                                    <constraint firstAttribute="trailing" secondItem="IcU-6q-hyq" secondAttribute="trailing" id="k1e-Ot-BG6"/>
+                                    <constraint firstItem="gAd-B7-Wsh" firstAttribute="leading" secondItem="u0I-KV-xvr" secondAttribute="leading" id="lGu-j0-96S"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8X-oi-biU">
+                                <rect key="frame" x="0.0" y="111" width="375" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Standard-Card-Template" translatesAutoresizingMaskIntoConstraints="NO" id="uch-Yb-xeh">
+                                        <rect key="frame" x="0.0" y="-15" width="375" height="189"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2435 5346 2345 6234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HX-MR-Ukk">
+                                        <rect key="frame" x="100" y="50" width="175" height="20"/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="WtT-0L-iRM">
+                                        <rect key="frame" x="124" y="90" width="127.5" height="27"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zK3-kc-QOz">
+                                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARDHOLDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0e-sQ-sma">
+                                                        <rect key="frame" x="0.0" y="0.0" width="64.5" height="13.5"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="8"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOHN DEO JR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu7-8Q-ULZ">
+                                                        <rect key="frame" x="0.0" y="13.5" width="64.5" height="13.5"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="10"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v70-LB-wzZ">
+                                                <rect key="frame" x="89.5" y="0.0" width="38" height="27"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXP DATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0H-cz-VIC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="38" height="10.5"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="8"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="03/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upa-9T-aHQ">
+                                                        <rect key="frame" x="0.0" y="10.5" width="38" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="10"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="2HX-MR-Ukk" firstAttribute="centerX" secondItem="E8X-oi-biU" secondAttribute="centerX" id="0CR-Iy-EWo"/>
+                                    <constraint firstItem="2HX-MR-Ukk" firstAttribute="top" secondItem="E8X-oi-biU" secondAttribute="top" constant="50" id="0vN-ay-U0e"/>
+                                    <constraint firstAttribute="height" constant="150" id="51k-S6-XkA"/>
+                                    <constraint firstAttribute="trailing" secondItem="uch-Yb-xeh" secondAttribute="trailing" id="7nG-oO-4yf"/>
+                                    <constraint firstItem="uch-Yb-xeh" firstAttribute="leading" secondItem="E8X-oi-biU" secondAttribute="leading" id="Uyq-dm-J4d"/>
+                                    <constraint firstItem="uch-Yb-xeh" firstAttribute="top" secondItem="E8X-oi-biU" secondAttribute="top" constant="-15" id="cgn-2i-ZOz"/>
+                                    <constraint firstItem="WtT-0L-iRM" firstAttribute="top" secondItem="2HX-MR-Ukk" secondAttribute="bottom" constant="20" id="dGv-Y1-HTh"/>
+                                    <constraint firstItem="WtT-0L-iRM" firstAttribute="centerX" secondItem="E8X-oi-biU" secondAttribute="centerX" id="lah-E7-Dzf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w3k-A1-Nn5" firstAttribute="top" secondItem="Ndz-Gc-QfW" secondAttribute="top" constant="30" id="1sG-ft-kpa"/>
+                            <constraint firstItem="E8X-oi-biU" firstAttribute="top" secondItem="6P1-dt-B6d" secondAttribute="bottom" constant="15" id="S9O-Gs-EY0"/>
+                            <constraint firstItem="w3k-A1-Nn5" firstAttribute="centerX" secondItem="gDw-4O-cVM" secondAttribute="centerX" id="UOy-N0-Kfr"/>
+                            <constraint firstItem="u0I-KV-xvr" firstAttribute="leading" secondItem="Ndz-Gc-QfW" secondAttribute="leading" constant="15" id="cjJ-Ht-4ND"/>
+                            <constraint firstItem="E8X-oi-biU" firstAttribute="leading" secondItem="Ndz-Gc-QfW" secondAttribute="leading" id="cx8-Uk-7R7"/>
+                            <constraint firstItem="Ndz-Gc-QfW" firstAttribute="trailing" secondItem="u0I-KV-xvr" secondAttribute="trailing" constant="15" id="d1G-2i-7P6"/>
+                            <constraint firstItem="mcK-b8-hrQ" firstAttribute="leading" secondItem="Ndz-Gc-QfW" secondAttribute="leading" constant="15" id="fU5-FW-ClI"/>
+                            <constraint firstItem="6P1-dt-B6d" firstAttribute="leading" secondItem="gDw-4O-cVM" secondAttribute="leading" id="hLR-lb-nbq"/>
+                            <constraint firstItem="u0I-KV-xvr" firstAttribute="top" secondItem="E8X-oi-biU" secondAttribute="bottom" constant="20" id="hgs-dn-sCN"/>
+                            <constraint firstAttribute="trailing" secondItem="6P1-dt-B6d" secondAttribute="trailing" id="jI2-Xc-u6p"/>
+                            <constraint firstItem="Ndz-Gc-QfW" firstAttribute="trailing" secondItem="E8X-oi-biU" secondAttribute="trailing" id="nCa-ft-lLO"/>
+                            <constraint firstItem="6P1-dt-B6d" firstAttribute="top" secondItem="mcK-b8-hrQ" secondAttribute="bottom" constant="15" id="ryU-ZQ-i8q"/>
+                            <constraint firstItem="mcK-b8-hrQ" firstAttribute="centerY" secondItem="w3k-A1-Nn5" secondAttribute="centerY" id="wvb-DG-7Jv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ndz-Gc-QfW"/>
+                    </view>
+                    <connections>
+                        <outlet property="creditCardCVCTextField" destination="mP2-PP-tww" id="dUB-rR-eOO"/>
+                        <outlet property="creditCardExpDateLbl" destination="Upa-9T-aHQ" id="jmc-Bv-lrN"/>
+                        <outlet property="creditCardExpDateTextField" destination="Z3f-Zv-czJ" id="5V7-72-INn"/>
+                        <outlet property="creditCardHolderLbl" destination="Eu7-8Q-ULZ" id="bQv-az-q59"/>
+                        <outlet property="creditCardHolderTextField" destination="IcU-6q-hyq" id="P2A-7B-N7c"/>
+                        <outlet property="creditCardNbLbl" destination="2HX-MR-Ukk" id="Fsw-JQ-Twz"/>
+                        <outlet property="creditCardNbTextField" destination="gAd-B7-Wsh" id="5m8-nX-Uf9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uA-lR-xUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="517.60000000000002" y="-2149.4752623688159"/>
         </scene>
         <!--WelcomeVC-->
         <scene sceneID="cgT-VM-8fG">
@@ -1320,13 +2172,13 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIh-Hn-Vfu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="908"/>
                                     <connections>
                                         <segue destination="tI5-RQ-orJ" kind="embed" identifier="ShowImagesPageViewController" id="xrG-j2-e8N"/>
                                     </connections>
                                 </containerView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zat-uq-LWt">
-                                    <rect key="frame" x="168" y="496" width="39" height="37"/>
+                                    <rect key="frame" x="168" y="871" width="39" height="37"/>
                                     <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="currentPageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                 </pageControl>
@@ -1530,12 +2382,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Name" width="16" height="16"/>
+        <image name="Standard-Card-Template" width="279" height="189"/>
         <image name="account" width="32" height="32"/>
         <image name="arrow" width="560" height="560"/>
         <image name="back-arrow" width="512" height="512"/>
         <image name="bag" width="400" height="400"/>
         <image name="bg" width="750" height="556"/>
         <image name="bg (1)" width="600" height="200"/>
+        <image name="cards" width="400" height="400"/>
         <image name="cart" width="32" height="32"/>
         <image name="category" width="32" height="32"/>
         <image name="close" width="32" height="32"/>

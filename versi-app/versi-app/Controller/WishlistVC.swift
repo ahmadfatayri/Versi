@@ -30,7 +30,10 @@ class WishlistVC: UIViewController {
         
     }
     
-
+    @IBAction func closeBtnPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 

@@ -50,6 +50,9 @@
 		3161DEAB225F42F600832661 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DEAA225F42F600832661 /* ProductsService.swift */; };
 		3161DEAD225F493200832661 /* wishlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 3161DEAC225F493200832661 /* wishlist.json */; };
 		3161DEAF225F494300832661 /* WishlistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DEAE225F494300832661 /* WishlistService.swift */; };
+		3161DEB1225F71E600832661 /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DEB0225F71E600832661 /* UITextFieldExt.swift */; };
+		3197CA6E22606CAC008AF38C /* CreditsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197CA6D22606CAC008AF38C /* CreditsVC.swift */; };
+		3197CA7022606CBE008AF38C /* AddCreditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3197CA6F22606CBE008AF38C /* AddCreditVC.swift */; };
 		31C37A5022534C6E0050505D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C37A4F22534C6E0050505D /* AppDelegate.swift */; };
 		31C37A5222534C6F0050505D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C37A5122534C6F0050505D /* LoginVC.swift */; };
 		31C37A5522534C6F0050505D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5322534C6F0050505D /* Main.storyboard */; };
@@ -102,6 +105,9 @@
 		3161DEAA225F42F600832661 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		3161DEAC225F493200832661 /* wishlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wishlist.json; sourceTree = "<group>"; };
 		3161DEAE225F494300832661 /* WishlistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistService.swift; sourceTree = "<group>"; };
+		3161DEB0225F71E600832661 /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
+		3197CA6D22606CAC008AF38C /* CreditsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsVC.swift; sourceTree = "<group>"; };
+		3197CA6F22606CBE008AF38C /* AddCreditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditVC.swift; sourceTree = "<group>"; };
 		31C37A4C22534C6E0050505D /* versi-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "versi-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C37A4F22534C6E0050505D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31C37A5122534C6F0050505D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -214,6 +220,8 @@
 				3161DE87225C8CB800832661 /* AddAddressVC.swift */,
 				3161DE8B225CAC7500832661 /* WishlistVC.swift */,
 				3161DE91225CCA3000832661 /* SearchVC.swift */,
+				3197CA6D22606CAC008AF38C /* CreditsVC.swift */,
+				3197CA6F22606CBE008AF38C /* AddCreditVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,6 +248,7 @@
 			children = (
 				315B96D42255E98900C6CE2A /* UIButtonExt.swift */,
 				3161DEA2225F25DA00832661 /* UIViewControllerExt.swift */,
+				3161DEB0225F71E600832661 /* UITextFieldExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -423,6 +432,7 @@
 			files = (
 				3123542A2257774E0067B21A /* ProductImageViewController.swift in Sources */,
 				315B96E1225635A300C6CE2A /* AccountVC.swift in Sources */,
+				3197CA6E22606CAC008AF38C /* CreditsVC.swift in Sources */,
 				3161DEA3225F25DA00832661 /* UIViewControllerExt.swift in Sources */,
 				315B96D72255FCCD00C6CE2A /* CategoryVC.swift in Sources */,
 				31235424225772C10067B21A /* ProductImagesHeaderView.swift in Sources */,
@@ -436,6 +446,7 @@
 				3161DEAB225F42F600832661 /* ProductsService.swift in Sources */,
 				31235436225B53860067B21A /* AddressesVC.swift in Sources */,
 				315B96D52255E98900C6CE2A /* UIButtonExt.swift in Sources */,
+				3161DEB1225F71E600832661 /* UITextFieldExt.swift in Sources */,
 				315B96DD2256092200C6CE2A /* Category.swift in Sources */,
 				3161DE92225CCA3000832661 /* SearchVC.swift in Sources */,
 				3123541D225750930067B21A /* ProductCell.swift in Sources */,
@@ -460,6 +471,7 @@
 				3161DE8A225C996400832661 /* LikedImage.swift in Sources */,
 				315B96D32255E92200C6CE2A /* GenderType.swift in Sources */,
 				3123541B225738540067B21A /* ConstatntsAccountList.swift in Sources */,
+				3197CA7022606CBE008AF38C /* AddCreditVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

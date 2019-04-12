@@ -105,7 +105,6 @@ class SignupVC: UIViewController {
         passwordTextField.setup(setting: passwordSetting)
         phoneTextField.setup(setting: phonenumberSetting)
         fullnameTextField.setup(setting: fullnameSetting)
-
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {

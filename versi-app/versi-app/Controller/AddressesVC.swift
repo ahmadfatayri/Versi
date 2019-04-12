@@ -20,4 +20,8 @@ class AddressesVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func addAddressbtnPressed(_ sender: Any) {
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDADDRESS) as! AddAddressVC
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

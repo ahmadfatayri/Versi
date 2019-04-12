@@ -55,7 +55,6 @@ class LoginVC: UIViewController {
         
         usernameTextField.setup(setting: usernameSetting)
         passwordTextField.setup(setting: passwordSetting)
-
     }
 
     @IBAction func closeBtnWasPressed(_ sender: Any) {

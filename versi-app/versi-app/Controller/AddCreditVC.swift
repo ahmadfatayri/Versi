@@ -22,13 +22,17 @@ class AddCreditVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        config()
+     }
+    
+    func config() {
         UITextField.connectFields(fields: [creditCardHolderTextField, creditCardNbTextField, creditCardCVCTextField, creditCardExpDateTextField])
         
         creditCardHolderTextField.addTarget(self, action: #selector(textFieldHolderDidChange(_:)), for: .editingChanged)
         creditCardNbTextField.addTarget(self, action: #selector(textFieldNbDidChange(_:)), for: .editingChanged)
         creditCardExpDateTextField.addTarget(self, action: #selector(textFieldExpDidChange(_:)), for: .editingChanged)
-
-     }
+        
+    }
     
     @objc func textFieldHolderDidChange(_ textField: UITextField) {
         if creditCardHolderTextField.text == "" {

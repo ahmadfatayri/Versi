@@ -142,13 +142,13 @@ extension ProductDetailTableViewController : UICollectionViewDataSource, UIColle
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = 5.0
         layout.minimumInteritemSpacing = 2.5
-        
+
         let numberOfItemsPerRow: CGFloat = 2.0
         let itemWidth = (collectionView.bounds.width - layout.minimumLineSpacing) / numberOfItemsPerRow
-        
+
         return CGSize(width: itemWidth, height: itemWidth)
     }
-    
+
 }
 
 

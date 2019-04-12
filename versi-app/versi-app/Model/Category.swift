@@ -16,12 +16,14 @@ class CategoryModel {
     public private(set) var imageUrl = ""
     public private(set) var title = ""
     public private(set) var description = ""
+    public private(set) var subCategories: [SubCategory] = []
     
-    func config(id: String, title: String, description: String, imageUrl: String) {
+    func config(id: String, title: String, description: String, imageUrl: String, subCategories: [SubCategory]) {
         self.id = id
         self.description = description
         self.title = title
         self.imageUrl = imageUrl
+        self.subCategories = subCategories
     }
     
 }

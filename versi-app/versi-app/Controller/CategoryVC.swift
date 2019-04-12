@@ -46,6 +46,9 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
 //        print("section: \(indexPath.section)")
 //        print("row: \(indexPath.row)")
         
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: SUBCATEGORY) as! SubCategoryVC
+        vc.subCategories = self.categories[indexPath.row].subCategories
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

@@ -27,8 +27,19 @@ class CategoryService {
                 let json = try? JSON(data: data)
                 
                 for (_,subJson):(String, JSON) in json! {
+                    
+                    
+                    var subCategories = [SubCategory]()
+                    for (_,subSubJson):(String, JSON) in subJson["sub_category"] {
+                        let subCat = SubCategory()
+                        subCat.config(id: subSubJson["id"].intValue, title: subSubJson["title"].stringValue, image: UIImage(named: subSubJson["image"].stringValue)!)
+                        subCategories.append(subCat)
+                    }
+                    
+                    
                     let cat = CategoryModel()
-                    cat.config(id: subJson["id"].stringValue, title: subJson["title"].stringValue, description: subJson["description"].stringValue, imageUrl: subJson["image"].stringValue)
+                    cat.config(id: subJson["id"].stringValue, title: subJson["title"].stringValue, description: subJson["description"].stringValue, imageUrl: subJson["image"].stringValue, subCategories: subCategories)
+                    
                     categories.append(cat)
                 }
                 

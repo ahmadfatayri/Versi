@@ -7,15 +7,68 @@
     "sub_category": [
       {
         "id": 1,
-        "title": "Brands"
+        "image": "dress",
+        "title": "Dresses"
       },
       {
         "id": 2,
-        "title": "Watches"
+        "image": "tops",
+        "title": "Tops and tees"
       },
       {
         "id": 3,
-        "title": "Jewellery"
+        "image": "jackets",
+        "title": "Jackets and coats"
+      },
+      {
+          "id": 4,
+          "image": "blouses",
+          "title": "Blouses and shirts"
+      },
+      {
+          "id": 5,
+          "image": "bodysuits",
+          "title": "Bodysuits"
+      },
+      {
+          "id": 6,
+          "image": "sets",
+          "title": "Women's Sets"
+      },
+      {
+          "id": 7,
+          "image": "jeans",
+          "title": "Jeans"
+      },
+      {
+          "id": 8,
+          "image": "intimates",
+          "title": "Intimates"
+      },
+      {
+          "id": 9,
+          "image": "baseball_cap",
+          "title": "Baseball caps"
+      },
+      {
+          "id": 10,
+          "image": "Bottoms",
+          "title": "Bottoms"
+      },
+      {
+          "id": 11,
+          "image": "hoodies&shirts",
+          "title": "Hoodies & Shirts"
+      },
+      {
+          "id": 12,
+          "image": "Sweaters",
+          "title": "Sweaters"
+      },
+      {
+          "id": 13,
+          "image": "Rompers",
+          "title": "Rompers"
       }
     ]
   },
@@ -27,14 +80,17 @@
     "sub_category": [
       {
         "id": 1,
+        "image": "Sunglasses",
         "title": "Brands"
       },
       {
         "id": 2,
+        "image": "Sunglasses",
         "title": "Watches"
       },
       {
         "id": 3,
+        "image": "Sunglasses",
         "title": "Jewellery"
       }
     ]
@@ -47,14 +103,17 @@
     "sub_category": [
       {
         "id": 1,
+        "image": "Sunglasses",
         "title": "Brands"
       },
       {
         "id": 2,
+        "image": "Sunglasses",
         "title": "Watches"
       },
       {
         "id": 3,
+        "image": "Sunglasses",
         "title": "Jewellery"
       }
     ]
@@ -67,14 +126,17 @@
     "sub_category": [
       {
         "id": 1,
+        "image": "Sunglasses",
         "title": "Brands"
       },
       {
         "id": 2,
+        "image": "Sunglasses",
         "title": "Watches"
       },
       {
         "id": 3,
+        "image": "Sunglasses",
         "title": "Jewellery"
       }
     ]
@@ -87,14 +149,17 @@
     "sub_category": [
       {
         "id": 1,
+        "image": "Sunglasses",
         "title": "Brands"
       },
       {
         "id": 2,
+        "image": "Sunglasses",
         "title": "Watches"
       },
       {
         "id": 3,
+        "image": "Sunglasses",
         "title": "Jewellery"
       }
     ]

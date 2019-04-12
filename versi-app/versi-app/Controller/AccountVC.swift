@@ -101,11 +101,11 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             switch indexPath.row {
-            case 3:
-                let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+            case 0:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: PROFILEDETAILS) as! ProfileDetailsVC
                 navigationController?.pushViewController(vc, animated: true)
             default:
-                let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: PROFILEDETAILS) as! ProfileDetailsVC
                 navigationController?.pushViewController(vc, animated: true)
             }
         default:

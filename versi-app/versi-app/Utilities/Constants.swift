@@ -66,6 +66,9 @@ let WISHLIST: String = "WishlistVC"
 let ADDADDRESS: String = "AddAddressVC"
 let ADDCREDITS: String = "AddCreditVC"
 let CREDITS: String = "CreditsVC"
+let PROFILEDETAILS: String = "ProfileDetailsVC"
+let SUBCATEGORY: String = "SubCategoryVC"
+let SUBSUBCATEGORY: String = "SubSubCatVC"
 
 
 

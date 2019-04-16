@@ -13,7 +13,6 @@ class ProductDetailTableViewController: UITableViewController {
     var relatedProducts: [Product]?
     var product: Product!
     
-//    @IBOutlet weak var productImagesHeaderView: ProductImagesHeaderView!
     @IBOutlet weak var productImagesHeaderView: ProductImagesHeaderView!
     
     override func viewDidLoad() {
@@ -23,13 +22,26 @@ class ProductDetailTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = self.tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
-//
-        //tableView.tabBarController?.tabBar.items![1].badgeValue = "2"
         
         ProductsService.instance.loadData(completion:  {data in
             self.relatedProducts = data
             self.tableView.reloadData()
         })
+        
+    }
+    
+    @objc func addToCart(_ sender: UIButton){ //<- needs `@objc`
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTVARIANTS) as! ProductVariantsVC
+        
+        //set anitmation for navigation
+        let transition:CATransition = CATransition()
+        transition.duration = 0.4
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromTop
+        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+        
+        self.navigationController?.pushViewController(vc, animated: false)
         
     }
     
@@ -75,7 +87,14 @@ extension ProductDetailTableViewController
             
             return cell
         } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.buyButtonCell, for: indexPath)
+            
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.buyButtonCell, for: indexPath) as! BuyButtonCell
+            cell.product = product
+            cell.selectionStyle = .none
+            
+            cell.addToCartBtn.addTarget(self, action: #selector(self.addToCart(_:)), for: .touchUpInside) //<- use `#selector(...)`
+
             
             return cell
         } else if indexPath.row == 2 {
@@ -117,6 +136,9 @@ extension ProductDetailTableViewController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //        print("section: \(indexPath.section)")
         //        print("row: \(indexPath.row)")
+        if indexPath.section == 1 {
+            
+        }
         
     }
 }

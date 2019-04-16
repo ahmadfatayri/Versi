@@ -63,8 +63,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTDETAILS) as! ProductDetailTableViewController
         vc.product = selectedProduct
         navigationController?.pushViewController(vc, animated: true)
-      
-        
+              
     }
     
 }

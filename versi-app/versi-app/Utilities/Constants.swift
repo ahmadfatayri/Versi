@@ -69,6 +69,6 @@ let CREDITS: String = "CreditsVC"
 let PROFILEDETAILS: String = "ProfileDetailsVC"
 let SUBCATEGORY: String = "SubCategoryVC"
 let SUBSUBCATEGORY: String = "SubSubCatVC"
-
+let PRODUCTVARIANTS: String = "ProductVariantsVC"
 
 

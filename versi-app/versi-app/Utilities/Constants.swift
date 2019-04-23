@@ -70,5 +70,9 @@ let PROFILEDETAILS: String = "ProfileDetailsVC"
 let SUBCATEGORY: String = "SubCategoryVC"
 let SUBSUBCATEGORY: String = "SubSubCatVC"
 let PRODUCTVARIANTS: String = "ProductVariantsVC"
+let CHECKOUT: String = "CheckoutVC"
+let CONTACT: String = "ContactusVC"
+let CHANGEPASSWORD: String = "ChangePasswordVC"
+let SEARCH: String = "SearchVC"
 
 

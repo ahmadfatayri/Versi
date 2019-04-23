@@ -27,6 +27,7 @@ class SubSubCatVC: UIViewController {
         
     }
     
+    
     @IBAction func backBtnPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -49,6 +50,10 @@ extension SubSubCatVC : UICollectionViewDataSource, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedProduct = products?[indexPath.row]
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTDETAILS) as! ProductDetailTableViewController
+        vc.product = selectedProduct
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     

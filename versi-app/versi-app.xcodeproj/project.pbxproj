@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		311900212253877B0098B064 /* borderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311900202253877B0098B064 /* borderButton.swift */; };
+		311DEAD6226EFE4400E8509E /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEAD5226EFE4400E8509E /* CheckoutVC.swift */; };
+		311DEAD8226F134900E8509E /* ContactusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEAD7226F134900E8509E /* ContactusVC.swift */; };
+		311DEADA226F15F000E8509E /* borderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEAD9226F15F000E8509E /* borderTextView.swift */; };
+		311DEADC226F2DB600E8509E /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEADB226F2DB600E8509E /* ChangePasswordVC.swift */; };
+		311DEADE226F3C4500E8509E /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEADD226F3C4500E8509E /* SearchVC.swift */; };
 		31235419225727CC0067B21A /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31235418225727CC0067B21A /* AccountCell.swift */; };
 		3123541B225738540067B21A /* ConstatntsAccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3123541A225738540067B21A /* ConstatntsAccountList.swift */; };
 		3123541D225750930067B21A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3123541C225750930067B21A /* ProductCell.swift */; };
@@ -37,7 +42,6 @@
 		3161DE8C225CAC7500832661 /* WishlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DE8B225CAC7500832661 /* WishlistVC.swift */; };
 		3161DE8E225CB0DD00832661 /* WishlistTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DE8D225CB0DD00832661 /* WishlistTableCell.swift */; };
 		3161DE90225CB0FF00832661 /* WishlistCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DE8F225CB0FF00832661 /* WishlistCollectionCell.swift */; };
-		3161DE92225CCA3000832661 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DE91225CCA3000832661 /* SearchVC.swift */; };
 		3161DE99225F0F2F00832661 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DE98225F0F2F00832661 /* User.swift */; };
 		3161DE9B225F0F9E00832661 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3161DE9A225F0F9E00832661 /* AuthService.swift */; };
 		3161DE9E225F1A7A00832661 /* login_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 3161DE9C225F1A7A00832661 /* login_success.json */; };
@@ -72,6 +76,11 @@
 
 /* Begin PBXFileReference section */
 		311900202253877B0098B064 /* borderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderButton.swift; sourceTree = "<group>"; };
+		311DEAD5226EFE4400E8509E /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		311DEAD7226F134900E8509E /* ContactusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactusVC.swift; sourceTree = "<group>"; };
+		311DEAD9226F15F000E8509E /* borderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderTextView.swift; sourceTree = "<group>"; };
+		311DEADB226F2DB600E8509E /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		311DEADD226F3C4500E8509E /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		31235418225727CC0067B21A /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		3123541A225738540067B21A /* ConstatntsAccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstatntsAccountList.swift; sourceTree = "<group>"; };
 		3123541C225750930067B21A /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -101,7 +110,6 @@
 		3161DE8B225CAC7500832661 /* WishlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistVC.swift; sourceTree = "<group>"; };
 		3161DE8D225CB0DD00832661 /* WishlistTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableCell.swift; sourceTree = "<group>"; };
 		3161DE8F225CB0FF00832661 /* WishlistCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCollectionCell.swift; sourceTree = "<group>"; };
-		3161DE91225CCA3000832661 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		3161DE98225F0F2F00832661 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3161DE9A225F0F9E00832661 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		3161DE9C225F1A7A00832661 /* login_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login_success.json; sourceTree = "<group>"; };
@@ -233,18 +241,21 @@
 				31235427225775A60067B21A /* ProductImagesPageViewController.swift */,
 				312354292257774E0067B21A /* ProductImageViewController.swift */,
 				3123542B225777C20067B21A /* ProductDetailTableViewController.swift */,
+				3197CA7B2260BCEC008AF38C /* SubSubCatVC.swift */,
 				315B96D62255FCCD00C6CE2A /* CategoryVC.swift */,
 				3197CA7322608D8E008AF38C /* SubCategoryVC.swift */,
-				3197CA7B2260BCEC008AF38C /* SubSubCatVC.swift */,
 				315B96E0225635A300C6CE2A /* AccountVC.swift */,
 				31235435225B53860067B21A /* AddressesVC.swift */,
 				3161DE87225C8CB800832661 /* AddAddressVC.swift */,
 				3161DE8B225CAC7500832661 /* WishlistVC.swift */,
-				3161DE91225CCA3000832661 /* SearchVC.swift */,
 				3197CA6D22606CAC008AF38C /* CreditsVC.swift */,
 				3197CA6F22606CBE008AF38C /* AddCreditVC.swift */,
 				3197CA7122607F37008AF38C /* ProfileDetailsVC.swift */,
 				31902E3B2265AEB50068E111 /* ProductVariantsVC.swift */,
+				311DEAD5226EFE4400E8509E /* CheckoutVC.swift */,
+				311DEAD7226F134900E8509E /* ContactusVC.swift */,
+				311DEADB226F2DB600E8509E /* ChangePasswordVC.swift */,
+				311DEADD226F3C4500E8509E /* SearchVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				311900202253877B0098B064 /* borderButton.swift */,
+				311DEAD9226F15F000E8509E /* borderTextView.swift */,
 				315B96D82255FD0100C6CE2A /* CategoryCell.swift */,
 				31235418225727CC0067B21A /* AccountCell.swift */,
 				3123541C225750930067B21A /* ProductCell.swift */,
@@ -458,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3123542A2257774E0067B21A /* ProductImageViewController.swift in Sources */,
+				311DEADE226F3C4500E8509E /* SearchVC.swift in Sources */,
 				3197CA7C2260BCEC008AF38C /* SubSubCatVC.swift in Sources */,
 				315B96E1225635A300C6CE2A /* AccountVC.swift in Sources */,
 				3197CA6E22606CAC008AF38C /* CreditsVC.swift in Sources */,
@@ -475,10 +488,10 @@
 				3161DEAB225F42F600832661 /* ProductsService.swift in Sources */,
 				31902E3E2265AFFF0068E111 /* BuyButtonCell.swift in Sources */,
 				31235436225B53860067B21A /* AddressesVC.swift in Sources */,
+				311DEAD8226F134900E8509E /* ContactusVC.swift in Sources */,
 				315B96D52255E98900C6CE2A /* UIButtonExt.swift in Sources */,
 				3161DEB1225F71E600832661 /* UITextFieldExt.swift in Sources */,
 				315B96DD2256092200C6CE2A /* Category.swift in Sources */,
-				3161DE92225CCA3000832661 /* SearchVC.swift in Sources */,
 				3123541D225750930067B21A /* ProductCell.swift in Sources */,
 				31235419225727CC0067B21A /* AccountCell.swift in Sources */,
 				315B96DF22562BCF00C6CE2A /* ForgotPasswordVC.swift in Sources */,
@@ -487,6 +500,7 @@
 				3161DE88225C8CB800832661 /* AddAddressVC.swift in Sources */,
 				3161DE80225B7EC800832661 /* WelcomeVC.swift in Sources */,
 				3197CA7422608D8E008AF38C /* SubCategoryVC.swift in Sources */,
+				311DEADA226F15F000E8509E /* borderTextView.swift in Sources */,
 				3161DE8E225CB0DD00832661 /* WishlistTableCell.swift in Sources */,
 				3161DE86225C819B00832661 /* BottomBarVC.swift in Sources */,
 				3197CA7A2260BCBD008AF38C /* SubSubCatCollectionCell.swift in Sources */,
@@ -495,12 +509,14 @@
 				3161DE99225F0F2F00832661 /* User.swift in Sources */,
 				31902E3A2265A8BD0068E111 /* UIImageViewExt.swift in Sources */,
 				31235430225783CC0067B21A /* SuggestionTableViewCell.swift in Sources */,
+				311DEAD6226EFE4400E8509E /* CheckoutVC.swift in Sources */,
 				3197CA782260A845008AF38C /* SubCategory.swift in Sources */,
 				3161DE8C225CAC7500832661 /* WishlistVC.swift in Sources */,
 				3161DE9B225F0F9E00832661 /* AuthService.swift in Sources */,
 				31C37A5022534C6E0050505D /* AppDelegate.swift in Sources */,
 				3161DE90225CB0FF00832661 /* WishlistCollectionCell.swift in Sources */,
 				311900212253877B0098B064 /* borderButton.swift in Sources */,
+				311DEADC226F2DB600E8509E /* ChangePasswordVC.swift in Sources */,
 				31235432225783FE0067B21A /* SuggestionCollectionViewCell.swift in Sources */,
 				3161DE8A225C996400832661 /* LikedImage.swift in Sources */,
 				315B96D32255E92200C6CE2A /* GenderType.swift in Sources */,

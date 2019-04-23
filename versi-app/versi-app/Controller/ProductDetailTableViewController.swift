@@ -45,6 +45,22 @@ class ProductDetailTableViewController: UITableViewController {
         
     }
     
+    @objc func checkout(_ sender: UIButton) {
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: CHECKOUT) as! CheckoutVC
+        
+        //set anitmation for navigation
+        let transition:CATransition = CATransition()
+        transition.duration = 0.4
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromTop
+        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+        
+        self.navigationController?.pushViewController(vc, animated: false)
+        
+    }
+    
+    
     @IBAction func closeBtnWasPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -95,6 +111,7 @@ extension ProductDetailTableViewController
             
             cell.addToCartBtn.addTarget(self, action: #selector(self.addToCart(_:)), for: .touchUpInside) //<- use `#selector(...)`
 
+            cell.buyBtn.addTarget(self, action: #selector(self.checkout(_:)), for: .touchUpInside)
             
             return cell
         } else if indexPath.row == 2 {

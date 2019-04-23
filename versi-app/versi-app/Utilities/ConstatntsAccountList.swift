@@ -16,14 +16,14 @@ struct PreviewDetail {
 }
 
 let group1 = [
-    PreviewDetail(title: "Orders", description: "Check your status", iconName: "orders"),
+    PreviewDetail(title: "Contact us", description: "Tell us your problem", iconName: "orders"),
     PreviewDetail(title: "Help Center", description: "Help regarding your recent purchases", iconName: "help"),
     PreviewDetail(title: "Wishlist", description: "Your most loved styles", iconName: "love"),
-    PreviewDetail(title: "Collections", description: "All your curated product cpllections", iconName: "orders")
+    PreviewDetail(title: "Invate Friend", description: "", iconName: "orders")
 ]
 
 let group2 = [
-    PreviewDetail(title: "Versi Credit", description: "Manage all your refunds & gif cards", iconName: "credit"),
+    PreviewDetail(title: "Search", description: "Manage all your refunds & gif cards", iconName: "credit"),
     PreviewDetail(title: "Versi Points", description: "Earn points as you shop and use them in checkout", iconName: "orders"),
     PreviewDetail(title: "Saved Cards", description: "Save your cards for faster checkout", iconName: "credit_cards"),
     PreviewDetail(title: "Address", description: "Save your address for hassle-free checkout", iconName: "location")

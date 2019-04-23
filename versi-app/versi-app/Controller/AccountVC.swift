@@ -25,7 +25,14 @@ class AccountVC: UIViewController {
 
     }
     
-    
+    func shareApp() {
+        let text = "Check out my new favorite shopping app! Come and join me on Versi"
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        self.present(activityViewController, animated: true, completion: nil)
+    }
 }
 
 extension AccountVC: UITableViewDelegate, UITableViewDataSource {
@@ -80,9 +87,14 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             switch indexPath.row {
+                case 0:
+                    let vc = STORYBOARD.instantiateViewController(withIdentifier: CONTACT) as! ContactusVC
+                    navigationController?.pushViewController(vc, animated: true)
                 case 2:
                     let vc = STORYBOARD.instantiateViewController(withIdentifier: WISHLIST) as! WishlistVC
                     navigationController?.pushViewController(vc, animated: true)
+                case 3:
+                    self.shareApp()
                 default:
                     let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
                     navigationController?.pushViewController(vc, animated: true)
@@ -90,6 +102,9 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         case 1:
             switch indexPath.row {
             case 0:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: SEARCH) as! SearchVC
+                navigationController?.pushViewController(vc, animated: true)
+            case 3:
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
                 navigationController?.pushViewController(vc, animated: true)
             case 2:

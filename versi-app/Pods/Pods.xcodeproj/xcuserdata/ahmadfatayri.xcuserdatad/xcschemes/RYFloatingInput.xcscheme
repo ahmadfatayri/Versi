@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0874D3981D375399FBF75C8825384CD8"
+               BlueprintIdentifier = "3B356806E2578C602DE088EA085E4CF3"
                BuildableName = "RYFloatingInput.framework"
                BlueprintName = "RYFloatingInput"
                ReferencedContainer = "container:Pods.xcodeproj">

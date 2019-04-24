@@ -42,13 +42,10 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
             
             return group1.count
         }
-        else if(section == 1) {
+        else {
             return group2.count
         }
-        else {
-            return group3.count
-        }
-        
+       
         
     }
     
@@ -58,8 +55,6 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section{
             case 1:
                 cat = group2[indexPath.row]
-            case 2:
-                cat = group3[indexPath.row]
             default:
                 cat = group1[indexPath.row]
         }
@@ -70,7 +65,7 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -90,6 +85,9 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
                 case 0:
                     let vc = STORYBOARD.instantiateViewController(withIdentifier: CONTACT) as! ContactusVC
                     navigationController?.pushViewController(vc, animated: true)
+                case 1:
+                    let vc = STORYBOARD.instantiateViewController(withIdentifier: HELP) as! HelpVC
+                    navigationController?.pushViewController(vc, animated: true)
                 case 2:
                     let vc = STORYBOARD.instantiateViewController(withIdentifier: WISHLIST) as! WishlistVC
                     navigationController?.pushViewController(vc, animated: true)
@@ -102,7 +100,10 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
         case 1:
             switch indexPath.row {
             case 0:
-                let vc = STORYBOARD.instantiateViewController(withIdentifier: SEARCH) as! SearchVC
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: PROFILEDETAILS) as! ProfileDetailsVC
+                navigationController?.pushViewController(vc, animated: true)
+            case 1:
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: SCAN) as! ScanVC
                 navigationController?.pushViewController(vc, animated: true)
             case 3:
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
@@ -112,15 +113,6 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource {
                 navigationController?.pushViewController(vc, animated: true)
             default:
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: ADDRESSES) as! AddressesVC
-                navigationController?.pushViewController(vc, animated: true)
-            }
-        case 2:
-            switch indexPath.row {
-            case 0:
-                let vc = STORYBOARD.instantiateViewController(withIdentifier: PROFILEDETAILS) as! ProfileDetailsVC
-                navigationController?.pushViewController(vc, animated: true)
-            default:
-                let vc = STORYBOARD.instantiateViewController(withIdentifier: PROFILEDETAILS) as! ProfileDetailsVC
                 navigationController?.pushViewController(vc, animated: true)
             }
         default:

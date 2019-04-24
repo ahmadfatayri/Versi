@@ -74,5 +74,7 @@ let CHECKOUT: String = "CheckoutVC"
 let CONTACT: String = "ContactusVC"
 let CHANGEPASSWORD: String = "ChangePasswordVC"
 let SEARCH: String = "SearchVC"
+let SCAN: String = "ScanVC"
+let HELP: String = "HelpVC"
 
 

@@ -27,6 +27,9 @@
 		31235432225783FE0067B21A /* SuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31235431225783FE0067B21A /* SuggestionCollectionViewCell.swift */; };
 		31235434225B52C30067B21A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31235433225B52C30067B21A /* Constants.swift */; };
 		31235436225B53860067B21A /* AddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31235435225B53860067B21A /* AddressesVC.swift */; };
+		31345392227044FB00945333 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31345391227044FB00945333 /* UIViewExt.swift */; };
+		31370EAC22705B1200284A2F /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31370EAB22705B1200284A2F /* HelpVC.swift */; };
+		31370EAE22705B2100284A2F /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31370EAD22705B2100284A2F /* ScanVC.swift */; };
 		315B96D12255E38200C6CE2A /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D02255E38200C6CE2A /* SignupVC.swift */; };
 		315B96D32255E92200C6CE2A /* GenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D22255E92200C6CE2A /* GenderType.swift */; };
 		315B96D52255E98900C6CE2A /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D42255E98900C6CE2A /* UIButtonExt.swift */; };
@@ -71,10 +74,11 @@
 		31C37A5522534C6F0050505D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5322534C6F0050505D /* Main.storyboard */; };
 		31C37A5722534C700050505D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5622534C700050505D /* Assets.xcassets */; };
 		31C37A5A22534C700050505D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5822534C700050505D /* LaunchScreen.storyboard */; };
-		6EBE18CA99278B6C1CCCEA7A /* Pods_versi_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3A1454C7024386B80AC392 /* Pods_versi_app.framework */; };
+		4353440551B8E9A183C7CC16 /* Pods_versi_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DA90FC6B77A2400C52582E /* Pods_versi_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15DA90FC6B77A2400C52582E /* Pods_versi_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_versi_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		311900202253877B0098B064 /* borderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderButton.swift; sourceTree = "<group>"; };
 		311DEAD5226EFE4400E8509E /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		311DEAD7226F134900E8509E /* ContactusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactusVC.swift; sourceTree = "<group>"; };
@@ -95,6 +99,9 @@
 		31235431225783FE0067B21A /* SuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		31235433225B52C30067B21A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		31235435225B53860067B21A /* AddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesVC.swift; sourceTree = "<group>"; };
+		31345391227044FB00945333 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		31370EAB22705B1200284A2F /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		31370EAD22705B2100284A2F /* ScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
 		315B96D02255E38200C6CE2A /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		315B96D22255E92200C6CE2A /* GenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderType.swift; sourceTree = "<group>"; };
 		315B96D42255E98900C6CE2A /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
@@ -141,9 +148,8 @@
 		31C37A5622534C700050505D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C37A5922534C700050505D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31C37A5B22534C700050505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DB2D2295E37DAAFE98ED340 /* Pods-versi-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.release.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.release.xcconfig"; sourceTree = "<group>"; };
-		3F3A1454C7024386B80AC392 /* Pods_versi_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_versi_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		91592550B184DCA3AEE86BCC /* Pods-versi-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.debug.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.debug.xcconfig"; sourceTree = "<group>"; };
+		A69137548B49A66507228AD8 /* Pods-versi-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.debug.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.debug.xcconfig"; sourceTree = "<group>"; };
+		DBE51EC8049C1D32FE808B9A /* Pods-versi-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.release.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EBE18CA99278B6C1CCCEA7A /* Pods_versi_app.framework in Frameworks */,
+				4353440551B8E9A183C7CC16 /* Pods_versi_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +167,8 @@
 		20EBEA6A1768B5DA4E478F78 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				91592550B184DCA3AEE86BCC /* Pods-versi-app.debug.xcconfig */,
-				3DB2D2295E37DAAFE98ED340 /* Pods-versi-app.release.xcconfig */,
+				A69137548B49A66507228AD8 /* Pods-versi-app.debug.xcconfig */,
+				DBE51EC8049C1D32FE808B9A /* Pods-versi-app.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -186,7 +192,7 @@
 				31C37A4E22534C6E0050505D /* versi-app */,
 				31C37A4D22534C6E0050505D /* Products */,
 				20EBEA6A1768B5DA4E478F78 /* Pods */,
-				6365A818D98C5203D66BF68B /* Frameworks */,
+				782AD3E25376B6CD158CD61A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,6 +262,8 @@
 				311DEAD7226F134900E8509E /* ContactusVC.swift */,
 				311DEADB226F2DB600E8509E /* ChangePasswordVC.swift */,
 				311DEADD226F3C4500E8509E /* SearchVC.swift */,
+				31370EAB22705B1200284A2F /* HelpVC.swift */,
+				31370EAD22705B2100284A2F /* ScanVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,6 +296,7 @@
 				3161DEA2225F25DA00832661 /* UIViewControllerExt.swift */,
 				3161DEB0225F71E600832661 /* UITextFieldExt.swift */,
 				31902E392265A8BD0068E111 /* UIImageViewExt.swift */,
+				31345391227044FB00945333 /* UIViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,10 +330,10 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		6365A818D98C5203D66BF68B /* Frameworks */ = {
+		782AD3E25376B6CD158CD61A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3F3A1454C7024386B80AC392 /* Pods_versi_app.framework */,
+				15DA90FC6B77A2400C52582E /* Pods_versi_app.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,11 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31C37A5E22534C700050505D /* Build configuration list for PBXNativeTarget "versi-app" */;
 			buildPhases = (
-				DC7F2EA74B213D919238B94F /* [CP] Check Pods Manifest.lock */,
+				0C0867A97C2D76A8638C2174 /* [CP] Check Pods Manifest.lock */,
 				31C37A4822534C6E0050505D /* Sources */,
 				31C37A4922534C6E0050505D /* Frameworks */,
 				31C37A4A22534C6E0050505D /* Resources */,
-				7AE2E2821C064BAA7A1B90F4 /* [CP] Embed Pods Frameworks */,
+				9A6180E1C4E883D92EB4C3A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -404,43 +413,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7AE2E2821C064BAA7A1B90F4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/RYFloatingInput/RYFloatingInput.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/TweeTextField/TweeTextField.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RYFloatingInput.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweeTextField.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC7F2EA74B213D919238B94F /* [CP] Check Pods Manifest.lock */ = {
+		0C0867A97C2D76A8638C2174 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -462,6 +435,44 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9A6180E1C4E883D92EB4C3A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/DCAnimationKit/DCAnimationKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RYFloatingInput/RYFloatingInput.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TweeTextField/TweeTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DCAnimationKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RYFloatingInput.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweeTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -469,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31370EAC22705B1200284A2F /* HelpVC.swift in Sources */,
 				3123542A2257774E0067B21A /* ProductImageViewController.swift in Sources */,
 				311DEADE226F3C4500E8509E /* SearchVC.swift in Sources */,
 				3197CA7C2260BCEC008AF38C /* SubSubCatVC.swift in Sources */,
@@ -491,12 +503,14 @@
 				311DEAD8226F134900E8509E /* ContactusVC.swift in Sources */,
 				315B96D52255E98900C6CE2A /* UIButtonExt.swift in Sources */,
 				3161DEB1225F71E600832661 /* UITextFieldExt.swift in Sources */,
+				31370EAE22705B2100284A2F /* ScanVC.swift in Sources */,
 				315B96DD2256092200C6CE2A /* Category.swift in Sources */,
 				3123541D225750930067B21A /* ProductCell.swift in Sources */,
 				31235419225727CC0067B21A /* AccountCell.swift in Sources */,
 				315B96DF22562BCF00C6CE2A /* ForgotPasswordVC.swift in Sources */,
 				3123542E225783900067B21A /* ProductDetailCell.swift in Sources */,
 				31235422225754140067B21A /* HomeVC.swift in Sources */,
+				31345392227044FB00945333 /* UIViewExt.swift in Sources */,
 				3161DE88225C8CB800832661 /* AddAddressVC.swift in Sources */,
 				3161DE80225B7EC800832661 /* WelcomeVC.swift in Sources */,
 				3197CA7422608D8E008AF38C /* SubCategoryVC.swift in Sources */,
@@ -667,7 +681,7 @@
 		};
 		31C37A5F22534C700050505D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91592550B184DCA3AEE86BCC /* Pods-versi-app.debug.xcconfig */;
+			baseConfigurationReference = A69137548B49A66507228AD8 /* Pods-versi-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -686,7 +700,7 @@
 		};
 		31C37A6022534C700050505D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DB2D2295E37DAAFE98ED340 /* Pods-versi-app.release.xcconfig */;
+			baseConfigurationReference = DBE51EC8049C1D32FE808B9A /* Pods-versi-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

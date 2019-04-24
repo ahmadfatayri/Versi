@@ -11,9 +11,9 @@ import Speech
 
 class SearchVC: UIViewController {
 
-    @IBOutlet weak var textView: borderTextView!
     @IBOutlet weak var microphoneButton: UIButton!
-    @IBOutlet weak var searchController: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
@@ -24,16 +24,10 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchController.delegate = self
-        searchController.showsBookmarkButton = true
-        searchController.setImage(UIImage(named: "favoriteButton"), for: .bookmark, state: .normal)
-        searchController.setImage(UIImage(named: "red-love"), for: .bookmark, state: .selected)
-        
-        
-        
-        
+        microphoneButton.bindToKeyboard()
+        //searchBar.becomeFirstResponder()
         microphoneButton.isEnabled = false
-        
+
         speechRecognizer.delegate = self as? SFSpeechRecognizerDelegate
         
         SFSpeechRecognizer.requestAuthorization { (authStatus) in
@@ -63,6 +57,13 @@ class SearchVC: UIViewController {
         }
 
     }
+    
+    
+    @IBAction func cancelBtnPressed(_ sender: Any) {
+        searchBar.resignFirstResponder()
+    }
+    
+    
 
     @IBAction func microphoneBtnPressed(_ sender: Any) {
         if audioEngine.isRunning {
@@ -108,7 +109,7 @@ class SearchVC: UIViewController {
             
             if result != nil {
                 
-                self.textView.text = result?.bestTranscription.formattedString  //9
+                self.searchBar.text = result?.bestTranscription.formattedString //9
                 isFinal = (result?.isFinal)!
             }
             
@@ -136,7 +137,8 @@ class SearchVC: UIViewController {
             print("audioEngine couldn't start because of an error.")
         }
         
-        textView.text = "Say something, I'm listening!"
+        
+        //self.searchBar.text = "Say something, I'm listening!"
         
     }
     
@@ -148,16 +150,5 @@ class SearchVC: UIViewController {
         }
     }
     
-    @IBAction func backBtnPressed(_ sender: Any) {
-    }
 }
 
-
-extension SearchVC: UISearchBarDelegate {
-    
-    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-        print("click")
-    }
-    
-    
-}

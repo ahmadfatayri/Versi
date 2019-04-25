@@ -76,5 +76,6 @@ let CHANGEPASSWORD: String = "ChangePasswordVC"
 let SEARCH: String = "SearchVC"
 let SCAN: String = "ScanVC"
 let HELP: String = "HelpVC"
+let CART: String = "CartVC"
 
 

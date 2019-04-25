@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+import PulsingHalo
 
 class SearchVC: UIViewController {
 
@@ -20,11 +21,27 @@ class SearchVC: UIViewController {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-    
+    let halo = PulsingHaloLayer()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        microphoneButton.bindToKeyboard()
+        
+        halo.position = view.center
+        halo.haloLayerNumber = 3
+        halo.backgroundColor = #colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85)
+        halo.radius = 150
+        view.layer.addSublayer(halo)
+        halo.start()
+        halo.isHidden = true
+
+        
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
+        microphoneButton.addGestureRecognizer(longGesture)
+
+        
+        
+//        microphoneButton.bindToKeyboard()
         //searchBar.becomeFirstResponder()
         microphoneButton.isEnabled = false
 
@@ -64,21 +81,24 @@ class SearchVC: UIViewController {
     }
     
     
-
-    @IBAction func microphoneBtnPressed(_ sender: Any) {
-        if audioEngine.isRunning {
+    @objc func longTap(_ sender: UIGestureRecognizer){
+        if sender.state == .ended {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
-            microphoneButton.setTitle("Start Recording", for: .normal)
-        } else {
+            halo.isHidden = true
+        }
+        else if sender.state == .began {
             startRecording()
-            microphoneButton.setTitle("Stop Recording", for: .normal)
+            halo.isHidden = false
         }
     }
+
+    
     
     func startRecording() {
-        
+        self.searchBar.text = ""
+
         if recognitionTask != nil {  //1
             recognitionTask?.cancel()
             recognitionTask = nil
@@ -137,7 +157,7 @@ class SearchVC: UIViewController {
             print("audioEngine couldn't start because of an error.")
         }
         
-        
+        searchBar.placeholder = "Say something, I'm listening!"
         //self.searchBar.text = "Say something, I'm listening!"
         
     }

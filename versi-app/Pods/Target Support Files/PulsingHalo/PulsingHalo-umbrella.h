@@ -10,8 +10,9 @@
 #endif
 #endif
 
-#import "UIView+DCAnimationKit.h"
+#import "PulsingHalo.h"
+#import "PulsingHaloLayer.h"
 
-FOUNDATION_EXPORT double DCAnimationKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char DCAnimationKitVersionString[];
+FOUNDATION_EXPORT double PulsingHaloVersionNumber;
+FOUNDATION_EXPORT const unsigned char PulsingHaloVersionString[];
 

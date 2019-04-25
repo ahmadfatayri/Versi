@@ -155,7 +155,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DCAnimationKit/DCAnimationKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PulsingHalo/PulsingHalo.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RYFloatingInput/RYFloatingInput.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
@@ -166,7 +166,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DCAnimationKit/DCAnimationKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PulsingHalo/PulsingHalo.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RYFloatingInput/RYFloatingInput.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"

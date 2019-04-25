@@ -13,5 +13,5 @@ target 'versi-app' do
   pod 'RYFloatingInput'
   pod 'SwiftyJSON'
   pod 'TweeTextField'
-  pod 'DCAnimationKit'
+  pod "PulsingHalo"
 end

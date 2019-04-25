@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
-  - DCAnimationKit (0.0.6)
+  - PulsingHalo (0.2.8)
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -17,7 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
-  - DCAnimationKit
+  - PulsingHalo
   - RxCocoa
   - RxSwift
   - RYFloatingInput
@@ -28,7 +28,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
-    - DCAnimationKit
+    - PulsingHalo
     - RxAtomic
     - RxCocoa
     - RxSwift
@@ -39,7 +39,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
-  DCAnimationKit: 7133bef877ce1aa113dcfeea1380ca67f91f7608
+  PulsingHalo: 64938e4bd3893b823abdf01478084cd92445af2b
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
@@ -47,6 +47,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TweeTextField: 18c7c8990a4a0926ce8ba73fc87e52df4f26805b
 
-PODFILE CHECKSUM: d77f26fdddeca045c80f2ba261022794325da74d
+PODFILE CHECKSUM: fc2c446fb1bb3d89eb5fa9896b7b830df0bfca0b
 
 COCOAPODS: 1.6.1

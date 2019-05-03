@@ -10,7 +10,6 @@ target 'versi-app' do
   pod 'RxCocoa'
   pod 'Alamofire'
   pod 'AlamofireImage'
-  pod 'RYFloatingInput'
   pod 'SwiftyJSON'
   pod 'TweeTextField'
   pod "PulsingHalo"

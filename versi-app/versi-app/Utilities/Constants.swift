@@ -16,30 +16,19 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 
 // URL Constants
-let PATH_LOGIN = Bundle.main.path(forResource: "login_success", ofType: "json")
-let URL_LOGIN = URL(fileURLWithPath: PATH_LOGIN!)
-
-let PATH_REGISTER = Bundle.main.path(forResource: "register_success", ofType: "json")
-let URL_REGISTER = URL(fileURLWithPath: PATH_REGISTER!)
-
 let PATH_CATEGORIES = Bundle.main.path(forResource: "category", ofType: "json")
 let URL_CATEGORIES = URL(fileURLWithPath: PATH_CATEGORIES!)
-
-let PATH_PRODUCTS = Bundle.main.path(forResource: "products", ofType: "json")
-let URL_PRODUCTS = URL(fileURLWithPath: PATH_PRODUCTS!)
 
 let PATH_WISHLIST = Bundle.main.path(forResource: "wishlist", ofType: "json")
 let URL_WISHLIST = URL(fileURLWithPath: PATH_WISHLIST!)
 
-//let BASE_URL = "https://test.com/"
-//let URL_REGISTER = "\(BASE_URL)account/register"
-
-
+let BASE_URL = "https://versi.herokuapp.com/"
+let URL_REGISTER = "\(BASE_URL)users/register"
+let URL_LOGIN = "\(BASE_URL)users/authenticate"
+let URL_PRODUCTS = "\(BASE_URL)products/getAll"
 
 // User Defaults
-let TOKEN_KEY = "token"
 let LOGGED_IN_KEY = "loggedIn"
-let USER_EMAIL = "userEmail"
 
 
 // Headers
@@ -51,6 +40,7 @@ let HEADER = [
 //navigations
 let STORYBOARD = UIStoryboard(name: "Main", bundle: nil)
 
+let WELCOME: String = "WelcomeVC"
 let SIGNUP: String = "SignupVC"
 let SIGNIN: String = "LoginVC"
 let FORGOTPASSWORD: String = "ForgotPasswordVC"

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import CommonCrypto
 
 class AuthService {
     
@@ -25,33 +26,33 @@ class AuthService {
         }
     }
     
-    var authToken: String {
-        get {
-            return defaults.value(forKey: TOKEN_KEY) as! String
-        }
-        set {
-            defaults.set(newValue, forKey: TOKEN_KEY)
-        }
-    }
     
    
     
     func registerUser(email: String, password: String, name: String, phone: String, gender: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
+        let encPassword = ccSha256(data: password.data(using: .utf8)!)
         
         let body: [String: Any] = [
             "email": lowerCaseEmail,
-            "password": password,
+            "password": encPassword.map { String(format: "%02hhx", $0) }.joined(),
             "phone": phone,
-            "name": name,
-            "gender": gender
+            "full_name": name,
+            "gender": gender,
+            "role": "user"
         ]
             
         Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
             
             if response.result.error == nil {
-                completion(true)
+                let statusCode = response.response?.statusCode
+                if  statusCode == 200 {
+                    completion(true)
+                }
+                else {
+                    completion(false)
+                }
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
@@ -62,28 +63,36 @@ class AuthService {
     func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
-        
+        let encPassword = ccSha256(data: password.data(using: .utf8)!)
+
         let body: [String: Any] = [
             "email": lowerCaseEmail,
-            "password": password
+            "password": encPassword.map { String(format: "%02hhx", $0) }.joined()
         ]
         
         Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             
             if response.result.error == nil {
-                guard let data = response.data else { return }
-                let json = try? JSON(data: data)
-    
-                self.authToken = json!["token"].stringValue
-                self.isLoggedIn = true
-                
-                let name = json!["name"].stringValue
-                let id = json!["id"].stringValue
-                let email = json!["email"].stringValue
-                
-                User.instance.setUserData(id: id, email: email, name: name, gender: "male")
-                
-                completion(true)
+                let statusCode = response.response?.statusCode
+                if  statusCode == 200 {
+                    guard let data = response.data else { return }
+                    let json = try? JSON(data: data)
+                    //self.authToken = json!["token"].stringValue
+                    self.isLoggedIn = true
+                    
+                    let name = json!["name"].stringValue
+                    let id = json!["id"].stringValue
+                    let email = json!["email"].stringValue
+                    
+                    KeychainService.saveKey(service: "service", account: "account", data: json!["token"].stringValue)
+                    
+                    User.instance.setUserData(id: id, email: email, name: name, gender: "male")
+                    
+                    completion(true)
+                }
+                else {
+                    completion(false)
+                }
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)
@@ -91,6 +100,15 @@ class AuthService {
         }
     }
     
-    
+    func ccSha256(data: Data) -> Data {
+        var digest = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
+        
+        _ = digest.withUnsafeMutableBytes { (digestBytes) in
+            data.withUnsafeBytes { (stringBytes) in
+                CC_SHA256(stringBytes, CC_LONG(data.count), digestBytes)
+            }
+        }
+        return digest
+    }
 }
 

@@ -17,8 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.0))
+        
+        if KeychainService.loadKey(service: "service", account: "account") != nil {
+            let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
+//            self.window?.rootViewController = vc
+//            self.window?.makeKeyAndVisible()
+            UIApplication.shared.keyWindow?.rootViewController = vc
 
-
+        }
         return true
     }
 

@@ -7,64 +7,32 @@
 //
 
 import UIKit
-import RYFloatingInput
+import TweeTextField
 
 class LoginVC: UIViewController {
 
     
     
-    @IBOutlet weak var usernameTextField: RYFloatingInput!
-    @IBOutlet weak var passwordTextField: RYFloatingInput!
+    
+    @IBOutlet weak var passwordTextField: TweeAttributedTextField!
+    @IBOutlet weak var usernameTextField: TweeAttributedTextField!
     @IBOutlet weak var loginBtn: borderButton!
     @IBOutlet weak var forgotPasswordBtn: UIButton!
     @IBOutlet weak var closeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configInput()
+        
+        UITextField.connectFields(fields: [usernameTextField, passwordTextField])
     }
     
-    func configInput() {
-        let usernameSetting = RYFloatingInputSetting.Builder.instance()
-            //.theme(.dark)
-            //.iconImage(UIImage(named: "image_name")!)
-            .placeholer("Mobile Number/Email ID")
-            //.secure(true)
-            .backgroundColor(.clear)
-            .textColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-            .placeholderColor(.lightGray)
-            .dividerColor(.lightGray)
-            .cursorColor(#colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85))
-            .accentColor(#colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85))
-            .warningColor(.red)
-            .build()
-        
-        let passwordSetting = RYFloatingInputSetting.Builder.instance()
-            //.theme(.dark)
-            //.iconImage(UIImage(named: "image_name")!)
-            .placeholer("Password")
-            .secure(true)
-            .backgroundColor(.clear)
-            .textColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
-            .placeholderColor(.lightGray)
-            .dividerColor(.lightGray)
-            .cursorColor(#colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85))
-            .accentColor(#colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85))
-            .warningColor(.red)
-            .build()
-        
-        usernameTextField.setup(setting: usernameSetting)
-        passwordTextField.setup(setting: passwordSetting)
-    }
-
     @IBAction func closeBtnWasPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated:true)
     }
     @IBAction func loginBtnPressed(_ sender: Any) {
         
-       
-        guard let email = usernameTextField.text() , usernameTextField.text() != "" else { return }
-        guard let pass = passwordTextField.text() , passwordTextField.text() != "" else { return }
+        guard let email = usernameTextField.text , usernameTextField.text != "" else { return }
+        guard let pass = passwordTextField.text , passwordTextField.text != "" else { return }
         
        
         AuthService.instance.loginUser(email: email, password: pass) { (success) in

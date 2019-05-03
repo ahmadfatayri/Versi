@@ -8,9 +8,6 @@ PODS:
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
-  - RYFloatingInput (0.1.6):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
   - SwiftyJSON (4.2.0)
   - TweeTextField (1.5.1)
 
@@ -20,7 +17,6 @@ DEPENDENCIES:
   - PulsingHalo
   - RxCocoa
   - RxSwift
-  - RYFloatingInput
   - SwiftyJSON
   - TweeTextField
 
@@ -32,7 +28,6 @@ SPEC REPOS:
     - RxAtomic
     - RxCocoa
     - RxSwift
-    - RYFloatingInput
     - SwiftyJSON
     - TweeTextField
 
@@ -43,10 +38,9 @@ SPEC CHECKSUMS:
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
-  RYFloatingInput: 4034e3c12a8235a7d7e0a97d69ae05e906397b22
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TweeTextField: 18c7c8990a4a0926ce8ba73fc87e52df4f26805b
 
-PODFILE CHECKSUM: fc2c446fb1bb3d89eb5fa9896b7b830df0bfca0b
+PODFILE CHECKSUM: d7daa5efcdecf2bfef178e2eccba6152e7d0b1ce
 
 COCOAPODS: 1.6.1

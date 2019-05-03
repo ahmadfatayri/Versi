@@ -25,6 +25,11 @@ class AccountVC: UIViewController {
 
     }
     
+    @IBAction func logoutBtnPressed(_ sender: Any) {
+        KeychainService.removeKey(service: "service", account: "account")
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: WELCOME) as! WelcomeVC
+        navigationController?.setViewControllers([vc], animated: true)
+    }
     func shareApp() {
         let text = "Check out my new favorite shopping app! Come and join me on Versi"
         let textToShare = [ text ]

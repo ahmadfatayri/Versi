@@ -23,10 +23,17 @@ class SearchVC: UIViewController {
     private let audioEngine = AVAudioEngine()
     let halo = PulsingHaloLayer()
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
+        microphoneButton.addGestureRecognizer(longGesture)
+
         halo.position = view.center
         halo.haloLayerNumber = 3
         halo.backgroundColor = #colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85)
@@ -34,12 +41,6 @@ class SearchVC: UIViewController {
         view.layer.addSublayer(halo)
         halo.start()
         halo.isHidden = true
-
-        
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
-        microphoneButton.addGestureRecognizer(longGesture)
-
-        
         
 //        microphoneButton.bindToKeyboard()
         //searchBar.becomeFirstResponder()
@@ -83,14 +84,15 @@ class SearchVC: UIViewController {
     
     @objc func longTap(_ sender: UIGestureRecognizer){
         if sender.state == .ended {
+            halo.isHidden = true
+
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
-            halo.isHidden = true
         }
         else if sender.state == .began {
-            startRecording()
             halo.isHidden = false
+            startRecording()
         }
     }
 
@@ -131,6 +133,7 @@ class SearchVC: UIViewController {
                 
                 self.searchBar.text = result?.bestTranscription.formattedString //9
                 isFinal = (result?.isFinal)!
+                
             }
             
             if error != nil || isFinal {  //10

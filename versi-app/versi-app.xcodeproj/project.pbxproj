@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31057535227C0C3C003554C3 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31057534227C0C3C003554C3 /* KeychainService.swift */; };
 		311900212253877B0098B064 /* borderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311900202253877B0098B064 /* borderButton.swift */; };
 		311DEAD6226EFE4400E8509E /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEAD5226EFE4400E8509E /* CheckoutVC.swift */; };
 		311DEAD8226F134900E8509E /* ContactusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEAD7226F134900E8509E /* ContactusVC.swift */; };
@@ -75,12 +76,11 @@
 		31C37A5522534C6F0050505D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5322534C6F0050505D /* Main.storyboard */; };
 		31C37A5722534C700050505D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5622534C700050505D /* Assets.xcassets */; };
 		31C37A5A22534C700050505D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C37A5822534C700050505D /* LaunchScreen.storyboard */; };
-		F735FE8E3DFA605FE63FB509 /* Pods_versi_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7109B030C0CECFBB59E749C9 /* Pods_versi_app.framework */; };
+		84094A3B9D7B43D01FCE6D1A /* Pods_versi_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D9273FDA7D09F856F0EBFF /* Pods_versi_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26DC7DC6F3A651D3D799920C /* Pods-versi-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.release.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.release.xcconfig"; sourceTree = "<group>"; };
-		2831629FE18277D8954D9CC1 /* Pods-versi-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.debug.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.debug.xcconfig"; sourceTree = "<group>"; };
+		31057534227C0C3C003554C3 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		311900202253877B0098B064 /* borderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderButton.swift; sourceTree = "<group>"; };
 		311DEAD5226EFE4400E8509E /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		311DEAD7226F134900E8509E /* ContactusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactusVC.swift; sourceTree = "<group>"; };
@@ -151,7 +151,9 @@
 		31C37A5622534C700050505D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31C37A5922534C700050505D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31C37A5B22534C700050505D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7109B030C0CECFBB59E749C9 /* Pods_versi_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_versi_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8433D20C790DEEE3D9DB331D /* Pods-versi-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.release.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.release.xcconfig"; sourceTree = "<group>"; };
+		B2D9273FDA7D09F856F0EBFF /* Pods_versi_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_versi_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED5075C024D4E276A96BC462 /* Pods-versi-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-versi-app.debug.xcconfig"; path = "Target Support Files/Pods-versi-app/Pods-versi-app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,26 +161,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F735FE8E3DFA605FE63FB509 /* Pods_versi_app.framework in Frameworks */,
+				84094A3B9D7B43D01FCE6D1A /* Pods_versi_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02F6EB2A397CBFA9F7CC87B4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7109B030C0CECFBB59E749C9 /* Pods_versi_app.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		20EBEA6A1768B5DA4E478F78 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2831629FE18277D8954D9CC1 /* Pods-versi-app.debug.xcconfig */,
-				26DC7DC6F3A651D3D799920C /* Pods-versi-app.release.xcconfig */,
+				ED5075C024D4E276A96BC462 /* Pods-versi-app.debug.xcconfig */,
+				8433D20C790DEEE3D9DB331D /* Pods-versi-app.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -202,7 +196,7 @@
 				31C37A4E22534C6E0050505D /* versi-app */,
 				31C37A4D22534C6E0050505D /* Products */,
 				20EBEA6A1768B5DA4E478F78 /* Pods */,
-				02F6EB2A397CBFA9F7CC87B4 /* Frameworks */,
+				33021267AD8DC2BE1917056E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,6 +322,7 @@
 				3161DEA6225F2E3400832661 /* CategoryService.swift */,
 				3161DEAA225F42F600832661 /* ProductsService.swift */,
 				3161DEAE225F494300832661 /* WishlistService.swift */,
+				31057534227C0C3C003554C3 /* KeychainService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -341,6 +336,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		33021267AD8DC2BE1917056E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2D9273FDA7D09F856F0EBFF /* Pods_versi_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,11 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31C37A5E22534C700050505D /* Build configuration list for PBXNativeTarget "versi-app" */;
 			buildPhases = (
-				F1C14A4F56DC378C6D13252B /* [CP] Check Pods Manifest.lock */,
+				0D669D24FA5434D4D04D797B /* [CP] Check Pods Manifest.lock */,
 				31C37A4822534C6E0050505D /* Sources */,
 				31C37A4922534C6E0050505D /* Frameworks */,
 				31C37A4A22534C6E0050505D /* Resources */,
-				475E7513F60AC3803BB4A139 /* [CP] Embed Pods Frameworks */,
+				B7BBC358259E8F39AA19C6CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,45 +419,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		475E7513F60AC3803BB4A139 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/PulsingHalo/PulsingHalo.framework",
-				"${BUILT_PRODUCTS_DIR}/RYFloatingInput/RYFloatingInput.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/TweeTextField/TweeTextField.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PulsingHalo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RYFloatingInput.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweeTextField.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1C14A4F56DC378C6D13252B /* [CP] Check Pods Manifest.lock */ = {
+		0D669D24FA5434D4D04D797B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -474,6 +439,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7BBC358259E8F39AA19C6CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/PulsingHalo/PulsingHalo.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TweeTextField/TweeTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PulsingHalo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweeTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-versi-app/Pods-versi-app-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -536,6 +537,7 @@
 				311DEADC226F2DB600E8509E /* ChangePasswordVC.swift in Sources */,
 				31235432225783FE0067B21A /* SuggestionCollectionViewCell.swift in Sources */,
 				3161DE8A225C996400832661 /* LikedImage.swift in Sources */,
+				31057535227C0C3C003554C3 /* KeychainService.swift in Sources */,
 				315B96D32255E92200C6CE2A /* GenderType.swift in Sources */,
 				3123541B225738540067B21A /* ConstatntsAccountList.swift in Sources */,
 				3197CA7022606CBE008AF38C /* AddCreditVC.swift in Sources */,
@@ -685,7 +687,7 @@
 		};
 		31C37A5F22534C700050505D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2831629FE18277D8954D9CC1 /* Pods-versi-app.debug.xcconfig */;
+			baseConfigurationReference = ED5075C024D4E276A96BC462 /* Pods-versi-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,7 +706,7 @@
 		};
 		31C37A6022534C700050505D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26DC7DC6F3A651D3D799920C /* Pods-versi-app.release.xcconfig */;
+			baseConfigurationReference = 8433D20C790DEEE3D9DB331D /* Pods-versi-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

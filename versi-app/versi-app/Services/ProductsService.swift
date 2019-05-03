@@ -15,38 +15,46 @@ class ProductsService {
     static let instance = ProductsService()
     
     func loadData(completion:@escaping (_ categories:[Product])->Void) {
-        
-        Alamofire.request(URL_PRODUCTS, method: .get, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
-            
-            if response.result.error == nil {
+        if let token = KeychainService.loadKey(service: "service", account: "account") {
+            let header = [
+                "Content-Type": "application/json; charset=utf-8",
+                "x-access-token": token
+            ]
+            Alamofire.request(URL_PRODUCTS, method: .get, encoding: JSONEncoding.default, headers: header).responseString { (response) in
                 
-                var products: [Product] = []
-                
-                
-                guard let data = response.data else { return }
-                let json = try? JSON(data: data)
-                //let imagesJson = try? json?.arrayObject!["images"]
-                
-                for (_,subJson):(String, JSON) in json! {
+                if response.result.error == nil {
                     
-                    var productImages = [UIImage]()
-                    for (_,subSubJson):(String, JSON) in subJson["images"] {
-                        productImages.append(UIImage(named: subSubJson["name"].stringValue)!)
+                    var products: [Product] = []
+                    
+                    
+                    guard let data = response.data else { return }
+                    let json = try? JSON(data: data)
+                    //let imagesJson = try? json?.arrayObject!["images"]
+                    
+                    for (_,subJson):(String, JSON) in json! {
+                        
+                        var productImages = [UIImage]()
+                        for (_,subSubJson):(String, JSON) in subJson["images"] {
+                            productImages.append(UIImage(named: subSubJson["url"].stringValue)!)
+                        }
+                        
+                        
+                        let p = Product(uid: subJson["id"].stringValue, name: subJson["name"].stringValue, images: productImages, price: subJson["price"].doubleValue, description: subJson["description"].stringValue, detail: subJson["detail"].stringValue)
+                        
+                        products.append(p)
                     }
                     
                     
-                    let p = Product(uid: subJson["id"].stringValue, name: subJson["name"].stringValue, images: productImages, price: subJson["price"].doubleValue, description: subJson["description"].stringValue, detail: subJson["detail"].stringValue)
-                    
-                    products.append(p)
+                    completion(products)
+                } else {
+                    completion([])
+                    debugPrint(response.result.error as Any)
                 }
-                
-                
-                completion(products)
-            } else {
-                completion([])
-                debugPrint(response.result.error as Any)
             }
         }
+        
+        
+        
     }
     
 }

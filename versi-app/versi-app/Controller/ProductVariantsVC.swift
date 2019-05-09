@@ -10,9 +10,33 @@ import UIKit
 
 class ProductVariantsVC: UIViewController {
 
+    var product: Product?
+    
+    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productTitle: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productAvailability: UILabel!
+    @IBOutlet weak var productShipping: UILabel!
+    @IBOutlet weak var productQty: UILabel!
+    @IBOutlet weak var stepperBtn: UIStepper!
+    
+    @IBOutlet weak var colorCollectionView: UICollectionView!
+    @IBOutlet weak var sizeCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //productImage.downloaded(from: (product?.images?.first)!)
+        productImage.downloaded(from: (product?.images?.first)!, contentMode: .scaleAspectFit)
+        productTitle.text = product?.name
+        productPrice.text = "$ \(product?.price ?? 150)"
+        productAvailability.text = "\(product?.availability ?? 1) available"
+        productShipping.text = "Shipping: US $\(product?.shipping ?? 10)"
+        stepperBtn.maximumValue = Double(product?.availability ?? 1)
+    }
+    @IBAction func stepperBtnPressed(_ sender: Any) {
+        productQty.text = "\(Int(stepperBtn.value))"
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -20,6 +44,13 @@ class ProductVariantsVC: UIViewController {
     }
     
     @IBAction func addToCartBtnPressed(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        CartService.instance.addData(product_id: self.product!.uid!, qty: "\(product!.availability ?? 1)", color: "red", size: "xl" ){ (success) in
+            if success {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            else {
+                
+            }
+        }
     }
 }

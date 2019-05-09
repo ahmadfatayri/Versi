@@ -1,8 +1,8 @@
 //
-//  WishlistService.swift
+//  CartServices.swift
 //  versi-app
 //
-//  Created by Ahmad Fatayri on 4/11/19.
+//  Created by Ahmad Fatayri on 5/9/19.
 //  Copyright © 2019 Ahmad Fatayri. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class WishlistService {
+class CartService {
     
-    static let instance = WishlistService()
+    static let instance = CartService()
     
-    func loadData(completion:@escaping (_ wishlist:[Product])->Void) {
+    func loadData(completion:@escaping (_ cart:[Product])->Void) {
         if let token = KeychainService.loadKey(service: SERVICEKEY, account: ACCOUNTKEY) {
             let header = [
                 "Content-Type": "application/json; charset=utf-8",
@@ -25,7 +25,7 @@ class WishlistService {
                 "user_id": id as Any
             ]
             
-            Alamofire.request(URL_WISHLIST_GET, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+            Alamofire.request(URL_CART_GET, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
                 
                 if response.result.error == nil {
                     let statusCode = response.response?.statusCode
@@ -86,7 +86,7 @@ class WishlistService {
                 "product_id": product_id
             ]
             
-            Alamofire.request(URL_WISHLIST_REMOVE, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+            Alamofire.request(URL_CART_REMOVE, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
                 
                 if response.result.error == nil {
                     let statusCode = response.response?.statusCode
@@ -105,7 +105,7 @@ class WishlistService {
         }
     }
     
-    func addData(product_id: String, completion: @escaping CompletionHandler) {
+    func addData(product_id: String,qty: String, color: String, size: String, completion: @escaping CompletionHandler) {
         if let token = KeychainService.loadKey(service: SERVICEKEY, account: ACCOUNTKEY) {
             let header = [
                 "Content-Type": "application/json; charset=utf-8",
@@ -115,10 +115,13 @@ class WishlistService {
             let body: [String: Any] = [
                 "user_id": id as Any,
                 "product_id": product_id,
-                "comments": ""
+                "comments": "",
+                "qty": qty,
+                "color": color,
+                "size": size
             ]
             
-            Alamofire.request(URL_WISHLIST_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+            Alamofire.request(URL_CART_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
                 
                 if response.result.error == nil {
                     let statusCode = response.response?.statusCode

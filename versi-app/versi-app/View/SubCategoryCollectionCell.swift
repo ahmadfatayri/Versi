@@ -21,7 +21,7 @@ class SubCategoryCollectionCell: UICollectionViewCell {
     
     func updateUI()
     {
-        subCategoryImage.image = subCategory.image
+        subCategoryImage.downloaded(from: subCategory.image, contentMode: .scaleAspectFit)
         subCategoryTitle.text = subCategory.title
     }
     

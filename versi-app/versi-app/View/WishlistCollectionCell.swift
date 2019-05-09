@@ -13,6 +13,8 @@ class WishlistCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageWishlist: UIImageView!
     @IBOutlet weak var titleWishlist: UILabel!
     @IBOutlet weak var priceWishlist: UILabel!
+    @IBOutlet weak var addToCartBtn: borderButton!
+    @IBOutlet weak var removeBtn: UIButton!
     
     
     var product: Product! {
@@ -23,7 +25,8 @@ class WishlistCollectionCell: UICollectionViewCell {
     
     func updateUI()
     {
-        imageWishlist.image = product.images?.first
+        imageWishlist.downloaded(from: (product.images?.first)!)
+        //imageWishlist.image = product.images?.first
         titleWishlist.text = product.name
         if let price = product.price {
             priceWishlist.text = "$\(price)"

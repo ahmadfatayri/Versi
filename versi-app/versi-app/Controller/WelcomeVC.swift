@@ -10,19 +10,19 @@ import UIKit
 
 class WelcomeVC: UIViewController {
 
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBar.isHidden = true
     }
     @IBAction func fbBtnWasPressed(_ sender: Any) {
-        
-        AuthService.instance.loginUser(email: "guest@guest.com", password: "123456") { (success) in
+        loader.isHidden = false
+        AuthService.instance.loginUser(email: USERNAME, password: PASSWORD) {(success) in
+            self.loader.isHidden = true
             if success {
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
                 self.navigationController?.setViewControllers([vc], animated: true)
-            }
-            else {
-                self.showToast(message: "Username or password not valid")
             }
         }
         

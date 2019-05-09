@@ -14,6 +14,7 @@ class ForgotPasswordVC: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var resetTextField: TweeAttributedTextField!
     @IBOutlet weak var resetPasswordBtn: borderButton!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class ForgotPasswordVC: UIViewController {
     }
     
     @IBAction func resetPasswordWasPressed(_ sender: Any) {
+        //loader.isHidden = true
+        //self.loader.isHidden = false
+
         navigationController?.popToRootViewController(animated:true)
     }
 }

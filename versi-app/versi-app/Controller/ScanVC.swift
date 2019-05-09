@@ -97,8 +97,18 @@ class ScanVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate  {
     }
     
     func found(code: String) {
-        print(code)
-        navigationController?.popViewController(animated: true)
+        ProductsService.instance.loadSingleData(productId: code, completion:  {data in
+            if data.uid != nil {
+                let selectedProduct = data
+                let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTDETAILS) as! ProductDetailTableViewController
+                vc.product = selectedProduct
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                self.showToast(message: "Not found")
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
     }
     
     override var prefersStatusBarHidden: Bool {

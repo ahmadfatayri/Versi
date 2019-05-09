@@ -21,6 +21,7 @@ class SignupVC: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var femaleBtn: borderButton!
     @IBOutlet weak var maleBtn: borderButton!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var gender: GenderType = .female
     
@@ -57,8 +58,9 @@ class SignupVC: UIViewController {
         guard let email = emailTextField.text , emailTextField.text != "" else { return }
         guard let pass = passwordTextField.text , passwordTextField.text != "" else { return }
         guard let phone = phoneTextField.text , phoneTextField.text != "" else { return }
-
+        loader.isHidden = false
         AuthService.instance.registerUser(email: email, password: pass, name: name, phone: phone, gender: gender.rawValue) { (success) in
+            self.loader.isHidden = true
             if success {
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNIN) as! LoginVC
                 self.navigationController?.pushViewController(vc, animated: true)

@@ -18,13 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.0))
         
-        if KeychainService.loadKey(service: "service", account: "account") != nil {
-            let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
-//            self.window?.rootViewController = vc
-//            self.window?.makeKeyAndVisible()
-            UIApplication.shared.keyWindow?.rootViewController = vc
-
+        var vc: UIViewController
+        if KeychainService.loadKey(service: SERVICEKEY, account: ACCOUNTKEY) != nil {
+            vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
         }
+        else {
+            vc = STORYBOARD.instantiateViewController(withIdentifier: WELCOME) as! WelcomeVC
+        }
+
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        let nav = UINavigationController(rootViewController: vc)
+        nav.navigationBar.isHidden = true
+        appdelegate.window!.rootViewController = nav
+        
         return true
     }
 

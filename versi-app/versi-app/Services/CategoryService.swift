@@ -15,36 +15,35 @@ class CategoryService {
     static let instance = CategoryService()
     
     func loadData(completion:@escaping (_ categories:[CategoryModel])->Void) {
-        
-        Alamofire.request(URL_CATEGORIES, method: .get, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
+        if let token = KeychainService.loadKey(service: SERVICEKEY, account: ACCOUNTKEY) {
+            let header = [
+                "Content-Type": "application/json; charset=utf-8",
+                "x-access-token": token
+            ]
+        Alamofire.request(URL_GET_CATEGORIES, method: .get, encoding: JSONEncoding.default, headers: header).responseString { (response) in
             
             if response.result.error == nil {
-                
-                var categories: [CategoryModel] = []
-                
-                
-                guard let data = response.data else { return }
-                let json = try? JSON(data: data)
-                
-                for (_,subJson):(String, JSON) in json! {
+                let statusCode = response.response?.statusCode
+                if  statusCode == 200 {
+                    var categories: [CategoryModel] = []
                     
                     
-                    var subCategories = [SubCategory]()
-                    for (_,subSubJson):(String, JSON) in subJson["sub_category"] {
-                        let subCat = SubCategory()
-                        subCat.config(id: subSubJson["id"].intValue, title: subSubJson["title"].stringValue, image: UIImage(named: subSubJson["image"].stringValue)!)
-                        subCategories.append(subCat)
+                    guard let data = response.data else { return }
+                    let json = try? JSON(data: data)
+                    
+                    for (_,subJson):(String, JSON) in json! {
+                        let cat = CategoryModel()
+                        cat.config(id: subJson["_id"].stringValue, title: subJson["title"].stringValue, description: subJson["description"].stringValue, imageUrl: subJson["image"].stringValue)
+                        
+                        categories.append(cat)
                     }
                     
                     
-                    let cat = CategoryModel()
-                    cat.config(id: subJson["id"].stringValue, title: subJson["title"].stringValue, description: subJson["description"].stringValue, imageUrl: subJson["image"].stringValue, subCategories: subCategories)
-                    
-                    categories.append(cat)
+                    completion(categories)
                 }
-                
-                
-                completion(categories)
+                else {
+                    completion([])
+                }
             } else {
                 completion([])
                 debugPrint(response.result.error as Any)
@@ -52,4 +51,5 @@ class CategoryService {
         }
     }
     
+    }
 }

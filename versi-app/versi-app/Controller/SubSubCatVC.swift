@@ -12,12 +12,13 @@ class SubSubCatVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var products: [Product]?
+    var subcategory_id: String?
+    var products: [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ProductsService.instance.loadData(completion:  {data in
+        ProductsService.instance.loadDataWithFilter(subCategory: subcategory_id! ,completion:  {data in
             self.products = data
             self.collectionView.dataSource = self
             self.collectionView.delegate = self
@@ -36,21 +37,21 @@ class SubSubCatVC: UIViewController {
 extension SubSubCatVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (self.products?.count)!
+        return (self.products.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubSubCatCollectionCell", for: indexPath) as! SubSubCatCollectionCell
         
-        cell.product = self.products?[indexPath.item]
+        cell.product = self.products[indexPath.item]
         
         return cell
         
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedProduct = products?[indexPath.row]
+        let selectedProduct = products[indexPath.row]
         let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTDETAILS) as! ProductDetailTableViewController
         vc.product = selectedProduct
         navigationController?.pushViewController(vc, animated: true)

@@ -12,16 +12,16 @@ class ProductImageViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
-    var image: UIImage? {
+    var image: String? {
         didSet {
-            self.imageView?.image = image
+//            self.imageView.downloaded(from: (image)!)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.imageView.image = image
+        
+        self.imageView.downloaded(from: (image)!)
     }
     
 

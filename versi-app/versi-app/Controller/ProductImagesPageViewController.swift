@@ -21,7 +21,7 @@ class ProductImagesPageViewController: UIPageViewController {
     var products: [Product]?
     
 //    var images: [UIImage]? = Product.fetchProducts().first!.images
-    var images: [UIImage]? = []
+    var images: [String]? = []
     weak var pageViewControllerDelegate: ProductImagesPageViewControllerDelegate?
     
     struct Storyboard {
@@ -50,7 +50,7 @@ class ProductImagesPageViewController: UIPageViewController {
         
         ProductsService.instance.loadData(completion:  {data in
             self.products = data
-            var images: [UIImage]? = self.products!.first!.images
+            var images: [String]? = self.products!.first!.images
         })
         
         automaticallyAdjustsScrollViewInsets = false
@@ -82,6 +82,10 @@ class ProductImagesPageViewController: UIPageViewController {
         for (index, vc) in controllers.enumerated() {
             if viewController === vc {
                 if let shoeImageVC = viewController as? ProductImageViewController {
+                    //shoeImageVC.image = self.images?[index]
+                    
+                    
+                    
                     shoeImageVC.image = self.images?[index]
                     
                     self.pageViewControllerDelegate?.turnPageController(to: index)

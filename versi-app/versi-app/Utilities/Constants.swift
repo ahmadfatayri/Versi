@@ -10,22 +10,23 @@ import Foundation
 import UIKit
 
 
-
-
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
-
-// URL Constants
-let PATH_CATEGORIES = Bundle.main.path(forResource: "category", ofType: "json")
-let URL_CATEGORIES = URL(fileURLWithPath: PATH_CATEGORIES!)
-
-let PATH_WISHLIST = Bundle.main.path(forResource: "wishlist", ofType: "json")
-let URL_WISHLIST = URL(fileURLWithPath: PATH_WISHLIST!)
 
 let BASE_URL = "https://versi.herokuapp.com/"
 let URL_REGISTER = "\(BASE_URL)users/register"
 let URL_LOGIN = "\(BASE_URL)users/authenticate"
 let URL_PRODUCTS = "\(BASE_URL)products/getAll"
+let URL_FIND_PRODUCT = "\(BASE_URL)products/getById/"
+let URL_PRODUCTS_FILTERS = "\(BASE_URL)products/getWithFilters"
+let URL_GET_CATEGORIES = "\(BASE_URL)category/getAll"
+let URL_GET_SUB_CATEGORIES = "\(BASE_URL)category/get"
+let URL_WISHLIST_GET = "\(BASE_URL)wishlist/get"
+let URL_WISHLIST_ADD = "\(BASE_URL)wishlist/add"
+let URL_WISHLIST_REMOVE = "\(BASE_URL)wishlist/remove"
+let URL_CART_GET = "\(BASE_URL)cart/get"
+let URL_CART_ADD = "\(BASE_URL)cart/add"
+let URL_CART_REMOVE = "\(BASE_URL)cart/remove"
 
 // User Defaults
 let LOGGED_IN_KEY = "loggedIn"
@@ -36,7 +37,15 @@ let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
 
+//default login
+let USERNAME = "guest@guest.com"
+let PASSWORD = "123456"
 
+//keychain
+let ACCOUNTKEY = "user"
+let ACCOUNTID = "id"
+let SERVICEKEY = "auth"
+let SERVICEID = "id"
 //navigations
 let STORYBOARD = UIStoryboard(name: "Main", bundle: nil)
 

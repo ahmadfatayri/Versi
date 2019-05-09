@@ -25,8 +25,14 @@ class ProductCell: UITableViewCell {
     
     func updateUI()
     {
-        imageProduct.image = product.images?.first
+        imageProduct.downloaded(from: (product.images?.first)!)
+//        imageView!.contentMode = UIView.ContentMode.scaleAspectFill
+
         titleProduct.text = product.name
+        if product.isLiked == true {
+            loveBtn.setLikedImage()
+            isLiked = .liked
+        }
         if let price = product.price {
             priceProduct.text = "$\(price)"
         } else {
@@ -38,10 +44,26 @@ class ProductCell: UITableViewCell {
         if isLiked.rawValue == "false" {
             loveBtn.setLikedImage()
             isLiked = .liked
+            WishlistService.instance.addData(product_id: self.product.uid! ){ (success) in
+                if success {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         else {
             loveBtn.setDisLikedImage()
             isLiked = .disliked
+            WishlistService.instance.removeData(product_id: self.product.uid! ){ (success) in
+                if success {
+                    
+                }
+                else {
+                    
+                }
+            }
         }
         
     }

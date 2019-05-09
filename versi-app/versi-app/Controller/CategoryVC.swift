@@ -39,15 +39,14 @@ extension CategoryVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableview.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell else { return UITableViewCell() }
         let cat = categories[indexPath.row]
         cell.config(title: cat.title,description: cat.description, bgCategory: cat.imageUrl)
+        cell.selectionStyle = .none
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("section: \(indexPath.section)")
-//        print("row: \(indexPath.row)")
-        
         let vc = STORYBOARD.instantiateViewController(withIdentifier: SUBCATEGORY) as! SubCategoryVC
-        vc.subCategories = self.categories[indexPath.row].subCategories
+        vc.category_id = self.categories[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
 

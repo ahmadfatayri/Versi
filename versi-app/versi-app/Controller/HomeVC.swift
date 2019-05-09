@@ -13,6 +13,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var productsTableView: UITableView!
     
     var products: [Product]?
+    var refreshControl: UIRefreshControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,24 @@ class HomeVC: UIViewController {
 //
         productsTableView.delegate = self as UITableViewDelegate
         productsTableView.dataSource = self as UITableViewDataSource
-
+        
+        addRefreshControl()
     }
     
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = #colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85)
+        refreshControl?.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        productsTableView.addSubview(refreshControl!)
+    }
     
+    @objc func refreshList() {
+        ProductsService.instance.loadData(completion:  {data in
+            self.products = data
+            self.productsTableView.reloadData()
+            self.refreshControl?.endRefreshing()
+        })
+    }
 }
 
 

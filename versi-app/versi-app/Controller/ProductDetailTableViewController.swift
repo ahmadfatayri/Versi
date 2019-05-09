@@ -32,7 +32,7 @@ class ProductDetailTableViewController: UITableViewController {
     
     @objc func addToCart(_ sender: UIButton){ //<- needs `@objc`
         let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTVARIANTS) as! ProductVariantsVC
-        
+        vc.product = self.product
         //set anitmation for navigation
         let transition:CATransition = CATransition()
         transition.duration = 0.4

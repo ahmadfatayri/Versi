@@ -19,6 +19,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginBtn: borderButton!
     @IBOutlet weak var forgotPasswordBtn: UIButton!
     @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,13 @@ class LoginVC: UIViewController {
         guard let email = usernameTextField.text , usernameTextField.text != "" else { return }
         guard let pass = passwordTextField.text , passwordTextField.text != "" else { return }
         
-       
+        loader.isHidden = false
+
         AuthService.instance.loginUser(email: email, password: pass) { (success) in
+            self.loader.isHidden = true
             if success {
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
-                self.present(vc, animated: true, completion: nil)
+                self.navigationController?.setViewControllers([vc], animated: true)
             }
             else {
                 self.showToast(message: "Username or password not valid")

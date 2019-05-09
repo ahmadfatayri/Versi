@@ -21,26 +21,15 @@ class SearchVC: UIViewController {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    
     let halo = PulsingHaloLayer()
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+    var longGesture: UIGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadAnimation()
         
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
-        microphoneButton.addGestureRecognizer(longGesture)
-
-        halo.position = view.center
-        halo.haloLayerNumber = 3
-        halo.backgroundColor = #colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85)
-        halo.radius = 150
-        view.layer.addSublayer(halo)
-        halo.start()
-        halo.isHidden = true
         
 //        microphoneButton.bindToKeyboard()
         //searchBar.becomeFirstResponder()
@@ -76,13 +65,25 @@ class SearchVC: UIViewController {
 
     }
     
-    
+    func loadAnimation() {
+        longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
+        microphoneButton.addGestureRecognizer(longGesture!)
+        
+        halo.position = view.center
+        halo.haloLayerNumber = 3
+        halo.backgroundColor = #colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85)
+        halo.radius = 150
+        view.layer.addSublayer(halo)
+        halo.start()
+        halo.isHidden = true
+    }
     @IBAction func cancelBtnPressed(_ sender: Any) {
         searchBar.resignFirstResponder()
     }
     
     
     @objc func longTap(_ sender: UIGestureRecognizer){
+        
         if sender.state == .ended {
             halo.isHidden = true
 
@@ -94,6 +95,8 @@ class SearchVC: UIViewController {
             halo.isHidden = false
             startRecording()
         }
+        //loadAnimation()
+        
     }
 
     

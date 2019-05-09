@@ -11,9 +11,11 @@ import UIKit
 class SuggestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
-    var image: UIImage! {
+    var image: String! {
         didSet {
-            self.imageView.image = image
+            self.imageView.downloaded(from: (image)!)
+
+            //self.imageView.image = image
             self.setNeedsLayout()
         }
     }

@@ -82,9 +82,11 @@ class AuthService {
                     
                     let name = json!["name"].stringValue
                     let id = json!["id"].stringValue
+                    print(id)
                     let email = json!["email"].stringValue
                     
-                    KeychainService.saveKey(service: "service", account: "account", data: json!["token"].stringValue)
+                    KeychainService.saveKey(service: SERVICEKEY, account: ACCOUNTKEY, data: json!["token"].stringValue)
+                    KeychainService.saveKey(service: SERVICEID, account: ACCOUNTID, data: id)
                     
                     User.instance.setUserData(id: id, email: email, name: name, gender: "male")
                     

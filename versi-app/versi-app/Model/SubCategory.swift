@@ -13,14 +13,17 @@ class SubCategory {
     
     static let instance = SubCategory()
     
-    public private(set) var id: Int = 0
-    public private(set) var image: UIImage?
+    public private(set) var id: String = ""
+    public private(set) var image: String = ""
     public private(set) var title: String = ""
+    public private(set) var category_id: String = ""
+
     
-    func config(id: Int, title: String, image: UIImage) {
+    func config(id: String, title: String, image: String, category_id: String) {
         self.id = id
         self.title = title
         self.image = image
+        self.category_id = category_id
     }
     
 }

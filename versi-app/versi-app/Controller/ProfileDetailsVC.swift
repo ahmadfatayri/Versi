@@ -19,6 +19,7 @@ class ProfileDetailsVC: UIViewController {
     @IBOutlet weak var maleBtn: borderButton!
     
     var gender: GenderType = .female
+    var profile: Profile?
     
     override func viewDidLoad() {
         super.viewDidLoad()

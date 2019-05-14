@@ -27,6 +27,8 @@ let URL_WISHLIST_REMOVE = "\(BASE_URL)wishlist/remove"
 let URL_CART_GET = "\(BASE_URL)cart/get"
 let URL_CART_ADD = "\(BASE_URL)cart/add"
 let URL_CART_REMOVE = "\(BASE_URL)cart/remove"
+let URL_CONTACTUS = "\(BASE_URL)contact/create"
+let URL_PROFILE = "\(BASE_URL)profile/get/"
 
 // User Defaults
 let LOGGED_IN_KEY = "loggedIn"

@@ -32,6 +32,9 @@
 		31370EAC22705B1200284A2F /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31370EAB22705B1200284A2F /* HelpVC.swift */; };
 		31370EAE22705B2100284A2F /* ScanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31370EAD22705B2100284A2F /* ScanVC.swift */; };
 		31370EB022717D7000284A2F /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31370EAF22717D7000284A2F /* CartVC.swift */; };
+		31429511228AA76400719CB1 /* ContactusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31429510228AA76300719CB1 /* ContactusService.swift */; };
+		31429513228ABD4E00719CB1 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31429512228ABD4E00719CB1 /* Profile.swift */; };
+		31429515228ABEA600719CB1 /* ProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31429514228ABEA600719CB1 /* ProfileServices.swift */; };
 		315B96D12255E38200C6CE2A /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D02255E38200C6CE2A /* SignupVC.swift */; };
 		315B96D32255E92200C6CE2A /* GenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D22255E92200C6CE2A /* GenderType.swift */; };
 		315B96D52255E98900C6CE2A /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B96D42255E98900C6CE2A /* UIButtonExt.swift */; };
@@ -104,6 +107,9 @@
 		31370EAB22705B1200284A2F /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		31370EAD22705B2100284A2F /* ScanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVC.swift; sourceTree = "<group>"; };
 		31370EAF22717D7000284A2F /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		31429510228AA76300719CB1 /* ContactusService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactusService.swift; sourceTree = "<group>"; };
+		31429512228ABD4E00719CB1 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		31429514228ABEA600719CB1 /* ProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServices.swift; sourceTree = "<group>"; };
 		315B96D02255E38200C6CE2A /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		315B96D22255E92200C6CE2A /* GenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderType.swift; sourceTree = "<group>"; };
 		315B96D42255E98900C6CE2A /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
@@ -227,6 +233,7 @@
 				3123541F2257517C0067B21A /* Product.swift */,
 				3161DE98225F0F2F00832661 /* User.swift */,
 				3197CA772260A845008AF38C /* SubCategory.swift */,
+				31429512228ABD4E00719CB1 /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -320,6 +327,8 @@
 				3161DEAE225F494300832661 /* WishlistService.swift */,
 				31F44A062284110C00F834C8 /* CartServices.swift */,
 				31057534227C0C3C003554C3 /* KeychainService.swift */,
+				31429510228AA76300719CB1 /* ContactusService.swift */,
+				31429514228ABEA600719CB1 /* ProfileServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -508,9 +517,11 @@
 				31345392227044FB00945333 /* UIViewExt.swift in Sources */,
 				31F44A072284110C00F834C8 /* CartServices.swift in Sources */,
 				3161DE88225C8CB800832661 /* AddAddressVC.swift in Sources */,
+				31429515228ABEA600719CB1 /* ProfileServices.swift in Sources */,
 				3161DE80225B7EC800832661 /* WelcomeVC.swift in Sources */,
 				3197CA7422608D8E008AF38C /* SubCategoryVC.swift in Sources */,
 				311DEADA226F15F000E8509E /* borderTextView.swift in Sources */,
+				31429511228AA76400719CB1 /* ContactusService.swift in Sources */,
 				3161DE8E225CB0DD00832661 /* WishlistTableCell.swift in Sources */,
 				3161DE86225C819B00832661 /* BottomBarVC.swift in Sources */,
 				3197CA7A2260BCBD008AF38C /* SubSubCatCollectionCell.swift in Sources */,
@@ -532,6 +543,7 @@
 				311DEADC226F2DB600E8509E /* ChangePasswordVC.swift in Sources */,
 				31235432225783FE0067B21A /* SuggestionCollectionViewCell.swift in Sources */,
 				3161DE8A225C996400832661 /* LikedImage.swift in Sources */,
+				31429513228ABD4E00719CB1 /* Profile.swift in Sources */,
 				31057535227C0C3C003554C3 /* KeychainService.swift in Sources */,
 				315B96D32255E92200C6CE2A /* GenderType.swift in Sources */,
 				3123541B225738540067B21A /* ConstatntsAccountList.swift in Sources */,

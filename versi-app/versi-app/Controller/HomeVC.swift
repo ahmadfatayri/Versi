@@ -17,12 +17,6 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ProductsService.instance.loadData(completion:  {data in
-            self.products = data
-            self.productsTableView.reloadData()
-        })
-        
 //        productsTableView.estimatedRowHeight = productsTableView.rowHeight
 //        productsTableView.rowHeight = UITableView.automaticDimension
 //
@@ -32,6 +26,31 @@ class HomeVC: UIViewController {
         addRefreshControl()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ProductsService.instance.loadData(completion:  {data in
+            WishlistService.instance.loadData(completion: {dataLiked in
+                for product in data{
+                    for likedProduct in dataLiked {
+                        if likedProduct.uid == product.uid {
+                            product.isLiked = true
+                        }
+                    }
+                }
+                self.products = data
+                self.productsTableView.reloadData()
+                CartService.instance.loadData(completion: { dataCart in
+                    for product in data{
+                        for cartProduct in dataCart {
+                            if cartProduct.uid == product.uid {
+                                product.isAddedToBasket = true
+                            }
+                        }
+                    }
+                })
+            })
+        })
+    }
     func addRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl?.tintColor = #colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85)
@@ -41,9 +60,18 @@ class HomeVC: UIViewController {
     
     @objc func refreshList() {
         ProductsService.instance.loadData(completion:  {data in
-            self.products = data
-            self.productsTableView.reloadData()
-            self.refreshControl?.endRefreshing()
+            WishlistService.instance.loadData(completion: {dataLiked in
+                for product in data{
+                    for likedProduct in dataLiked {
+                        if likedProduct.uid == product.uid {
+                            product.isLiked = true
+                        }
+                    }
+                }
+                self.products = data
+                self.productsTableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            })
         })
     }
 }

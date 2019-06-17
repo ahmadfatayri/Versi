@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "61F23834D485AD0F36466D51530B9A95"
+               BlueprintIdentifier = "F4910F20844080254741B177CB7E70BF"
                BuildableName = "TweeTextField.framework"
                BlueprintName = "TweeTextField"
                ReferencedContainer = "container:Pods.xcodeproj">

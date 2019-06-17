@@ -7,10 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
 class Profile {
-    
-    static let instance = Profile()
     
     public private(set) var full_name: String?
     public private(set) var email: String?
@@ -18,11 +17,11 @@ class Profile {
     public private(set) var mobile_number: String?
     public private(set) var gender: String?
     
-    func init() {
+    init() {
         
     }
     
-    func init(full_name: String, email: String, dob: String, mobile_number: String, gender: String) {
+     init(full_name: String, email: String, dob: String, mobile_number: String, gender: String) {
         self.full_name = full_name
         self.email = email
         self.dob = dob

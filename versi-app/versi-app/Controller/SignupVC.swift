@@ -31,7 +31,8 @@ class SignupVC: UIViewController {
         maleBtn.setDeselectedColor()
         
         UITextField.connectFields(fields: [emailTextField, passwordTextField, fullnameTextField, phoneTextField])
-
+        emailTextField.becomeFirstResponder()
+        self.hideKeyboardWhenTappedAround()
     }
     
     
@@ -54,19 +55,48 @@ class SignupVC: UIViewController {
     }
     @IBAction func createAccountPressed(_ sender: Any) {
         
-        guard let name = fullnameTextField.text , fullnameTextField.text != "" else { return }
-        guard let email = emailTextField.text , emailTextField.text != "" else { return }
-        guard let pass = passwordTextField.text , passwordTextField.text != "" else { return }
-        guard let phone = phoneTextField.text , phoneTextField.text != "" else { return }
+        guard let email = emailTextField.text , emailTextField.text != "" else {
+            self.alert(message: "Email textField cannot be empty!")
+            return
+        }
+        guard let pass = passwordTextField.text , passwordTextField.text != "" else {
+            self.alert(message: "Password textField cannot be empty!")
+            return
+        }
+        guard let name = fullnameTextField.text , fullnameTextField.text != "" else {
+            self.alert(message: "Full Name textField cannot be empty!")
+            return
+        }
+        guard let phone = phoneTextField.text , phoneTextField.text != "" else {
+            self.alert(message: "Phone Number textField cannot be empty!")
+            return
+        }
+        
+        if !email.isValidEmailTwee() {
+            self.alert(message: "Enter a valid email address!")
+            return
+        }
+        if !pass.minTextFieldTwee(minString: 6) {
+            self.alert(message: "Minimum 6 characters required for Password")
+            return
+        }
+        if !phone.minTextFieldTwee(minString: 8) {
+            self.alert(message: "Minimum 8 characters required for Phone")
+            return
+        }
+        
         loader.isHidden = false
+        createAccountBtn.isEnabled = false
         AuthService.instance.registerUser(email: email, password: pass, name: name, phone: phone, gender: gender.rawValue) { (success) in
             self.loader.isHidden = true
+            self.createAccountBtn.isEnabled = true
             if success {
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNIN) as! LoginVC
                 self.navigationController?.pushViewController(vc, animated: true)
+                self.alert(message: "Registration succeed")
             }
             else {
-                self.showToast(message: "Registration failed")
+                self.alert(message: "Registration failed!")
             }
         }
         

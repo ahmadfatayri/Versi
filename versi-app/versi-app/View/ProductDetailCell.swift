@@ -13,6 +13,7 @@ class ProductDetailCell: UITableViewCell {
     
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productDescriptionLabel: UILabel!
+    @IBOutlet weak var qrcodeImage: UIImageView!
     
     var product: Product! {
         didSet {
@@ -24,6 +25,7 @@ class ProductDetailCell: UITableViewCell {
     {
         productNameLabel.text = product.name
         productDescriptionLabel.text = product.description
+        qrcodeImage.sd_setImage(with: URL(string: product.qr_code!), placeholderImage: UIImage(named: "placeholder_image"))
     }
 
 }

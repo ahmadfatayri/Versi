@@ -25,6 +25,8 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         UITextField.connectFields(fields: [usernameTextField, passwordTextField])
+        usernameTextField.becomeFirstResponder()
+        self.hideKeyboardWhenTappedAround() 
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {
@@ -32,19 +34,33 @@ class LoginVC: UIViewController {
     }
     @IBAction func loginBtnPressed(_ sender: Any) {
         
-        guard let email = usernameTextField.text , usernameTextField.text != "" else { return }
-        guard let pass = passwordTextField.text , passwordTextField.text != "" else { return }
-        
+        guard let email = usernameTextField.text , usernameTextField.text != "" else {
+            self.alert(message: "Email textField cannot be empty!")
+            return
+        }
+        guard let pass = passwordTextField.text , passwordTextField.text != "" else {
+            self.alert(message: "Password textField cannot be empty!")
+            return
+        }
+        if !email.isValidEmailTwee() {
+            self.alert(message: "Enter a valid email address!")
+            return
+        }
+        if !pass.minTextFieldTwee(minString: 6) {
+            self.alert(message: "Minimum 6 characters required for Password")
+            return
+        }
         loader.isHidden = false
-
+        self.loginBtn.isEnabled = false
         AuthService.instance.loginUser(email: email, password: pass) { (success) in
             self.loader.isHidden = true
+            self.loginBtn.isEnabled = true
             if success {
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
                 self.navigationController?.setViewControllers([vc], animated: true)
             }
             else {
-                self.showToast(message: "Username or password not valid")
+                self.alert(message: "Username or password not valid")
             }
         }
         

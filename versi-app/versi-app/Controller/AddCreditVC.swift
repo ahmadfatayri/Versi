@@ -72,4 +72,20 @@ class AddCreditVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    @IBAction func addCreditCardBtnPressed(_ sender: Any) {
+        guard let name = creditCardHolderTextField.text , creditCardHolderTextField.text != "" else { return }
+        guard let number = creditCardNbTextField.text , creditCardNbTextField.text != "" else { return }
+        guard let cvc = creditCardCVCTextField.text , creditCardCVCTextField.text != "" else { return }
+        guard let exp_date = creditCardExpDateTextField.text , creditCardExpDateTextField.text != "" else { return }
+        
+        CardService.instance.addData(name: name, number: number, cvc: cvc, expire_date: exp_date) { (success) in
+            if success {
+                self.navigationController?.popToRootViewController(animated: true)
+                self.alert(message: "Card added successfully!")
+            }
+            else {
+                self.alert(message: "Couldn't add this card!")
+            }
+        }
+    }
 }

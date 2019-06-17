@@ -55,7 +55,7 @@ class CartService {
                                 }
                                 
                                 let p = Product(uid: res["id"].stringValue, name: res["name"].stringValue, images: productImages, price: res["price"].doubleValue, description: res["description"].stringValue, detail: res["detail"].stringValue, type: res["type"].stringValue, brand: res["brand"].stringValue, qr_code: res["qr_code"].stringValue, colors:colors, sizes: sizes, shipping: res["shipping"].intValue, weight: res["weight"].intValue, width: res["width"].intValue, height: res["height"].intValue, isPaid: res["isPaid"].boolValue, availability: res["availability"].intValue,
-                                                isLiked: res["isLiked"].boolValue)
+                                                isLiked: res["isLiked"].boolValue, isAddedToBasket: false)
                                 
                                 products.append(p)
                             }

@@ -23,7 +23,7 @@ class CartCell: UITableViewCell {
     
     func updateUI()
     {
-        cartImageView.downloaded(from: (product.images?.first)!)
+        cartImageView.sd_setImage(with: URL(string: (product.images?.first)!), placeholderImage: UIImage(named: "placeholder_image"))
         cartTitle.text = product.name
         if let price = product.price {
             cartPrice.text = "$\(price)"

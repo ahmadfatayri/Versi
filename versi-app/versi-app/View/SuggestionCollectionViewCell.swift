@@ -13,9 +13,7 @@ class SuggestionCollectionViewCell: UICollectionViewCell {
     
     var image: String! {
         didSet {
-            self.imageView.downloaded(from: (image)!)
-
-            //self.imageView.image = image
+            self.imageView.sd_setImage(with: URL(string: (image)!), placeholderImage: UIImage(named: "placeholder_image"))
             self.setNeedsLayout()
         }
     }

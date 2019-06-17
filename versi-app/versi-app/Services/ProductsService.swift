@@ -51,7 +51,7 @@ class ProductsService {
                             
                             
                             let p = Product(uid: subJson["id"].stringValue, name: subJson["name"].stringValue, images: productImages, price: subJson["price"].doubleValue, description: subJson["description"].stringValue, detail: subJson["detail"].stringValue, type: subJson["type"].stringValue, brand: subJson["brand"].stringValue, qr_code: subJson["qr_code"].stringValue, colors:colors, sizes: sizes, shipping: subJson["shipping"].intValue, weight: subJson["weight"].intValue, width: subJson["width"].intValue, height: subJson["height"].intValue, isPaid: subJson["isPaid"].boolValue, availability: subJson["availability"].intValue,
-                                            isLiked: subJson["isLiked"].boolValue)
+                                            isLiked: subJson["isLiked"].boolValue, isAddedToBasket: false)
                             
                             products.append(p)
                         }
@@ -115,7 +115,7 @@ class ProductsService {
                             
                             
                             let p = Product(uid: subJson["id"].stringValue, name: subJson["name"].stringValue, images: productImages, price: subJson["price"].doubleValue, description: subJson["description"].stringValue, detail: subJson["detail"].stringValue, type: subJson["type"].stringValue, brand: subJson["brand"].stringValue, qr_code: subJson["qr_code"].stringValue, colors:colors, sizes: sizes, shipping: subJson["shipping"].intValue, weight: subJson["weight"].intValue, width: subJson["width"].intValue, height: subJson["height"].intValue, isPaid: subJson["isPaid"].boolValue, availability: subJson["availability"].intValue,
-                                            isLiked: subJson["isLiked"].boolValue)
+                                            isLiked: subJson["isLiked"].boolValue, isAddedToBasket: false)
                             
                             products.append(p)
                         }
@@ -173,7 +173,7 @@ class ProductsService {
                             }
                         
                             
-                        let p = Product(uid: json!["id"].stringValue, name: json!["name"].stringValue, images: productImages, price: json!["price"].doubleValue, description: json!["description"].stringValue, detail: json!["detail"].stringValue, type: json!["type"].stringValue, brand: json!["brand"].stringValue, qr_code: json!["qr_code"].stringValue, colors:colors, sizes: sizes, shipping: json!["shipping"].intValue, weight: json!["weight"].intValue, width: json!["width"].intValue, height: json!["height"].intValue, isPaid: json!["isPaid"].boolValue, availability: json!["availability"].intValue,isLiked: json!["isLiked"].boolValue)
+                        let p = Product(uid: json!["id"].stringValue, name: json!["name"].stringValue, images: productImages, price: json!["price"].doubleValue, description: json!["description"].stringValue, detail: json!["detail"].stringValue, type: json!["type"].stringValue, brand: json!["brand"].stringValue, qr_code: json!["qr_code"].stringValue, colors:colors, sizes: sizes, shipping: json!["shipping"].intValue, weight: json!["weight"].intValue, width: json!["width"].intValue, height: json!["height"].intValue, isPaid: json!["isPaid"].boolValue, availability: json!["availability"].intValue,isLiked: json!["isLiked"].boolValue, isAddedToBasket: false)
                             
                         
                         

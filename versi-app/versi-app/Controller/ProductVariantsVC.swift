@@ -26,9 +26,7 @@ class ProductVariantsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //productImage.downloaded(from: (product?.images?.first)!)
-        productImage.downloaded(from: (product?.images?.first)!, contentMode: .scaleAspectFit)
+        productImage.sd_setImage(with: URL(string: (product?.images?.first)!), placeholderImage: UIImage(named: "placeholder_image"))
         productTitle.text = product?.name
         productPrice.text = "$ \(product?.price ?? 150)"
         productAvailability.text = "\(product?.availability ?? 1) available"

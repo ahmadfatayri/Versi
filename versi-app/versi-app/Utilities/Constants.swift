@@ -16,6 +16,8 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let BASE_URL = "https://versi.herokuapp.com/"
 let URL_REGISTER = "\(BASE_URL)users/register"
 let URL_LOGIN = "\(BASE_URL)users/authenticate"
+let URL_SKIPLOGIN = "\(BASE_URL)users/skiplogin"
+let URL_FORGOTPASSWORD = "\(BASE_URL)users/forgotpassword"
 let URL_PRODUCTS = "\(BASE_URL)products/getAll"
 let URL_FIND_PRODUCT = "\(BASE_URL)products/getById/"
 let URL_PRODUCTS_FILTERS = "\(BASE_URL)products/getWithFilters"
@@ -29,10 +31,21 @@ let URL_CART_ADD = "\(BASE_URL)cart/add"
 let URL_CART_REMOVE = "\(BASE_URL)cart/remove"
 let URL_CONTACTUS = "\(BASE_URL)contact/create"
 let URL_PROFILE = "\(BASE_URL)profile/get/"
+let URL_PROFILE_UPDATE = "\(BASE_URL)profile/update/"
+let URL_CARD_GET = "\(BASE_URL)card/get"
+let URL_CARD_ADD = "\(BASE_URL)card/create/"
+let URL_CARD_REMOVE = "\(BASE_URL)card/remove/"
+let URL_ADDRESS_GET = "\(BASE_URL)address/get"
+let URL_ADDRESS_ADD = "\(BASE_URL)address/create/"
+let URL_ADDRESS_REMOVE = "\(BASE_URL)address/remove/"
 
 // User Defaults
 let LOGGED_IN_KEY = "loggedIn"
 
+// Public key
+struct DEFAULTKEY {
+    static let role = ""
+}
 
 // Headers
 let HEADER = [
@@ -40,7 +53,7 @@ let HEADER = [
 ]
 
 //default login
-let USERNAME = "guest@guest.com"
+let USERNAME = "guest@versi.com"
 let PASSWORD = "123456"
 
 //keychain

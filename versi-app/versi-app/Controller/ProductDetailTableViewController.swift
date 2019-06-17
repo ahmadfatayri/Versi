@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lightbox
 
 class ProductDetailTableViewController: UITableViewController {
     
@@ -27,7 +28,6 @@ class ProductDetailTableViewController: UITableViewController {
             self.relatedProducts = data
             self.tableView.reloadData()
         })
-        
     }
     
     @objc func addToCart(_ sender: UIButton){ //<- needs `@objc`
@@ -58,6 +58,27 @@ class ProductDetailTableViewController: UITableViewController {
         
         self.navigationController?.pushViewController(vc, animated: false)
         
+    }
+    
+    @objc func imageTapped(recognizer: UITapGestureRecognizer) {
+        let images = [
+            LightboxImage(imageURL: URL(string: self.product.qr_code!)!,
+            text: "You can use this Qr Code to quick access to this product"
+)
+        ]
+        
+        // Create an instance of LightboxController.
+        let controller = LightboxController(images: images)
+        
+        // Set delegates.
+        controller.pageDelegate = self as? LightboxControllerPageDelegate
+        controller.dismissalDelegate = self as? LightboxControllerDismissalDelegate
+        
+        // Use dynamic background.
+        controller.dynamicBackground = true
+        
+        // Present your controller.
+        present(controller, animated: true, completion: nil)
     }
     
     
@@ -100,6 +121,9 @@ extension ProductDetailTableViewController
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.productDetailCell, for: indexPath) as! ProductDetailCell
             cell.product = product
             cell.selectionStyle = .none
+            cell.qrcodeImage.isUserInteractionEnabled = true
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+            cell.qrcodeImage.addGestureRecognizer(tapRecognizer)
             
             return cell
         } else if indexPath.row == 1 {
@@ -112,7 +136,9 @@ extension ProductDetailTableViewController
             cell.addToCartBtn.addTarget(self, action: #selector(self.addToCart(_:)), for: .touchUpInside) //<- use `#selector(...)`
 
             cell.buyBtn.addTarget(self, action: #selector(self.checkout(_:)), for: .touchUpInside)
-            
+            if self.product.isAddedToBasket! {
+                cell.addToCartBtn.setTitle("Remove From Cart", for: .normal)
+            }
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.productDetailsCell, for: indexPath)

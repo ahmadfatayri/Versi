@@ -16,11 +16,8 @@ class CartVC: UIViewController {
     var refreshControl: UIRefreshControl?
     var products: [Product]?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.view.setNeedsLayout()
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         
         CartService.instance.loadData(completion:  {data in
             self.products = data
@@ -30,6 +27,11 @@ class CartVC: UIViewController {
                 self.defaultView.isHidden = true
             }
         })
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.setNeedsLayout()
         
         tableView.delegate = self as UITableViewDelegate
         tableView.dataSource = self as UITableViewDataSource
@@ -106,7 +108,7 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return 110
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

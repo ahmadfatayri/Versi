@@ -25,8 +25,7 @@ class WishlistCollectionCell: UICollectionViewCell {
     
     func updateUI()
     {
-        imageWishlist.downloaded(from: (product.images?.first)!)
-        //imageWishlist.image = product.images?.first
+        imageWishlist.sd_setImage(with: URL(string: (product.images?.first)!), placeholderImage: UIImage(named: "placeholder_image"))
         titleWishlist.text = product.name
         if let price = product.price {
             priceWishlist.text = "$\(price)"

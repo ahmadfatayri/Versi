@@ -17,7 +17,7 @@ class CategoryCell: UITableViewCell {
     func config(title: String, description: String, bgCategory: String) {
         self.titleCategory.text = title
         self.descriptionCategory.text = description
-        self.bgCategory.downloaded(from: bgCategory)
+        self.bgCategory.sd_setImage(with: URL(string: bgCategory), placeholderImage: UIImage(named: "placeholder_image"))
     }
 
 }

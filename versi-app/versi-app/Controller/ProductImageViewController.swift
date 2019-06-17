@@ -14,14 +14,12 @@ class ProductImageViewController: UIViewController {
     
     var image: String? {
         didSet {
-//            self.imageView.downloaded(from: (image)!)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.imageView.downloaded(from: (image)!)
+         self.imageView.sd_setImage(with: URL(string: (image)!), placeholderImage: UIImage(named: "placeholder_image"))
     }
     
 

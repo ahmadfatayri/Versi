@@ -25,8 +25,7 @@ class SubSubCatCollectionCell: UICollectionViewCell {
     
     func updateUI()
     {
-        productImage.downloaded(from: (product.images?.first)!)
-//        productImage.image = product.images?.first
+        productImage.sd_setImage(with: URL(string: (product.images?.first)!), placeholderImage: UIImage(named: "placeholder_image"))
         productTitle.text = product.name
         if let price = product.price {
             productPrice.text = "$\(price)"

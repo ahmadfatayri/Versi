@@ -25,9 +25,7 @@ class ProductCell: UITableViewCell {
     
     func updateUI()
     {
-        imageProduct.downloaded(from: (product.images?.first)!)
-//        imageView!.contentMode = UIView.ContentMode.scaleAspectFill
-
+        imageProduct.sd_setImage(with: URL(string: (product.images?.first)!), placeholderImage: UIImage(named: "placeholder_image"))
         titleProduct.text = product.name
         if product.isLiked == true {
             loveBtn.setLikedImage()

@@ -27,12 +27,13 @@ class Product
     public private(set) var height: Int?
     public private(set) var isPaid: Bool?
     public private(set) var availability: Int?
-    public private(set) var isLiked: Bool?
-
+    public var isLiked: Bool?
+    public var isAddedToBasket: Bool?
+    
     init() {
     }
     
-    init(uid: String, name: String, images: [String], price: Double, description: String, detail: String, type: String, brand: String, qr_code: String, colors: [String], sizes: [String], shipping: Int, weight: Int, width: Int, height: Int, isPaid: Bool, availability: Int, isLiked: Bool)
+    init(uid: String, name: String, images: [String], price: Double, description: String, detail: String, type: String, brand: String, qr_code: String, colors: [String], sizes: [String], shipping: Int, weight: Int, width: Int, height: Int, isPaid: Bool, availability: Int, isLiked: Bool, isAddedToBasket: Bool)
     {
         self.uid = uid
         self.name = name
@@ -52,7 +53,7 @@ class Product
         self.isPaid = isPaid
         self.availability = availability
         self.isLiked = isLiked
-        
+        self.isAddedToBasket = isAddedToBasket
     }
     
   

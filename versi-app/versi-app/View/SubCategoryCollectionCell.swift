@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SubCategoryCollectionCell: UICollectionViewCell {
     
@@ -21,7 +22,7 @@ class SubCategoryCollectionCell: UICollectionViewCell {
     
     func updateUI()
     {
-        subCategoryImage.downloaded(from: subCategory.image, contentMode: .scaleAspectFit)
+        subCategoryImage.sd_setImage(with: URL(string: subCategory.image), placeholderImage: UIImage(named: "placeholder_image"))
         subCategoryTitle.text = subCategory.title
     }
     

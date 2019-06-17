@@ -19,8 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.0))
         
         var vc: UIViewController
-        if KeychainService.loadKey(service: SERVICEKEY, account: ACCOUNTKEY) != nil {
-            vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
+        let defaults = UserDefaults.standard
+        if let stringOne = defaults.string(forKey: DEFAULTKEY.role) {
+            if KeychainService.loadKey(service: SERVICEKEY, account: ACCOUNTKEY) != nil {
+                vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
+            }
+            else {
+                vc = STORYBOARD.instantiateViewController(withIdentifier: WELCOME) as! WelcomeVC
+            }
         }
         else {
             vc = STORYBOARD.instantiateViewController(withIdentifier: WELCOME) as! WelcomeVC

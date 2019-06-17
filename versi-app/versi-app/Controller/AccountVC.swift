@@ -27,6 +27,8 @@ class AccountVC: UIViewController {
     
     @IBAction func logoutBtnPressed(_ sender: Any) {
         KeychainService.removeKey(service: SERVICEKEY, account: ACCOUNTKEY)
+        let defaults = UserDefaults.standard
+        defaults.set("", forKey: DEFAULTKEY.role)
         let vc = STORYBOARD.instantiateViewController(withIdentifier: WELCOME) as! WelcomeVC
         navigationController?.setViewControllers([vc], animated: true)
     }

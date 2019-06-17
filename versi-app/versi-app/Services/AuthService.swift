@@ -82,14 +82,40 @@ class AuthService {
                     
                     let name = json!["name"].stringValue
                     let id = json!["id"].stringValue
-                    print(id)
                     let email = json!["email"].stringValue
                     
                     KeychainService.saveKey(service: SERVICEKEY, account: ACCOUNTKEY, data: json!["token"].stringValue)
                     KeychainService.saveKey(service: SERVICEID, account: ACCOUNTID, data: id)
                     
-                    User.instance.setUserData(id: id, email: email, name: name, gender: "male")
+                    User.instance.setUserData(id: id, email: email, name: name, gender: "")
                     
+                    let defaults = UserDefaults.standard
+                    defaults.set("user", forKey: DEFAULTKEY.role)
+                    
+                    completion(true)
+                }
+                else {
+                    completion(false)
+                }
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func forgotPassword(email: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+        ]
+        
+        Alamofire.request(URL_FORGOTPASSWORD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
+            
+            if response.result.error == nil {
+                let statusCode = response.response?.statusCode
+                if  statusCode == 200 {
                     completion(true)
                 }
                 else {
@@ -111,6 +137,53 @@ class AuthService {
             }
         }
         return digest
+    }
+    
+    func skipLogin(email: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        let password = "123456"
+        let encPassword = ccSha256(data: password.data(using: .utf8)!)
+        
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "role": "guest",
+            "password": encPassword.map { String(format: "%02hhx", $0) }.joined(),
+        ]
+        
+        Alamofire.request(URL_SKIPLOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                let statusCode = response.response?.statusCode
+                if  statusCode == 200 {
+                    guard let data = response.data else { return }
+                    let json = try? JSON(data: data)
+                    //self.authToken = json!["token"].stringValue
+                    self.isLoggedIn = true
+                    
+                    let name = json!["name"].stringValue
+                    let id = json!["id"].stringValue
+                    let email = json!["email"].stringValue
+                    print(id)
+                    KeychainService.removeKey(service: SERVICEKEY, account: ACCOUNTKEY)
+                    KeychainService.saveKey(service: SERVICEKEY, account: ACCOUNTKEY, data: json!["token"].stringValue)
+                    KeychainService.saveKey(service: SERVICEID, account: ACCOUNTID, data: id)
+                    
+                    User.instance.setUserData(id: id, email: email, name: name, gender: "male")
+                    
+                    let defaults = UserDefaults.standard
+                    defaults.set("guest", forKey: DEFAULTKEY.role)
+                    
+                    completion(true)
+                }
+                else {
+                    completion(false)
+                }
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
     }
 }
 

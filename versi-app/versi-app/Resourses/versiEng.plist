@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>titleLblWelcomePage</key>
+	<string>EXPRESS YOUR STYLE!</string>
+	<key>descriptionLblWelcomePage</key>
+	<string>Sign In or Sign Up to like, collect, and manage ordersw</string>
+	<key>skiploginBtnWelcomePage</key>
+	<string>Skip Login</string>
+	<key>underBtnLblWelcomePage</key>
+	<string>or use email address</string>
+	<key>signin</key>
+	<string>Sign In</string>
+	<key>signup</key>
+	<string>Sign Up</string>
+	<key>emailPlaceholder</key>
+	<string>Email Address</string>
+	<key>passwordPlaceholder</key>
+	<string>Password</string>
+	<key>fullnamePlaceholder</key>
+	<string>Full Name</string>
+	<key>mobileNumberPlaceholder</key>
+	<string>Mobile Number</string>
+	<key>genderLbl</key>
+	<string>Gender</string>
+	<key>female</key>
+	<string>Female</string>
+	<key>male</key>
+	<string>Male</string>
+	<key>DescriptionLblSigninPage</key>
+	<string>Already have an account</string>
+	<key>Now</key>
+	<string>now</string>
+	<key>Forgotpassword</key>
+	<string>Forgot Password?</string>
+	<key>DescriptionLblLoginPage</key>
+	<string>New to Versi?</string>
+	<key>titleLblForgotPass</key>
+	<string>Forgot Password</string>
+	<key>descriptionLblForgotPasswordPage</key>
+	<string>Enter your email address and we will send a new generated password</string>
+	<key>ResetPassword</key>
+	<string>Reset Password</string>
+	<key>appTitle</key>
+	<string>Versi</string>
+	<key>productOptionLbl</key>
+	<string>Product Options</string>
+	<key>colorLbl</key>
+	<string>Color</string>
+	<key>sizeLbl</key>
+	<string>Size</string>
+	<key>qtyLbl</key>
+	<string>Quantity</string>
+	<key>availableLbl</key>
+	<string>available</string>
+	<key>shippingLbl</key>
+	<string>Shipping</string>
+	<key>descriptionShippingLbl</key>
+	<string>To Lebanon via Versi Standard Shipping Estimated Delivery: 3-5 days</string>
+	<key>trakingLbl</key>
+	<string>Tracking Available</string>
+	<key>addtocart</key>
+	<string>Add To Cart</string>
+	<key>categoriesLbl</key>
+	<string>Categories</string>
+	<key>productsLbl</key>
+	<string>Products</string>
+	<key>cartLbl</key>
+	<string>Cart</string>
+	<key>checkout</key>
+	<string>Checkout</string>
+	<key>descriptionLblCartPage</key>
+	<string>Hey, it feels so light!</string>
+	<key>subDescriptionLblCartPage</key>
+	<string>There is nothing in your bag. let&apos;s add some items.</string>
+	<key>titleLblAccountPage</key>
+	<string>Account</string>
+	<key>contactusBtn</key>
+	<string>Contact us</string>
+	<key>contactusLbl</key>
+	<string>Tell us your problem</string>
+	<key>helpcenterBtn</key>
+	<string>Help Center</string>
+	<key>helpcenterLbl</key>
+	<string>Help regarding your recent purchase</string>
+	<key>wishlistBtn</key>
+	<string>Wishlist</string>
+	<key>wishlistLbl</key>
+	<string>Your most loved styles</string>
+	<key>invatefriendBtn</key>
+	<string>Invite Friend</string>
+	<key>invatefriendLbl</key>
+	<string></string>
+	<key>profileBtn</key>
+	<string>Profile Details</string>
+	<key>profileLbl</key>
+	<string>Change your profile details and password</string>
+	<key>scanBtn</key>
+	<string>Scan</string>
+	<key>scanLbl</key>
+	<string>Scan your item for easy search</string>
+	<key>savedCardsBtn</key>
+	<string>Saved Cards</string>
+	<key>savedCardsLbl</key>
+	<string>Save your cards for faster checkout</string>
+	<key>addressBtn</key>
+	<string>Address</string>
+	<key>addressLbl</key>
+	<string>Save your address for hassle-free checkout</string>
+	<key>logout</key>
+	<string>Log Out</string>
+    
+    <key>doneLbl</key>
+    <string>Done</string>
+    <key>priceLbl</key>
+    <string>Price</string>
+    <key>mightLbl</key>
+    <string>You might also like</string>
+    
+    <key>msgEmailErrorEmpty</key>
+    <string>Email textField cannot be empty!</string>
+    <key>msgPasswordErrorEmpty</key>
+    <string>Password textField cannot be empty!</string>
+    <key>msgFullnameErrorEmpty</key>
+    <string>Full Name textField cannot be empty!</string>
+    <key>msgPhoneErrorEmpty</key>
+    <string>Phone Number textField cannot be empty!</string>
+    <key>msgEmailErrorValid</key>
+    <string>Enter a valid email address!</string>
+    <key>msgMinimumError</key>
+    <string>Minimum 6 characters required for Password</string>
+    <key>msgMinimumPhoneError</key>
+    <string>Minimum 8 characters required for Phone</string>
+    <key>msgLoginError</key>
+    <string>Username or password not valid</string>
+    <key>msgForgotSuccess</key>
+    <string>Your password has been changed, Please check your mail.</string>
+    <key>msgForgotError</key>
+    <string>Your password has not been changed, Please try again.</string>
+    <key>msgRegisterError</key>
+    <string>Registration failed!</string>
+    <key>msgRegisterSuccess</key>
+    <string>Registration succeed</string>
+    <key>msgQrCode</key>
+    <string>You can use this Qr Code to quick access to this product</string>
+</dict>
+</plist>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   versiFr.plist
+   versi-app
+
+   Created by Ahmad Fatayri on 6/20/19.
+   Copyright (c) 2019 Ahmad Fatayri. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>titleLblWelcomePage</key><string>EXPRIMEZ VOTRE STYLE!</string>
+        <key>descriptionLblWelcomePage</key><string>Connectez-vous ou inscrivez-vous pour aimer, collecter et gérer les commandes</string>
+        <key>skiploginBtnWelcomePage</key><string>Passer l'identification</string>
+        <key>underBtnLblWelcomePage</key><string>ou utilisez l'adresse e-mail</string>
+        <key>signin</key><string>Se connecter</string>
+        <key>signup</key><string>S'inscrire</string>
+        <key>emailPlaceholder</key><string>Adresse électronique</string>
+        <key>passwordPlaceholder</key><string>Mot de passe</string>
+        <key>fullnamePlaceholder</key><string>Nom complet</string>
+        <key>mobileNumberPlaceholder</key><string>Numéro de portable</string>
+        <key>genderLbl</key><string>Le sexe</string>
+        <key>female</key><string>Femelle</string>
+        <key>male</key><string>Mâle</string>
+        <key>DescriptionLblSigninPage</key><string>Vous avez déjà un compte</string>
+        <key>Now</key><string>à présent</string>
+        <key>Forgotpassword</key><string>Mot de passe oublié?</string>
+        <key>DescriptionLblLoginPage</key><string>Nouveau chez Versi?</string>
+        <key>titleLbl</key><string>Mot de passe oublié</string>
+        <key>descriptionLblForgotPasswordPage</key><string>Entrez votre adresse email et nous vous enverrons un nouveau mot de passe</string>
+        <key>ResetPassword</key><string>réinitialiser le mot de passe</string>
+        <key>appTitle</key><string>Versi</string>
+        <key>productOptionLbl</key><string>Options du produit</string>
+        <key>colorLbl</key><string>Couleur</string>
+        <key>sizeLbl</key><string>Taille</string>
+        <key>qtyLbl</key><string>Quantité</string>
+        <key>availableLbl</key><string>disponible</string>
+        <key>shippingLbl</key><string>livraison</string>
+        <key>descriptionShippingLbl</key><string>To Lebanon via Versi Livraison standard Livraison estimée: 3-5 jours</string>
+        <key>trakingLbl</key><string>Suivi disponible</string>
+        <key>addtocart</key><string>Ajouter au panier</string>
+        <key>categoriesLbl</key><string>Les catégories</string>
+        <key>productsLbl</key><string>Des produits</string>
+        <key>cartLbl</key><string>Chariot</string>
+        <key>checkout</key><string>Check-out</string>
+        <key>descriptionLblCartPage</key><string>Hé, c'est tellement léger!</string>
+        <key>subDescriptionLblCartPage</key><string>Il n'y a rien dans ton sac. ajoutons quelques éléments.</string>
+        <key>titleLblAccountPage</key><string>Compte</string>
+        <key>contactusBtn</key><string>Contactez nous</string>
+        <key>contactusLbl</key><string>Dis nous ton problème</string>
+        <key>helpcenterBtn</key><string>Centre d'aide</string>
+        <key>helpcenterLbl</key><string>Aide concernant votre achat récent</string>
+        <key>wishlistBtn</key><string>Liste de souhaits</string>
+        <key>wishlistLbl</key><string>Vos styles les plus aimés</string>
+        <key>invatefriendBtn</key><string>Inviter un ami</string>
+        <key>invatefriendLbl</key><string></string>
+        <key>profileBtn</key><string>Détails du profil</string>
+        <key>profileLbl</key><string>Changer les détails de votre profil et votre mot de passe</string>
+        <key>scanBtn</key><string>Balayage</string>
+        <key>scanLbl</key><string>Scannez votre article pour une recherche facile</string>
+        <key>savedCardsBtn</key><string>Cartes sauvegardées</string>
+        <key>savedCardsLbl</key><string>Sauvegardez vos cartes pour un paiement plus rapide</string>
+        <key>addressBtn</key><string>Adresse</string>
+        <key>addressLbl</key><string>Enregistrez votre adresse pour un paiement sans soucis</string>
+        <key>logout</key><string>Connectez - Out</string>
+    </dict>
+</plist>

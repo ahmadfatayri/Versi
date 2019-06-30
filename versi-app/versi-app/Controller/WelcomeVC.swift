@@ -12,10 +12,21 @@ class WelcomeVC: UIViewController {
 
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var skiploginBtn: borderButton!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var underBtnLbl: UILabel!
+    @IBOutlet weak var signinBtn: UIButton!
+    @IBOutlet weak var signupBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.navigationBar.isHidden = true
+        titleLbl.text = self.getByTagName(key: "titleLblWelcomePage")
+        descriptionLbl.text = self.getByTagName(key: "descriptionLblWelcomePage")
+        underBtnLbl.text = self.getByTagName(key: "underBtnLblWelcomePage")
+        skiploginBtn.setTitle(self.getByTagName(key: "skiploginBtnWelcomePage"), for: .normal)
+        signinBtn.setTitle(self.getByTagName(key: "signin"), for: .normal)
+        signupBtn.setTitle(self.getByTagName(key: "signup"), for: .normal)
     }
     @IBAction func fbBtnWasPressed(_ sender: Any) {
         skiploginBtn.isEnabled = false

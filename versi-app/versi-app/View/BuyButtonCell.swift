@@ -19,15 +19,19 @@ class BuyButtonCell: UITableViewCell {
         }
     }
     
+    @IBAction func cartBtnPressed(_ sender: Any) {
+        if addToCartBtn.currentTitle! == "Remove From Cart" {
+            addToCartBtn.setTitle("Add To Cart", for: .normal)
+        }
+        else {
+            //addToCartBtn.setTitle("Remove From Cart", for: .normal)
+        }
+        
+    }
     
     func updateUI()
     {
-        
-        if let price = product.price {
-            buyBtn.setTitle("BUY $\(price)", for: .normal)
-        } else {
-            buyBtn.setTitle("", for: .normal)
-        }
+        buyBtn.setTitle("Buy", for: .normal)
     }
    
 }

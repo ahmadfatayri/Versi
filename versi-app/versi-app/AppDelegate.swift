@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var vc: UIViewController
         let defaults = UserDefaults.standard
-        if let stringOne = defaults.string(forKey: DEFAULTKEY.role) {
+        if defaults.string(forKey: DEFAULTKEY.role) != nil {
             if KeychainService.loadKey(service: SERVICEKEY, account: ACCOUNTKEY) != nil {
                 vc = STORYBOARD.instantiateViewController(withIdentifier: BOTTOMBAR) as! BottomBarVC
             }

@@ -11,19 +11,18 @@ import UIKit
 class HomeVC: UIViewController {
 
     @IBOutlet weak var productsTableView: UITableView!
+    @IBOutlet weak var titleLbl: UILabel!
     
     var products: [Product]?
     var refreshControl: UIRefreshControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        productsTableView.estimatedRowHeight = productsTableView.rowHeight
-//        productsTableView.rowHeight = UITableView.automaticDimension
-//
         productsTableView.delegate = self as UITableViewDelegate
         productsTableView.dataSource = self as UITableViewDataSource
         
         addRefreshControl()
+        titleLbl.text = self.getByTagName(key: "appTitle")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -11,7 +11,6 @@ import TweeTextField
 
 class SignupVC: UIViewController {
 
-    
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var emailTextField: TweeAttributedTextField!
     @IBOutlet weak var passwordTextField: TweeAttributedTextField!
@@ -22,6 +21,10 @@ class SignupVC: UIViewController {
     @IBOutlet weak var femaleBtn: borderButton!
     @IBOutlet weak var maleBtn: borderButton!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var genderLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var nowLbl: UILabel!
     
     var gender: GenderType = .female
     
@@ -33,6 +36,19 @@ class SignupVC: UIViewController {
         UITextField.connectFields(fields: [emailTextField, passwordTextField, fullnameTextField, phoneTextField])
         emailTextField.becomeFirstResponder()
         self.hideKeyboardWhenTappedAround()
+        emailTextField.tweePlaceholder = self.getByTagName(key: "emailPlaceholder")
+        passwordTextField.tweePlaceholder = self.getByTagName(key: "passwordPlaceholder")
+        fullnameTextField.tweePlaceholder = self.getByTagName(key: "fullnamePlaceholder")
+        phoneTextField.tweePlaceholder = self.getByTagName(key: "mobileNumberPlaceholder")
+        titleLbl.text = self.getByTagName(key: "signup")
+        genderLbl.text = self.getByTagName(key: "genderLbl")
+        descriptionLbl.text = self.getByTagName(key: "DescriptionLblSigninPage")
+        nowLbl.text = self.getByTagName(key: "Now")
+        femaleBtn.setTitle(self.getByTagName(key: "female"), for: .normal)
+        maleBtn.setTitle(self.getByTagName(key: "male"), for: .normal)
+        loginBtn.setTitle(self.getByTagName(key: "signin"), for: .normal)
+        createAccountBtn.setTitle(self.getByTagName(key: "signup"), for: .normal)
+
     }
     
     
@@ -48,40 +64,38 @@ class SignupVC: UIViewController {
         gender = .male
     }
     
-    
-    
     @IBAction func closeBtnWasPressed(_ sender: Any) {
         navigationController?.popToRootViewController(animated:true)
     }
     @IBAction func createAccountPressed(_ sender: Any) {
         
         guard let email = emailTextField.text , emailTextField.text != "" else {
-            self.alert(message: "Email textField cannot be empty!")
+            self.alert(message: self.getByTagName(key: "msgEmailErrorEmpty"))
             return
         }
         guard let pass = passwordTextField.text , passwordTextField.text != "" else {
-            self.alert(message: "Password textField cannot be empty!")
+            self.alert(message: self.getByTagName(key: "msgPasswordErrorEmpty"))
             return
         }
         guard let name = fullnameTextField.text , fullnameTextField.text != "" else {
-            self.alert(message: "Full Name textField cannot be empty!")
+            self.alert(message: self.getByTagName(key: "msgFullnameErrorEmpty"))
             return
         }
         guard let phone = phoneTextField.text , phoneTextField.text != "" else {
-            self.alert(message: "Phone Number textField cannot be empty!")
+            self.alert(message: self.getByTagName(key: "msgPhoneErrorEmpty"))
             return
         }
         
         if !email.isValidEmailTwee() {
-            self.alert(message: "Enter a valid email address!")
+            self.alert(message: self.getByTagName(key: "msgEmailErrorValid"))
             return
         }
         if !pass.minTextFieldTwee(minString: 6) {
-            self.alert(message: "Minimum 6 characters required for Password")
+            self.alert(message: self.getByTagName(key: "msgMinimumError"))
             return
         }
         if !phone.minTextFieldTwee(minString: 8) {
-            self.alert(message: "Minimum 8 characters required for Phone")
+            self.alert(message: self.getByTagName(key: "msgMinimumPhoneError"))
             return
         }
         
@@ -93,10 +107,10 @@ class SignupVC: UIViewController {
             if success {
                 let vc = STORYBOARD.instantiateViewController(withIdentifier: SIGNIN) as! LoginVC
                 self.navigationController?.pushViewController(vc, animated: true)
-                self.alert(message: "Registration succeed")
+                self.alert(message: self.getByTagName(key: "msgRegisterError"))
             }
             else {
-                self.alert(message: "Registration failed!")
+                self.alert(message: self.getByTagName(key: "msgRegisterSuccess"))
             }
         }
         

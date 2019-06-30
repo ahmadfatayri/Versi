@@ -20,7 +20,6 @@ class ProductDetailTableViewController: UITableViewController {
         super.viewDidLoad()
 
         title = product.name
-        
         tableView.estimatedRowHeight = self.tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         
@@ -30,19 +29,29 @@ class ProductDetailTableViewController: UITableViewController {
         })
     }
     
-    @objc func addToCart(_ sender: UIButton){ //<- needs `@objc`
-        let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTVARIANTS) as! ProductVariantsVC
-        vc.product = self.product
-        //set anitmation for navigation
-        let transition:CATransition = CATransition()
-        transition.duration = 0.4
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromTop
-        self.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        
-        self.navigationController?.pushViewController(vc, animated: false)
-        
+    @objc func addToCart(_ sender: UIButton){
+        if product.isAddedToBasket! {
+            CartService.instance.removeData(product_id: self.product!.uid! ){ (success) in
+                if success {
+                    self.product.isAddedToBasket = false
+                }
+                else {
+                    self.alert(message: "Item not removed from the basket!")
+                }
+            }
+        }
+        else {
+            let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTVARIANTS) as! ProductVariantsVC
+            vc.product = self.product
+            //set anitmation for navigation
+            let transition:CATransition = CATransition()
+            transition.duration = 0.4
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromTop
+            self.navigationController!.view.layer.add(transition, forKey: kCATransition)
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
     }
     
     @objc func checkout(_ sender: UIButton) {
@@ -63,7 +72,7 @@ class ProductDetailTableViewController: UITableViewController {
     @objc func imageTapped(recognizer: UITapGestureRecognizer) {
         let images = [
             LightboxImage(imageURL: URL(string: self.product.qr_code!)!,
-            text: "You can use this Qr Code to quick access to this product"
+            text: self.getByTagName(key: "msgQrCode")
 )
         ]
         
@@ -141,12 +150,13 @@ extension ProductDetailTableViewController
             }
             return cell
         } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.productDetailsCell, for: indexPath)
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.productDetailsCell, for: indexPath) as! ProductDetailsCell
+            cell.product = product
+            cell.selectionStyle = .none
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.suggestionCell, for: indexPath) as! SuggestionTableViewCell
-            
+            cell.selectionStyle = .none
             return cell
         }
         

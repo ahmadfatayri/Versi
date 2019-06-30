@@ -223,6 +223,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="ZDu-dp-vI9"/>
                     <connections>
                         <outlet property="productsTableView" destination="KWe-u7-ch5" id="jT1-qO-8qO"/>
+                        <outlet property="titleLbl" destination="x42-zd-yGi" id="gwm-9f-pOM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcP-7b-HpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2625,8 +2626,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ede-tB-C1H"/>
                     <connections>
+                        <outlet property="descriptionLbl" destination="tX6-M1-NJj" id="vu6-3X-SVX"/>
                         <outlet property="loader" destination="6h6-cK-lwH" id="HhM-zT-vUG"/>
+                        <outlet property="signinBtn" destination="bLD-HL-ke6" id="ESB-d6-Pyq"/>
+                        <outlet property="signupBtn" destination="x2M-0L-5qD" id="TNS-Od-Qih"/>
                         <outlet property="skiploginBtn" destination="yRO-oo-EVK" id="iO1-bK-6ka"/>
+                        <outlet property="titleLbl" destination="TWi-AA-wEe" id="N4I-dx-G3C"/>
+                        <outlet property="underBtnLbl" destination="6e9-vO-1K0" id="uQ9-CG-vn7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uaa-AL-3QW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2764,9 +2770,11 @@
                     </view>
                     <connections>
                         <outlet property="closeBtn" destination="NyA-Vx-bh2" id="ynT-qR-wNQ"/>
+                        <outlet property="descriptionLbl" destination="eMZ-Mp-TcZ" id="Rdx-r8-nke"/>
                         <outlet property="loader" destination="GJB-Co-EB0" id="efN-7c-Cnw"/>
                         <outlet property="resetPasswordBtn" destination="hgP-Hv-D3u" id="yd9-vH-fH7"/>
                         <outlet property="resetTextField" destination="kdY-RZ-5Vw" id="mD7-0A-rcs"/>
+                        <outlet property="titleLbl" destination="kAl-If-QzF" id="7Yg-U3-NXs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyP-SC-4Lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2982,7 +2990,11 @@
                         <outlet property="forgotPasswordBtn" destination="WKj-KE-bPq" id="mP3-rJ-vjV"/>
                         <outlet property="loader" destination="l1C-Q9-DfZ" id="eSB-qF-kRm"/>
                         <outlet property="loginBtn" destination="0fJ-Kf-F0w" id="7Cx-di-qVr"/>
+                        <outlet property="newversiLbl" destination="OvO-C1-tmv" id="KOL-8F-egh"/>
+                        <outlet property="nowLbl" destination="xAe-uU-eX6" id="qGK-lB-0Nk"/>
                         <outlet property="passwordTextField" destination="u7X-7F-aoN" id="m5d-Jx-cxv"/>
+                        <outlet property="signupBtn" destination="r2c-Vy-EhA" id="rMd-3j-mwT"/>
+                        <outlet property="titleLbl" destination="80g-b5-jIJ" id="a6T-4m-W22"/>
                         <outlet property="usernameTextField" destination="2cj-kS-eOG" id="zrC-Em-t31"/>
                     </connections>
                 </viewController>
@@ -3333,14 +3345,18 @@
                     <connections>
                         <outlet property="closeBtn" destination="ah3-h1-6Rh" id="iEh-TE-Mh1"/>
                         <outlet property="createAccountBtn" destination="pcQ-3d-npm" id="ybH-14-YBM"/>
+                        <outlet property="descriptionLbl" destination="6vl-kN-Z0r" id="jHR-GV-5dv"/>
                         <outlet property="emailTextField" destination="R7A-zW-NfS" id="C8O-cF-gqn"/>
                         <outlet property="femaleBtn" destination="nae-QR-o0K" id="3cS-V7-e4H"/>
                         <outlet property="fullnameTextField" destination="uwv-GF-j1L" id="gWS-Tg-THI"/>
+                        <outlet property="genderLbl" destination="4Ao-8i-GP6" id="pW0-03-x3O"/>
                         <outlet property="loader" destination="EVy-Fc-dWm" id="JD5-La-LpF"/>
                         <outlet property="loginBtn" destination="nbH-SJ-DVD" id="rAh-23-Urc"/>
                         <outlet property="maleBtn" destination="Pv4-zb-hm8" id="F2r-ZE-bxN"/>
+                        <outlet property="nowLbl" destination="st0-Op-dgX" id="dp1-MF-zCm"/>
                         <outlet property="passwordTextField" destination="xY6-h3-DCW" id="CG4-2M-Y3B"/>
                         <outlet property="phoneTextField" destination="D6p-TR-tEE" id="i9e-YI-Rh2"/>
+                        <outlet property="titleLbl" destination="Hcv-8P-hNZ" id="evT-AA-mjT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzp-fy-rPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3572,6 +3588,7 @@
                         <viewLayoutGuide key="safeArea" id="nuf-AY-mRH"/>
                     </view>
                     <connections>
+                        <outlet property="doneLbl" destination="oOc-Fa-Ecr" id="J3v-Ow-A95"/>
                         <outlet property="webView" destination="n8c-6d-qH3" id="Bxr-6z-vkU"/>
                     </connections>
                 </viewController>
@@ -3838,7 +3855,7 @@
                             <constraint firstItem="a5Y-wx-17X" firstAttribute="top" secondItem="2Qc-24-VMn" secondAttribute="bottom" constant="15" id="7HL-EB-Qgp"/>
                             <constraint firstItem="cG7-bP-q9C" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="7fI-53-qmF"/>
                             <constraint firstItem="mDf-w1-KTV" firstAttribute="top" secondItem="Xph-Id-So6" secondAttribute="bottom" constant="15" id="8is-ar-5W6"/>
-                            <constraint firstItem="pRZ-dC-1GJ" firstAttribute="top" secondItem="5sh-mC-g80" secondAttribute="bottom" constant="15" id="9ua-cS-JQw"/>
+                            <constraint firstItem="5sh-mC-g80" firstAttribute="top" secondItem="FrJ-x3-GN7" secondAttribute="bottom" id="D7r-Nf-k1w"/>
                             <constraint firstItem="WjV-Kc-hXt" firstAttribute="top" secondItem="2Qc-24-VMn" secondAttribute="bottom" constant="10" id="Ghz-QM-yhH"/>
                             <constraint firstItem="b9a-af-5AZ" firstAttribute="top" secondItem="8Ij-nH-1lb" secondAttribute="bottom" constant="10" id="HPi-w5-tmF"/>
                             <constraint firstItem="Xph-Id-So6" firstAttribute="leading" secondItem="A98-SS-Jba" secondAttribute="leading" constant="15" id="KX3-PN-EKW"/>
@@ -3850,6 +3867,7 @@
                             <constraint firstItem="b9a-af-5AZ" firstAttribute="leading" secondItem="A98-SS-Jba" secondAttribute="leading" id="Nlf-4t-GBU"/>
                             <constraint firstAttribute="trailing" secondItem="hc3-XB-QN8" secondAttribute="trailing" constant="15" id="ODr-7E-NCU"/>
                             <constraint firstItem="7Fa-q5-D1o" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="OF4-Bq-nD7"/>
+                            <constraint firstItem="FrJ-x3-GN7" firstAttribute="top" secondItem="a5Y-wx-17X" secondAttribute="bottom" constant="15" id="PkG-t7-uj1"/>
                             <constraint firstItem="1pt-lw-ljz" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="QlA-Kc-2LJ"/>
                             <constraint firstItem="1pt-lw-ljz" firstAttribute="top" secondItem="GC9-e9-ZL1" secondAttribute="bottom" constant="15" id="QzA-IJ-uMd"/>
                             <constraint firstAttribute="trailing" secondItem="WjV-Kc-hXt" secondAttribute="trailing" constant="15" id="Sek-sg-Oho"/>
@@ -3869,7 +3887,6 @@
                             <constraint firstItem="U1A-1M-CgZ" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="hzw-DJ-YC5"/>
                             <constraint firstItem="FrJ-x3-GN7" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="i4O-iO-OIc"/>
                             <constraint firstItem="2Qc-24-VMn" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="jaS-er-CEo"/>
-                            <constraint firstItem="FrJ-x3-GN7" firstAttribute="top" secondItem="a5Y-wx-17X" secondAttribute="bottom" constant="15" id="ktH-lI-eBH"/>
                             <constraint firstItem="2Qc-24-VMn" firstAttribute="top" secondItem="b9a-af-5AZ" secondAttribute="bottom" constant="10" id="kxt-vC-ffn"/>
                             <constraint firstItem="E42-80-NzR" firstAttribute="top" secondItem="HME-fI-C8A" secondAttribute="top" constant="15" id="mtK-Ti-vPg"/>
                             <constraint firstItem="8Ij-nH-1lb" firstAttribute="centerY" secondItem="E42-80-NzR" secondAttribute="centerY" id="o6e-zs-e7U"/>
@@ -3880,21 +3897,28 @@
                             <constraint firstItem="g3K-2W-8f3" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="sSR-rU-Slg"/>
                             <constraint firstItem="mDf-w1-KTV" firstAttribute="leading" secondItem="HME-fI-C8A" secondAttribute="leading" constant="15" id="sri-T2-1fa"/>
                             <constraint firstItem="hc3-XB-QN8" firstAttribute="top" secondItem="YmE-b3-9GG" secondAttribute="bottom" constant="15" id="tAW-ap-S0S"/>
-                            <constraint firstItem="5sh-mC-g80" firstAttribute="top" secondItem="FrJ-x3-GN7" secondAttribute="bottom" constant="10" id="v93-cd-fmG"/>
                             <constraint firstAttribute="trailing" secondItem="5sh-mC-g80" secondAttribute="trailing" constant="15" id="xIu-f8-pUd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HME-fI-C8A"/>
                     </view>
                     <connections>
+                        <outlet property="addToCartBtn" destination="U1A-1M-CgZ" id="N3R-Lo-ggv"/>
                         <outlet property="colorCollectionView" destination="FrJ-x3-GN7" id="KUw-o8-AhW"/>
+                        <outlet property="colorLbl" destination="iiP-9g-B2M" id="TkP-8b-S41"/>
+                        <outlet property="colorValueLbl" destination="rVT-S7-xTu" id="9Qe-cN-c55"/>
+                        <outlet property="descriptionLbl" destination="cG7-bP-q9C" id="dFp-LD-CMP"/>
                         <outlet property="productAvailability" destination="roh-pa-vpJ" id="Yah-vX-ETj"/>
                         <outlet property="productImage" destination="ukp-FT-alf" id="KJx-p5-vrS"/>
                         <outlet property="productPrice" destination="hHG-m3-v3f" id="zN9-v1-rjm"/>
                         <outlet property="productQty" destination="xIM-on-zdU" id="4Px-Ik-16d"/>
                         <outlet property="productShipping" destination="1pt-lw-ljz" id="auc-5H-3lu"/>
                         <outlet property="productTitle" destination="L4a-aj-6TN" id="N4I-4A-g03"/>
+                        <outlet property="qtyLbl" destination="vQJ-A9-i5p" id="h33-rz-pML"/>
                         <outlet property="sizeCollectionView" destination="g3K-2W-8f3" id="Faz-kz-yMq"/>
+                        <outlet property="sizeLbl" destination="61s-r9-kFx" id="2y1-Gz-PMD"/>
+                        <outlet property="sizeValueLbl" destination="g0X-pw-Xbf" id="Hfm-ub-D4l"/>
                         <outlet property="stepperBtn" destination="c8z-MY-bef" id="NQF-v1-ydT"/>
+                        <outlet property="titleLbl" destination="E42-80-NzR" id="z32-vZ-Icz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MP7-ax-VGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4014,7 +4038,7 @@
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="15"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="ADD TO CART">
+                                                    <state key="normal" title="Add To Cart">
                                                         <color key="titleColor" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -4022,13 +4046,16 @@
                                                             <integer key="value" value="3"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="cartBtnPressed:" destination="Nw8-93-ycM" eventType="touchUpInside" id="QUx-NP-YpA"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L74-lU-JrY">
                                                     <rect key="frame" x="174" y="0.0" width="169" height="43"/>
                                                     <color key="backgroundColor" red="0.89411764709999997" green="0.1960784314" blue="0.1450980392" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="15"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="BUY $120">
+                                                    <state key="normal" title="Buy">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -4064,7 +4091,7 @@
                                     <outlet property="buyBtn" destination="L74-lU-JrY" id="ZvH-tY-HbV"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductDetailsCell" rowHeight="53" id="Ddc-LB-omB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ProductDetailsCell" rowHeight="53" id="Ddc-LB-omB" customClass="ProductDetailsCell" customModule="versi_app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="641" width="375" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ddc-LB-omB" id="Nra-x0-PSp">
@@ -4084,6 +4111,9 @@
                                         <constraint firstItem="lga-WQ-xoK" firstAttribute="leading" secondItem="Nra-x0-PSp" secondAttribute="leading" constant="12" id="gDR-mx-Lbw"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLbl" destination="lga-WQ-xoK" id="evT-vs-A2V"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuggestionCell" rowHeight="443" id="Za7-UR-Hva" customClass="SuggestionTableViewCell" customModule="versi_app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="694" width="375" height="443"/>

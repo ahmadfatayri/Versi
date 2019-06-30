@@ -10,9 +10,6 @@ import UIKit
 import TweeTextField
 
 class LoginVC: UIViewController {
-
-    
-    
     
     @IBOutlet weak var passwordTextField: TweeAttributedTextField!
     @IBOutlet weak var usernameTextField: TweeAttributedTextField!
@@ -20,13 +17,24 @@ class LoginVC: UIViewController {
     @IBOutlet weak var forgotPasswordBtn: UIButton!
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var newversiLbl: UILabel!
+    @IBOutlet weak var nowLbl: UILabel!
+    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var titleLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UITextField.connectFields(fields: [usernameTextField, passwordTextField])
         usernameTextField.becomeFirstResponder()
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        usernameTextField.tweePlaceholder = self.getByTagName(key: "emailPlaceholder")
+        passwordTextField.tweePlaceholder = self.getByTagName(key: "passwordPlaceholder")
+        loginBtn.setTitle(self.getByTagName(key: "signin"), for: .normal)
+        forgotPasswordBtn.setTitle(self.getByTagName(key: "Forgotpassword"), for: .normal)
+        newversiLbl.text = self.getByTagName(key: "DescriptionLblLoginPage")
+        nowLbl.text = self.getByTagName(key: "Now")
+        signupBtn.setTitle(self.getByTagName(key: "signup"), for: .normal)
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {
@@ -35,19 +43,19 @@ class LoginVC: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         
         guard let email = usernameTextField.text , usernameTextField.text != "" else {
-            self.alert(message: "Email textField cannot be empty!")
+            self.alert(message: self.getByTagName(key: "msgEmailErrorEmpty"))
             return
         }
         guard let pass = passwordTextField.text , passwordTextField.text != "" else {
-            self.alert(message: "Password textField cannot be empty!")
+            self.alert(message: self.getByTagName(key: "msgPasswordErrorEmpty"))
             return
         }
         if !email.isValidEmailTwee() {
-            self.alert(message: "Enter a valid email address!")
+            self.alert(message: self.getByTagName(key: "msgEmailErrorValid"))
             return
         }
         if !pass.minTextFieldTwee(minString: 6) {
-            self.alert(message: "Minimum 6 characters required for Password")
+            self.alert(message: self.getByTagName(key: "msgMinimumError"))
             return
         }
         loader.isHidden = false
@@ -60,7 +68,7 @@ class LoginVC: UIViewController {
                 self.navigationController?.setViewControllers([vc], animated: true)
             }
             else {
-                self.alert(message: "Username or password not valid")
+                self.alert(message: self.getByTagName(key: "msgLoginError"))
             }
         }
         

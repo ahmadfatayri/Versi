@@ -15,12 +15,18 @@ class ForgotPasswordVC: UIViewController {
     @IBOutlet weak var resetTextField: TweeAttributedTextField!
     @IBOutlet weak var resetPasswordBtn: borderButton!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UITextField.connectFields(fields: [resetTextField])
         resetTextField.becomeFirstResponder()
         self.hideKeyboardWhenTappedAround()
+        titleLbl.text = self.getByTagName(key: "titleLblForgotPass")
+        descriptionLbl.text = self.getByTagName(key: "descriptionLblForgotPasswordPage")
+        resetTextField.tweePlaceholder = self.getByTagName(key: "emailPlaceholder")
+        resetPasswordBtn.setTitle(self.getByTagName(key: "ResetPassword"), for: .normal)
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {
@@ -30,12 +36,12 @@ class ForgotPasswordVC: UIViewController {
     @IBAction func resetPasswordWasPressed(_ sender: Any) {
         
         guard let email = resetTextField.text , resetTextField.text != "" else {
-            self.alert(message: "Email textField cannot be empty!")
+            self.alert(message: self.getByTagName(key: "msgEmailErrorEmpty"))
             return
         }
         
         if !email.isValidEmailTwee() {
-            self.alert(message: "Enter a valid email address!")
+            self.alert(message: self.getByTagName(key: "msgEmailErrorValid"))
             return
         }
         
@@ -46,10 +52,10 @@ class ForgotPasswordVC: UIViewController {
             self.resetPasswordBtn.isEnabled = true
             if success {
                 self.navigationController?.popToRootViewController(animated:true)
-                self.alert(message: "Your password has been changed, Please check your mail.")
+                self.alert(message: self.getByTagName(key: "msgForgotSuccess"))
             }
             else {
-                self.alert(message: "Your password has not been changed, Please try again.")
+                self.alert(message: self.getByTagName(key: "msgForgotError"))
             }
         }
     }

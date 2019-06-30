@@ -45,6 +45,7 @@ let LOGGED_IN_KEY = "loggedIn"
 // Public key
 struct DEFAULTKEY {
     static let role = ""
+    static let lng = "en"
 }
 
 // Headers

@@ -144,5 +144,8 @@
     <string>Registration succeed</string>
     <key>msgQrCode</key>
     <string>You can use this Qr Code to quick access to this product</string>
+<key>msgQrCode12312312</key>
+    <string>You can use this Qr Code to quick access to this product</string>
+
 </dict>
 </plist>

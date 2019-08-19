@@ -9,6 +9,7 @@
 import UIKit
 import Speech
 import PulsingHalo
+import Clarifai
 
 class SearchVC: UIViewController {
 
@@ -28,6 +29,17 @@ class SearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //api key for fashion detection
+        let app = ClarifaiApp(apiKey: "38e92484139744298a6fea788039ce8a")
+
+        
+        
+        
+        
+      
+        
+    
+        
         loadAnimation()
         
         

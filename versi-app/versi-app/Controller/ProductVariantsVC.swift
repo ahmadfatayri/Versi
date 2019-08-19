@@ -97,6 +97,7 @@ extension ProductVariantsVC : UICollectionViewDataSource, UICollectionViewDelega
         }
         else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SizeCollectionCell", for: indexPath) as! SizeCollectionCell
+            
         }
         return cell
     }
@@ -110,7 +111,7 @@ extension ProductVariantsVC : UICollectionViewDataSource, UICollectionViewDelega
         let numberOfItemsPerRow: CGFloat = 2.0
         let itemWidth = (collectionView.bounds.width - layout.minimumLineSpacing) / numberOfItemsPerRow
         
-        return CGSize(width: itemWidth, height: itemWidth)
+        return CGSize(width: itemWidth, height: 100.0)
     }
     
 }

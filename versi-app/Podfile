@@ -13,4 +13,5 @@ target 'versi-app' do
   pod "PulsingHalo"
   pod 'SDWebImage', '~> 4.0'
   pod 'Lightbox'
+  pod 'Clarifai'
 end

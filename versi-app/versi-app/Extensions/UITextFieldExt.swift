@@ -36,4 +36,10 @@ extension String {
         return self.count >= nbChar
     }
     
+    public func maxTextFieldTwee(maxString nbChar: Int) -> Bool {
+        return self.count <= nbChar
+    }
+    
+    
+    
 }

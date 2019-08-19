@@ -27,10 +27,10 @@ class ProductCell: UITableViewCell {
     {
         imageProduct.sd_setImage(with: URL(string: (product.images?.first)!), placeholderImage: UIImage(named: "placeholder_image"))
         titleProduct.text = product.name
-        if product.isLiked == true {
-            loveBtn.setLikedImage()
-            isLiked = .liked
-        }
+//        if product.isLiked == true {
+//            loveBtn.setLikedImage()
+//            isLiked = .liked
+//        }
         if let price = product.price {
             priceProduct.text = "$\(price)"
         } else {

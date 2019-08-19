@@ -10,4 +10,10 @@ import UIKit
 
 class SizeCollectionCell: UICollectionViewCell {
     
+    @IBOutlet weak var sizeLbl: UILabel!
+    
+    func config(sizeLbl: String) {
+        self.sizeLbl.text = sizeLbl
+    }
+    
 }

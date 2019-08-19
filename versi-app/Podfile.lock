@@ -1,8 +1,25 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Alamofire (4.8.1)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
   - Cache (5.2.0)
+  - Clarifai (2.3.2):
+    - AFNetworking (~> 3.1)
   - Imaginary (4.2.0):
     - Cache (~> 5.0)
   - Lightbox (2.3.0):
@@ -17,6 +34,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - Clarifai
   - Lightbox
   - PulsingHalo
   - SDWebImage (~> 4.0)
@@ -25,9 +43,11 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Alamofire
     - AlamofireImage
     - Cache
+    - Clarifai
     - Imaginary
     - Lightbox
     - PulsingHalo
@@ -36,9 +56,11 @@ SPEC REPOS:
     - TweeTextField
 
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
+  Clarifai: 6d6cce2b31aefcf33893f2c3a18588b266771d11
   Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
   Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
   PulsingHalo: 64938e4bd3893b823abdf01478084cd92445af2b
@@ -46,6 +68,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TweeTextField: 18c7c8990a4a0926ce8ba73fc87e52df4f26805b
 
-PODFILE CHECKSUM: 12d26566e55130223aa983915d09345ed5edb64e
+PODFILE CHECKSUM: 7df97e1dc41be06c8250b85978b5405b63875d2d
 
 COCOAPODS: 1.6.1

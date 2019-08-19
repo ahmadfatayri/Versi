@@ -31,7 +31,7 @@ class AddCreditVC: UIViewController {
         creditCardHolderTextField.addTarget(self, action: #selector(textFieldHolderDidChange(_:)), for: .editingChanged)
         creditCardNbTextField.addTarget(self, action: #selector(textFieldNbDidChange(_:)), for: .editingChanged)
         creditCardExpDateTextField.addTarget(self, action: #selector(textFieldExpDidChange(_:)), for: .editingChanged)
-        
+        creditCardCVCTextField.addTarget(self, action: #selector(textFieldCVCDidChange(_:)), for: .editingChanged)
     }
     
     @objc func textFieldHolderDidChange(_ textField: UITextField) {
@@ -66,6 +66,12 @@ class AddCreditVC: UIViewController {
                 creditCardExpDateTextField.text = creditCardExpDateTextField.text! + "/"
             }
             creditCardExpDateLbl.text = creditCardExpDateTextField.text
+        }
+    }
+    
+    @objc func textFieldCVCDidChange(_ textField: UITextField) {
+        if ((creditCardCVCTextField.text?.count)!) > 3 {
+            creditCardCVCTextField.text = creditCardCVCTextField.text! + "/"
         }
     }
     

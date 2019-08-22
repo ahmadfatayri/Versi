@@ -12,6 +12,8 @@ class ContactusVC: UIViewController {
 
     @IBOutlet weak var msgTextView: borderTextView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var callBtn: borderButton!
+    @IBOutlet weak var content: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,5 +37,10 @@ class ContactusVC: UIViewController {
             }
         }
         
+    }
+    
+    @IBAction func callBtnPressed(_ sender: Any) {
+        let url: NSURL = URL(string: "TEL://1234567890")! as NSURL
+        UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
     }
 }

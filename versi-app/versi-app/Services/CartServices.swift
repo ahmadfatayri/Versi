@@ -44,9 +44,10 @@ class CartService {
                                     productImages.append(subSubJson["url"].stringValue)
                                 }
                                 
-                                var colors = [String]()
-                                for (_,subSubJson):(String, JSON) in res["colors"] {
-                                    colors.append(subSubJson["name"].stringValue)
+                                var colors = Dictionary<String, String>()
+                                for (_,subSubJson):(String, JSON) in subJson["colors"] {
+                                    colors.updateValue(subSubJson["value"].stringValue, forKey: subSubJson["name"].stringValue)
+                                    //colors.append(subSubJson["name"].stringValue, subSubJson["value"].stringValue)
                                 }
                                 
                                 var sizes = [String]()

@@ -46,12 +46,23 @@ class ProductVariantsVC: UIViewController {
         qtyLbl.text = self.getByTagName(key: "qtyLbl")
         descriptionLbl.text = self.getByTagName(key: "descriptionShippingLbl")
         addToCartBtn.setTitle(self.getByTagName(key: "addtocart"), for: .normal)
+        sizeValueLbl.text = product?.sizes![0]
+        colorValueLbl.text = Array((self.product?.colors!.keys)!)[0]
         
         colorCollectionView.tag = 12
         sizeCollectionView.tag = 13
         
-        colorCollectionView.delegate = self as UICollectionViewDelegate
-        colorCollectionView.dataSource = self as UICollectionViewDataSource
+        colorCollectionView.delegate = self
+        colorCollectionView.dataSource = self
+        var layout = colorCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.minimumLineSpacing = 0
+        layout?.minimumInteritemSpacing = 0
+        
+        sizeCollectionView.delegate = self
+        sizeCollectionView.dataSource = self
+        layout = sizeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.minimumLineSpacing = 0
+        layout?.minimumInteritemSpacing = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +78,7 @@ class ProductVariantsVC: UIViewController {
     }
     
     @IBAction func addToCartBtnPressed(_ sender: Any) {
-        CartService.instance.addData(product_id: self.product!.uid!, qty: "\(product!.availability ?? 1)", color: "red", size: "xl" ){ (success) in
+        CartService.instance.addData(product_id: self.product!.uid!, qty: productQty.text!, color: colorValueLbl.text!, size: sizeValueLbl.text!){ (success) in
             if success {
                 self.navigationController?.popToRootViewController(animated: true)
             }
@@ -89,31 +100,67 @@ extension ProductVariantsVC : UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
-        let cell: UICollectionViewCell
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 12 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCollectionCell", for: indexPath) as! ColorCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCollectionCell", for: indexPath) as! ColorCollectionCell
+            
+            let layer = cell.layer
+            layer.cornerRadius = 4.0
+            layer.borderColor = UIColor(white: 0.8, alpha: 1).cgColor
+            layer.borderWidth = 1.0
+//            Array((self.product?.colors!.keys)!)[0]
+//            Array((self.product?.colors!.values)!)[0]
+            cell.backgroundColor = UIColor(hexString: Array((self.product?.colors!.values)!)[indexPath.row])
+//            if cell.isSelected {
+//
+//            }else {
+//
+//            }
+            return cell
         }
         else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SizeCollectionCell", for: indexPath) as! SizeCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SizeCollectionCell", for: indexPath) as! SizeCollectionCell
+            cell.config(sizeLbl: (self.product?.sizes![indexPath.row])!)
             
+            let layer = cell.layer
+            layer.cornerRadius = 4.0
+            layer.borderColor = UIColor(white: 0.8, alpha: 1).cgColor
+            layer.borderWidth = 1.0
+          
+            return cell
         }
-        return cell
     }
+  
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let layout = collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumLineSpacing = 5.0
-        layout.minimumInteritemSpacing = 2.5
-        
-        let numberOfItemsPerRow: CGFloat = 2.0
-        let itemWidth = (collectionView.bounds.width - layout.minimumLineSpacing) / numberOfItemsPerRow
-        
-        return CGSize(width: itemWidth, height: 100.0)
+        return CGSize(width: 50.0, height: 50.0)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor.blue.cgColor
+        cell?.layer.borderWidth = 1
+        cell?.isSelected = true
+        if collectionView.tag == 13 {
+            self.sizeValueLbl.text = product?.sizes![indexPath.row]
+        }
+        else {
+            self.colorValueLbl.text = Array((self.product?.colors!.keys)!)[indexPath.row]
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor(white: 0.8, alpha: 1).cgColor
+        cell?.layer.borderWidth = 1
+        cell?.isSelected = true
+    }
 }
 
 

@@ -21,6 +21,7 @@
 		311DEADA226F15F000E8509E /* borderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEAD9226F15F000E8509E /* borderTextView.swift */; };
 		311DEADC226F2DB600E8509E /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEADB226F2DB600E8509E /* ChangePasswordVC.swift */; };
 		311DEADE226F3C4500E8509E /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DEADD226F3C4500E8509E /* SearchVC.swift */; };
+		311DF803230C05BC000E4BF7 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311DF802230C05BC000E4BF7 /* UIColorExt.swift */; };
 		31235419225727CC0067B21A /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31235418225727CC0067B21A /* AccountCell.swift */; };
 		3123541B225738540067B21A /* ConstatntsAccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3123541A225738540067B21A /* ConstatntsAccountList.swift */; };
 		3123541D225750930067B21A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3123541C225750930067B21A /* ProductCell.swift */; };
@@ -106,6 +107,7 @@
 		311DEAD9226F15F000E8509E /* borderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = borderTextView.swift; sourceTree = "<group>"; };
 		311DEADB226F2DB600E8509E /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		311DEADD226F3C4500E8509E /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		311DF802230C05BC000E4BF7 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		31235418225727CC0067B21A /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		3123541A225738540067B21A /* ConstatntsAccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstatntsAccountList.swift; sourceTree = "<group>"; };
 		3123541C225750930067B21A /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				31902E392265A8BD0068E111 /* UIImageViewExt.swift */,
 				31345391227044FB00945333 /* UIViewExt.swift */,
 				31071A6D22B96CA40001E499 /* MultiLangExt.swift */,
+				311DF802230C05BC000E4BF7 /* UIColorExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				3197CA7022606CBE008AF38C /* AddCreditVC.swift in Sources */,
 				31902E3C2265AEB50068E111 /* ProductVariantsVC.swift in Sources */,
 				3197CA7622608DC0008AF38C /* SubCategoryCollectionCell.swift in Sources */,
+				311DF803230C05BC000E4BF7 /* UIColorExt.swift in Sources */,
 				31370EB022717D7000284A2F /* CartVC.swift in Sources */,
 				31F44A0B2284288A00F834C8 /* ColorCollectionCell.swift in Sources */,
 			);

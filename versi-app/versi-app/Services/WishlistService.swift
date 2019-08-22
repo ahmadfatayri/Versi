@@ -44,9 +44,10 @@ class WishlistService {
                                     productImages.append(subSubJson["url"].stringValue)
                                 }
                                 
-                                var colors = [String]()
-                                for (_,subSubJson):(String, JSON) in res["colors"] {
-                                    colors.append(subSubJson["name"].stringValue)
+                                var colors = Dictionary<String, String>()
+                                for (_,subJson):(String, JSON) in json!["colors"] {
+                                    colors.updateValue(subJson["value"].stringValue, forKey: subJson["name"].stringValue)
+                                    //colors.append(subSubJson["name"].stringValue, subSubJson["value"].stringValue)
                                 }
                                 
                                 var sizes = [String]()

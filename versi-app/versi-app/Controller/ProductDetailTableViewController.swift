@@ -22,7 +22,7 @@ class ProductDetailTableViewController: UITableViewController {
         title = product.name
         tableView.estimatedRowHeight = self.tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
-        
+//
         ProductsService.instance.loadData(completion:  {data in
             self.relatedProducts = data
             self.tableView.reloadData()
@@ -141,9 +141,7 @@ extension ProductDetailTableViewController
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.buyButtonCell, for: indexPath) as! BuyButtonCell
             cell.product = product
             cell.selectionStyle = .none
-            
-            cell.addToCartBtn.addTarget(self, action: #selector(self.addToCart(_:)), for: .touchUpInside) //<- use `#selector(...)`
-
+            cell.addToCartBtn.addTarget(self, action: #selector(self.addToCart(_:)), for: .touchUpInside)
             cell.buyBtn.addTarget(self, action: #selector(self.checkout(_:)), for: .touchUpInside)
             if self.product.isAddedToBasket! {
                 cell.addToCartBtn.setTitle("Remove From Cart", for: .normal)
@@ -156,7 +154,7 @@ extension ProductDetailTableViewController
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.suggestionCell, for: indexPath) as! SuggestionTableViewCell
-            cell.selectionStyle = .none
+            //cell.selectionStyle = .none
             return cell
         }
         
@@ -189,7 +187,7 @@ extension ProductDetailTableViewController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //        print("section: \(indexPath.section)")
         //        print("row: \(indexPath.row)")
-        if indexPath.section == 1 {
+        if indexPath.section == 3 {
             
         }
         
@@ -199,7 +197,7 @@ extension ProductDetailTableViewController
 extension ProductDetailTableViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (relatedProducts?.count)!
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -224,6 +222,12 @@ extension ProductDetailTableViewController : UICollectionViewDataSource, UIColle
         return CGSize(width: itemWidth, height: itemWidth)
     }
 
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let selectedProduct = relatedProducts?[indexPath.row]
+        let vc = STORYBOARD.instantiateViewController(withIdentifier: PRODUCTDETAILS) as! ProductDetailTableViewController
+        vc.product = selectedProduct
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

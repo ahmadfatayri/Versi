@@ -19,10 +19,35 @@ class SubSubCatVC: UIViewController {
         super.viewDidLoad()
         
         ProductsService.instance.loadDataWithFilter(subCategory: subcategory_id! ,completion:  {data in
-            self.products = data
-            self.collectionView.dataSource = self
-            self.collectionView.delegate = self
+//            self.products = data
+//            self.collectionView.dataSource = self
+//            self.collectionView.delegate = self
            // self.collectionView.reloadData()
+            
+            
+            WishlistService.instance.loadData(completion: {dataLiked in
+                for product in data{
+                    for likedProduct in dataLiked {
+                        if likedProduct.uid == product.uid {
+                            product.isLiked = true
+                        }
+                    }
+                }
+                self.products = data
+                self.collectionView.dataSource = self
+                self.collectionView.delegate = self
+                CartService.instance.loadData(completion: { dataCart in
+                    for product in data{
+                        for cartProduct in dataCart {
+                            if cartProduct.uid == product.uid {
+                                product.isAddedToBasket = true
+                            }
+                        }
+                    }
+                })
+            })
+            
+            
         })
 
         

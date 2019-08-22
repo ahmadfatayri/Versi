@@ -39,9 +39,10 @@ class ProductsService {
                                 productImages.append(subSubJson["url"].stringValue)
                             }
                             
-                            var colors = [String]()
+                            var colors = Dictionary<String, String>()
                             for (_,subSubJson):(String, JSON) in subJson["colors"] {
-                                colors.append(subSubJson["name"].stringValue)
+                                colors.updateValue(subSubJson["value"].stringValue, forKey: subSubJson["name"].stringValue)
+                                //colors.append(subSubJson["name"].stringValue, subSubJson["value"].stringValue)
                             }
                             
                             var sizes = [String]()
@@ -103,9 +104,10 @@ class ProductsService {
                                 productImages.append(subSubJson["url"].stringValue)
                             }
                             
-                            var colors = [String]()
+                            var colors = Dictionary<String, String>()
                             for (_,subSubJson):(String, JSON) in subJson["colors"] {
-                                colors.append(subSubJson["name"].stringValue)
+                                colors.updateValue(subSubJson["value"].stringValue, forKey: subSubJson["name"].stringValue)
+                                //colors.append(subSubJson["name"].stringValue, subSubJson["value"].stringValue)
                             }
                             
                             var sizes = [String]()
@@ -162,10 +164,11 @@ class ProductsService {
                                 productImages.append(subJson["url"].stringValue)
                             }
                         
-                            var colors = [String]()
+                        var colors = Dictionary<String, String>()
                         for (_,subJson):(String, JSON) in json!["colors"] {
-                                colors.append(subJson["name"].stringValue)
-                            }
+                            colors.updateValue(subJson["value"].stringValue, forKey: subJson["name"].stringValue)
+                            //colors.append(subSubJson["name"].stringValue, subSubJson["value"].stringValue)
+                        }
                         
                             var sizes = [String]()
                         for (_,subJson):(String, JSON) in json!["sizes"] {

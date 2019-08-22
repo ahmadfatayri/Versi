@@ -13,9 +13,6 @@ class SubSubCatCollectionCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productPrice: UILabel!
-    @IBOutlet weak var loveBtn: UIButton!
-    
-    var isLiked: LikedImage = .disliked
     
     var product: Product! {
         didSet {
@@ -33,16 +30,4 @@ class SubSubCatCollectionCell: UICollectionViewCell {
             productPrice.text = ""
         }
     }
-    
-    @IBAction func loveBtnPressed(_ sender: UIButton) {
-        if isLiked.rawValue == "false" {
-            loveBtn.setLikedImage()
-            isLiked = .liked
-        }
-        else {
-            loveBtn.setDisLikedImage()
-            isLiked = .disliked
-        }
-    }
-    
 }

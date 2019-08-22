@@ -19,7 +19,7 @@ class Product
     public private(set) var type: String?
     public private(set) var brand: String?
     public private(set) var qr_code: String?
-    public private(set) var colors: [String]?
+    public private(set) var colors: Dictionary<String, String>?
     public private(set) var sizes: [String]?
     public private(set) var shipping: Int?
     public private(set) var weight: Int?
@@ -33,7 +33,7 @@ class Product
     init() {
     }
     
-    init(uid: String, name: String, images: [String], price: Double, description: String, detail: String, type: String, brand: String, qr_code: String, colors: [String], sizes: [String], shipping: Int, weight: Int, width: Int, height: Int, isPaid: Bool, availability: Int, isLiked: Bool, isAddedToBasket: Bool)
+    init(uid: String, name: String, images: [String], price: Double, description: String, detail: String, type: String, brand: String, qr_code: String, colors: Dictionary<String, String>, sizes: [String], shipping: Int, weight: Int, width: Int, height: Int, isPaid: Bool, availability: Int, isLiked: Bool, isAddedToBasket: Bool)
     {
         self.uid = uid
         self.name = name

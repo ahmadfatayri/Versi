@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import FirebasePerformance
+import FirebaseAnalytics
 
 class HomeVC: UIViewController {
 
+    let trace = Performance.startTrace(name: "LoadProductProccess")
     @IBOutlet weak var productsTableView: UITableView!
     @IBOutlet weak var titleLbl: UILabel!
     
@@ -23,6 +26,13 @@ class HomeVC: UIViewController {
         
         addRefreshControl()
         titleLbl.text = self.getByTagName(key: "appTitle")
+        let title = "HomeVC"
+        
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-\(title)",
+            AnalyticsParameterItemName: title,
+            AnalyticsParameterContentType: "cont"
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +59,10 @@ class HomeVC: UIViewController {
                 })
             })
         })
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super .viewDidDisappear(animated)
+        trace?.stop()
     }
     func addRefreshControl() {
         refreshControl = UIRefreshControl()

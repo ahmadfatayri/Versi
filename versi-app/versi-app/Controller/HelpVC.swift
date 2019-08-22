@@ -9,9 +9,18 @@
 import UIKit
 import WebKit
 
-class HelpVC: UIViewController {
+class HelpVC: UIViewController, WKUIDelegate {
 
     @IBOutlet weak var webview: WKWebView!
+    
+    override func loadView() {
+        super.loadView()
+        let webConfiguration = WKWebViewConfiguration()
+        webview = WKWebView(frame: .zero, configuration: webConfiguration)
+        webview.uiDelegate = self
+        view = webview
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

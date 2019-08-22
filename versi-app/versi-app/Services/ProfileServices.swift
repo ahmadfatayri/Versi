@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+
 class ProfileService {
     
     static let instance = ProfileService()

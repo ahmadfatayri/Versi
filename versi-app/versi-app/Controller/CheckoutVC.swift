@@ -9,10 +9,18 @@
 import UIKit
 import WebKit
 
-class CheckoutVC: UIViewController {
+class CheckoutVC: UIViewController, WKUIDelegate {
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var doneLbl: UIButton!
+    
+    override func loadView() {
+        super.loadView()
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

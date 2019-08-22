@@ -9,12 +9,18 @@
 import UIKit
 import Speech
 import PulsingHalo
+import Crashlytics
 
 class SearchVC: UIViewController {
 
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var cancelBtn: UIButton!
+    
+    @IBOutlet weak var imageSearch: UIImageView!
+    @IBOutlet weak var btnSearch: UIButton!
+    
+    
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
@@ -175,6 +181,14 @@ class SearchVC: UIViewController {
             microphoneButton.isEnabled = false
         }
     }
+    
+    
+    
+    @IBAction func btnSearchPressed(_ sender: Any) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
+  
     
 }
 

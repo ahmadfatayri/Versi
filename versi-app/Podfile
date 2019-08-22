@@ -12,5 +12,9 @@ target 'versi-app' do
   pod 'TweeTextField'
   pod "PulsingHalo"
   pod 'SDWebImage', '~> 4.0'
-  pod 'Lightbox'
+  pod 'Lightbox' 
+  pod 'Firebase/Analytics'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics'
+  pod 'Firebase/Performance'
 end

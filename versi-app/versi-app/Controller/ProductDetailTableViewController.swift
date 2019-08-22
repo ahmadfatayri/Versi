@@ -9,6 +9,7 @@
 import UIKit
 import Lightbox
 
+
 class ProductDetailTableViewController: UITableViewController {
     
     var relatedProducts: [Product]?

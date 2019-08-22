@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNm-S7-lac">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNm-S7-lac">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -628,6 +628,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RX3-Tc-Ou0">
+                                <rect key="frame" x="16" y="446" width="343" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-FU-Tbo">
+                                <rect key="frame" x="275" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnSearchPressed:" destination="zO9-xv-ceA" eventType="touchUpInside" id="ivd-ir-wkg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -646,7 +658,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="vIe-hj-u2i"/>
                     <connections>
+                        <outlet property="btnSearch" destination="8gz-FU-Tbo" id="ydd-7O-Yam"/>
                         <outlet property="cancelBtn" destination="jSX-JV-Xcs" id="Q14-UZ-MaQ"/>
+                        <outlet property="imageSearch" destination="RX3-Tc-Ou0" id="wre-BG-SGl"/>
                         <outlet property="microphoneButton" destination="Xoi-bX-lc0" id="aap-GQ-ajJ"/>
                         <outlet property="searchBar" destination="VLA-9i-BT8" id="2uq-0s-U6P"/>
                         <outlet property="searchDisplayController" destination="41B-pG-7h2" id="Lr3-4n-pZ7"/>
@@ -655,7 +669,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0M-df-nIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="41B-pG-7h2"/>
             </objects>
-            <point key="canvasLocation" x="-1830" y="-676"/>
+            <point key="canvasLocation" x="-1831.2" y="-676.01199400299856"/>
         </scene>
         <!--HelpVC-->
         <scene sceneID="oPv-ea-U8g">
@@ -733,7 +747,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode-reader" translatesAutoresizingMaskIntoConstraints="NO" id="US9-Up-xAo">
-                                <rect key="frame" x="0.0" y="-466.5" width="375" height="1600"/>
+                                <rect key="frame" x="0.0" y="325.5" width="375" height="16"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-bW-Xug">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>

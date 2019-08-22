@@ -20,6 +20,7 @@ let kSecReturnDataValue = NSString(format: kSecReturnData)
 let kSecMatchLimitOneValue = NSString(format: kSecMatchLimitOne)
 
 
+
 class KeychainService: NSObject {
     class func updateKey(service: String, account:String, data: String) {
         if let dataFromString: Data = data.data(using: String.Encoding.utf8, allowLossyConversion: false) {
@@ -30,8 +31,12 @@ class KeychainService: NSObject {
             let status = SecItemUpdate(keychainQuery as CFDictionary, [kSecValueDataValue:dataFromString] as CFDictionary)
             
             if (status != errSecSuccess) {
-                if let err = SecCopyErrorMessageString(status, nil) {
-                    print("Read failed: \(err)")
+                if #available(iOS 11.3, *) {
+                    if let err = SecCopyErrorMessageString(status, nil) {
+                        print("Read failed: \(err)")
+                    }
+                } else {
+                    // Fallback on earlier versions
                 }
             }
         }
@@ -46,8 +51,12 @@ class KeychainService: NSObject {
         // Delete any existing items
         let status = SecItemDelete(keychainQuery as CFDictionary)
         if (status != errSecSuccess) {
-            if let err = SecCopyErrorMessageString(status, nil) {
-                print("Remove failed: \(err)")
+            if #available(iOS 11.3, *) {
+                if let err = SecCopyErrorMessageString(status, nil) {
+                    print("Remove failed: \(err)")
+                }
+            } else {
+                // Fallback on earlier versions
             }
         }
         
@@ -64,8 +73,12 @@ class KeychainService: NSObject {
             let status = SecItemAdd(keychainQuery as CFDictionary, nil)
             
             if (status != errSecSuccess) {    // Always check the status
-                if let err = SecCopyErrorMessageString(status, nil) {
-                    print("Write failed: \(err)")
+                if #available(iOS 11.3, *) {
+                    if let err = SecCopyErrorMessageString(status, nil) {
+                        print("Write failed: \(err)")
+                    }
+                } else {
+                    // Fallback on earlier versions
                 }
             }
         }

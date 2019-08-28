@@ -15,16 +15,16 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (4.8.1)
-  - AlamofireImage (3.5.0):
-    - Alamofire (~> 4.8)
   - Cache (5.2.0)
   - Clarifai (2.3.2):
     - AFNetworking (~> 3.1)
+  - DynamicBlurView (3.0.1)
   - Imaginary (4.2.0):
     - Cache (~> 5.0)
   - Lightbox (2.3.0):
     - Imaginary (~> 4.0)
-  - PulsingHalo (0.2.8)
+  - PopupDialog (1.0.0):
+    - DynamicBlurView (~> 3.0.1)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
@@ -33,10 +33,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - AlamofireImage
   - Clarifai
   - Lightbox
-  - PulsingHalo
+  - PopupDialog (~> 1.0.0)
   - SDWebImage (~> 4.0)
   - SwiftyJSON
   - TweeTextField
@@ -45,12 +44,12 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Alamofire
-    - AlamofireImage
     - Cache
     - Clarifai
+    - DynamicBlurView
     - Imaginary
     - Lightbox
-    - PulsingHalo
+    - PopupDialog
     - SDWebImage
     - SwiftyJSON
     - TweeTextField
@@ -58,16 +57,16 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
   Clarifai: 6d6cce2b31aefcf33893f2c3a18588b266771d11
+  DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
   Imaginary: dae33d06dbc2ada22f98afef5eb45cc061311a2c
   Lightbox: d317750e4132bfb871a5307cfe0a2c7d6a583c65
-  PulsingHalo: 64938e4bd3893b823abdf01478084cd92445af2b
+  PopupDialog: 28f29a1ffe9e1fab32fb258b53d56ca31670e8a2
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TweeTextField: 18c7c8990a4a0926ce8ba73fc87e52df4f26805b
 
-PODFILE CHECKSUM: 7df97e1dc41be06c8250b85978b5405b63875d2d
+PODFILE CHECKSUM: 02019c0ea49ae72dff136a903ff32046bd575ede
 
 COCOAPODS: 1.6.1

@@ -8,7 +8,6 @@
 
 import UIKit
 import Speech
-import PulsingHalo
 import Clarifai
 
 class SearchVC: UIViewController {
@@ -23,7 +22,6 @@ class SearchVC: UIViewController {
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
-    let halo = PulsingHaloLayer()
     var longGesture: UIGestureRecognizer?
     
     override func viewDidLoad() {
@@ -31,20 +29,6 @@ class SearchVC: UIViewController {
 
         //api key for fashion detection
         let app = ClarifaiApp(apiKey: "38e92484139744298a6fea788039ce8a")
-
-        
-        
-        
-        
-      
-        
-    
-        
-        loadAnimation()
-        
-        
-//        microphoneButton.bindToKeyboard()
-        //searchBar.becomeFirstResponder()
         microphoneButton.isEnabled = false
 
         speechRecognizer.delegate = self as? SFSpeechRecognizerDelegate
@@ -77,18 +61,6 @@ class SearchVC: UIViewController {
 
     }
     
-    func loadAnimation() {
-        longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(_:)))
-        microphoneButton.addGestureRecognizer(longGesture!)
-        
-        halo.position = view.center
-        halo.haloLayerNumber = 3
-        halo.backgroundColor = #colorLiteral(red: 0.9245222211, green: 0.2878485918, blue: 0.1882302463, alpha: 0.85)
-        halo.radius = 150
-        view.layer.addSublayer(halo)
-        halo.start()
-        halo.isHidden = true
-    }
     @IBAction func cancelBtnPressed(_ sender: Any) {
         searchBar.resignFirstResponder()
     }
@@ -97,18 +69,13 @@ class SearchVC: UIViewController {
     @objc func longTap(_ sender: UIGestureRecognizer){
         
         if sender.state == .ended {
-            halo.isHidden = true
-
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
         }
         else if sender.state == .began {
-            halo.isHidden = false
             startRecording()
         }
-        //loadAnimation()
-        
     }
 
     

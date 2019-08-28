@@ -7,11 +7,10 @@ target 'versi-app' do
 
   # Pods for versi-app
   pod 'Alamofire'
-  pod 'AlamofireImage'
   pod 'SwiftyJSON'
   pod 'TweeTextField'
-  pod "PulsingHalo"
   pod 'SDWebImage', '~> 4.0'
   pod 'Lightbox'
   pod 'Clarifai'
+  pod 'PopupDialog', '~> 1.0.0'
 end

@@ -577,7 +577,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xoi-bX-lc0">
-                                <rect key="frame" x="150" y="246" width="75" height="75"/>
+                                <rect key="frame" x="150" y="226" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="4Ic-wY-wkx"/>
                                     <constraint firstAttribute="height" constant="75" id="BOI-5V-Wpf"/>
@@ -614,14 +614,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uo-kz-6Sr">
-                                <rect key="frame" x="165" y="362" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="1sadas"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uo-kz-6Sr">
+                                <rect key="frame" x="110" y="315.5" width="155" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="or Upload an image">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadImageBtnPressed:" destination="zO9-xv-ceA" eventType="touchUpInside" id="MBS-lI-w2Z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2Uo-kz-6Sr" firstAttribute="centerY" secondItem="xYi-F1-gwq" secondAttribute="centerY" id="4MU-kW-guO"/>
                             <constraint firstItem="6wc-2u-qyw" firstAttribute="top" secondItem="DmU-zl-FZR" secondAttribute="top" constant="15" id="9Jg-b9-rqU"/>
                             <constraint firstItem="fMx-4R-lhs" firstAttribute="top" secondItem="s2F-XU-4BY" secondAttribute="bottom" id="9eV-mt-Ue7"/>
                             <constraint firstItem="s2F-XU-4BY" firstAttribute="top" secondItem="6wc-2u-qyw" secondAttribute="bottom" constant="15" id="ACp-fe-Tz5"/>
@@ -631,7 +637,8 @@
                             <constraint firstAttribute="trailing" secondItem="s2F-XU-4BY" secondAttribute="trailing" id="ewU-VQ-cRn"/>
                             <constraint firstItem="6wc-2u-qyw" firstAttribute="centerX" secondItem="xYi-F1-gwq" secondAttribute="centerX" id="hIh-c1-Y2i"/>
                             <constraint firstItem="s2F-XU-4BY" firstAttribute="leading" secondItem="xYi-F1-gwq" secondAttribute="leading" id="lNE-yb-7N0"/>
-                            <constraint firstItem="Xoi-bX-lc0" firstAttribute="centerY" secondItem="xYi-F1-gwq" secondAttribute="centerY" constant="-50" id="pBA-TS-uKo"/>
+                            <constraint firstItem="Xoi-bX-lc0" firstAttribute="centerY" secondItem="xYi-F1-gwq" secondAttribute="centerY" constant="-70" id="pBA-TS-uKo"/>
+                            <constraint firstItem="2Uo-kz-6Sr" firstAttribute="centerX" secondItem="xYi-F1-gwq" secondAttribute="centerX" id="ykm-Hy-JuI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DmU-zl-FZR"/>
                     </view>
@@ -641,6 +648,7 @@
                         <outlet property="microphoneButton" destination="Xoi-bX-lc0" id="aap-GQ-ajJ"/>
                         <outlet property="searchBar" destination="VLA-9i-BT8" id="2uq-0s-U6P"/>
                         <outlet property="searchDisplayController" destination="41B-pG-7h2" id="Lr3-4n-pZ7"/>
+                        <outlet property="uploadImageBtn" destination="2Uo-kz-6Sr" id="6vb-VD-0EU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0M-df-nIW" userLabel="First Responder" sceneMemberID="firstResponder"/>

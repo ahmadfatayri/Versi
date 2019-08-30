@@ -47,5 +47,7 @@
 	<string>Speech recognition will be used to determine which words you speak into this device&apos;s microphone.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Your camera will be used to read your product&apos;s QR Code</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>You can select photos to attach.</string>
 </dict>
 </plist>

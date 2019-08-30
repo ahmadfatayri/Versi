@@ -9,12 +9,14 @@
 import UIKit
 import Speech
 import Clarifai
+import PopupDialog
 
-class SearchVC: UIViewController {
+class SearchVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     @IBOutlet weak var microphoneButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var uploadImageBtn: UIButton!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
@@ -24,11 +26,17 @@ class SearchVC: UIViewController {
     
     var longGesture: UIGestureRecognizer?
     
+    var app:ClarifaiApp?
+    let picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //api key for fashion detection
-        let app = ClarifaiApp(apiKey: "38e92484139744298a6fea788039ce8a")
+        app = ClarifaiApp(apiKey: "38e92484139744298a6fea788039ce8a")
+      
+        
+        
         microphoneButton.isEnabled = false
 
         speechRecognizer.delegate = self as? SFSpeechRecognizerDelegate
@@ -155,89 +163,79 @@ class SearchVC: UIViewController {
         }
     }
     
+    @IBAction func uploadImageBtnPressed(_ sender: Any) {
+        let popup = PopupDialog(title: "", message: "")
+        let buttonOne = DefaultButton(title: "Use a Camera") {
+            self.picker.sourceType = UIImagePickerController.SourceType.camera
+            self.picker.delegate = self;
+            self.present(self.picker, animated: true, completion: nil)
+        }
+        let buttonTwo = DefaultButton(title: "Choose from photoes") {
+            self.picker.allowsEditing = true;
+            self.picker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.picker.delegate = self;
+            self.present(self.picker, animated: true, completion: nil)
+        }
+        let buttonThree = CancelButton(title: "Cancel") {}
+        popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        self.present(popup, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            // The user picked an image. Send it to Clarifai for recognition.
+            dismiss(animated: true, completion: nil)
+            if let image = info[.originalImage] as? UIImage {
+                //UIImageView.image = image
+                recognizeImage(image: image)
+                //UITextView.text = "Recognizing..."
+                //button.isEnabled = false
+            }
+        }
+    
+        func recognizeImage(image: UIImage) {
+    
+            // Check that the application was initialized correctly.
+            if let app = app {
+    
+                // Fetch Clarifai's general model.
+                app.getModelByName("general-v1.3", completion: { (model, error) in
+    
+                    // Create a Clarifai image from a uiimage.
+                    let caiImage = ClarifaiImage(image: image)!
+    
+                    // Use Clarifai's general model to pedict tags for the given image.
+                    model?.predict(on: [caiImage], completion: { (outputs, error) in
+                        print("%@", error ?? "no error")
+                        guard
+                            let caiOuputs = outputs
+                            else {
+                                print("Predict failed")
+                                return
+                        }
+    
+                        if let caiOutput = caiOuputs.first {
+                            // Loop through predicted concepts (tags), and display them on the screen.
+                            let tags = NSMutableArray()
+                            for concept in caiOutput.concepts {
+                                tags.add(concept.conceptName)
+                            }
+    
+                            DispatchQueue.main.async {
+                                // Update the new tags in the UI.
+                                let khara = String(format: "Tags:\n%@", tags.componentsJoined(by: ", "))
+                                print(khara)
+                                self.searchBar.text = tags[2] as? String
+                                //call api's for all keywords
+                            }
+                        }
+    
+                        DispatchQueue.main.async {
+                            // Reset select photo button for multiple selections.
+                            //self.button.isEnabled = true;
+                        }
+                    })
+                })
+            }
+        }
 }
 
-
-//
-//class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//
-//    @IBOutlet weak var imageView: UIImageView!
-//    @IBOutlet weak var textView: UITextView!
-//    @IBOutlet weak var button: UIButton!
-//
-//    var app:ClarifaiApp?
-//    let picker = UIImagePickerController()
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        app = ClarifaiApp(apiKey: "38e92484139744298a6fea788039ce8a")
-//
-//        // Depracated, for older Clarifai Applications.
-//        // app = ClarifaiApp(appID: "", appSecret: "")
-//
-//    }
-//
-//    @IBAction func buttonPressed(_ sender: UIButton) {
-//        // Show a UIImagePickerController to let the user pick an image from their library.
-//        picker.allowsEditing = false;
-//        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-//        picker.delegate = self;
-//        present(picker, animated: true, completion: nil)
-//    }
-//
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//        // The user picked an image. Send it to Clarifai for recognition.
-//        dismiss(animated: true, completion: nil)
-//        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imageView.image = image
-//            recognizeImage(image: image)
-//            textView.text = "Recognizing..."
-//            button.isEnabled = false
-//        }
-//    }
-//
-//    func recognizeImage(image: UIImage) {
-//
-//        // Check that the application was initialized correctly.
-//        if let app = app {
-//
-//            // Fetch Clarifai's general model.
-//            app.getModelByName("general-v1.3", completion: { (model, error) in
-//
-//                // Create a Clarifai image from a uiimage.
-//                let caiImage = ClarifaiImage(image: image)!
-//
-//                // Use Clarifai's general model to pedict tags for the given image.
-//                model?.predict(on: [caiImage], completion: { (outputs, error) in
-//                    print("%@", error ?? "no error")
-//                    guard
-//                        let caiOuputs = outputs
-//                        else {
-//                            print("Predict failed")
-//                            return
-//                    }
-//
-//                    if let caiOutput = caiOuputs.first {
-//                        // Loop through predicted concepts (tags), and display them on the screen.
-//                        let tags = NSMutableArray()
-//                        for concept in caiOutput.concepts {
-//                            tags.add(concept.conceptName)
-//                        }
-//
-//                        DispatchQueue.main.async {
-//                            // Update the new tags in the UI.
-//                            self.textView.text = String(format: "Tags:\n%@", tags.componentsJoined(by: ", "))
-//                        }
-//                    }
-//
-//                    DispatchQueue.main.async {
-//                        // Reset select photo button for multiple selections.
-//                        self.button.isEnabled = true;
-//                    }
-//                })
-//            })
-//        }
-//    }
-//}
-//
